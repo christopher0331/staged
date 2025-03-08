@@ -1,0 +1,5 @@
+{
+  "/resources/insurance-coverage/page": "app/resources/insurance-coverage/page.js",
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js"
+}

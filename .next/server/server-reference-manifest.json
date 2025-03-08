@@ -1,0 +1,20 @@
+{
+  "node": {
+    "ebfd2f1f52f1ebd2e1e7bdc501219ac27e705f30": {
+      "workers": {
+        "app/not-found": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fchristopherhancock%2FDesktop%2FWebApps%2Fnlmsf%2Fsrc%2Fapp%2Factions%2Fsearch.ts%22%2C%5B%22search%22%5D%5D%5D&__client_imported__=true!",
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fchristopherhancock%2FDesktop%2FWebApps%2Fnlmsf%2Fsrc%2Fapp%2Factions%2Fsearch.ts%22%2C%5B%22search%22%5D%5D%5D&__client_imported__=true!",
+        "app/resources/transportation-lodging/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fchristopherhancock%2FDesktop%2FWebApps%2Fnlmsf%2Fsrc%2Fapp%2Factions%2Fsearch.ts%22%2C%5B%22search%22%5D%5D%5D&__client_imported__=true!",
+        "app/resources/insurance-coverage/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fchristopherhancock%2FDesktop%2FWebApps%2Fnlmsf%2Fsrc%2Fapp%2Factions%2Fsearch.ts%22%2C%5B%22search%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/not-found": "action-browser",
+        "app/page": "action-browser",
+        "app/resources/transportation-lodging/page": "action-browser",
+        "app/resources/insurance-coverage/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "hiXFZGffGqFwHAa//xr9d34SgMaj8wTPpQKjjEs5bFA="
+}

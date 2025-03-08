@@ -1,0 +1,151 @@
+{
+  "siteMetadata": {
+    "title": "National LeioMyoSarcoma Foundation",
+    "shortTitle": "NLMSF",
+    "description": "Empowering and educating about leiomyosarcoma, a rare smooth tissue cancer",
+    "url": "https://nlmsf.org",
+    "lastUpdated": "2025-03-02",
+    "contact": {
+      "supportHotline": "(303) 808-3437",
+      "alternateHotline": "(303) 783-0924"
+    }
+  },
+  "informationArchitecture": {
+    "home": {
+      "path": "/",
+      "sections": [
+        "hero",
+        "quickLinks",
+        "latestNews",
+        "featuredStory"
+      ]
+    },
+    "aboutUs": {
+      "path": "/about",
+      "subPages": {
+        "missionVision": "/about/mission-vision",
+        "historyMilestones": "/about/history",
+        "leadershipBoard": "/about/leadership",
+        "partnersCollaborations": "/about/partners"
+      }
+    },
+    "whatIsLMS": {
+      "path": "/what-is-lms",
+      "subPages": {
+        "overview": "/what-is-lms/overview",
+        "diagnosisStaging": "/what-is-lms/diagnosis",
+        "treatmentOptions": "/what-is-lms/treatment",
+        "clinicalTrials": "/what-is-lms/clinical-trials",
+        "faq": "/what-is-lms/faq"
+      }
+    },
+    "patientFamilySupport": {
+      "path": "/support",
+      "subPages": {
+        "supportGroups": "/support/groups",
+        "educationalResources": "/support/resources",
+        "financialAid": "/support/financial-aid",
+        "caregiverResources": "/support/caregivers"
+      }
+    },
+    "researchMedical": {
+      "path": "/research",
+      "subPages": {
+        "initiatives": "/research/initiatives",
+        "publicationsStudies": "/research/publications",
+        "grantsFunding": "/research/grants",
+        "conferencesSeminars": "/research/conferences"
+      }
+    },
+    "newsEvents": {
+      "path": "/news",
+      "subPages": {
+        "calendar": "/news/calendar",
+        "announcements": "/news/announcements",
+        "pastEvents": "/news/past-events"
+      }
+    },
+    "getInvolved": {
+      "path": "/get-involved",
+      "subPages": {
+        "donate": "/get-involved/donate",
+        "volunteer": "/get-involved/volunteer",
+        "fundraise": "/get-involved/fundraise",
+        "advocacy": "/get-involved/advocacy"
+      }
+    },
+    "contactConnect": {
+      "path": "/contact",
+      "subPages": {
+        "contactForm": "/contact/form",
+        "location": "/contact/location",
+        "socialMedia": "/contact/social",
+        "newsletter": "/contact/newsletter"
+      }
+    },
+    "communityStories": {
+      "path": "/stories",
+      "subPages": {
+        "patientStories": "/stories/patients",
+        "caregiverPerspectives": "/stories/caregivers",
+        "volunteerSpotlights": "/stories/volunteers"
+      }
+    }
+  },
+  "components": {
+    "hero": {
+      "enabled": true,
+      "showLatestNews": true,
+      "primaryCTA": {
+        "text": "Get Support",
+        "path": "/support"
+      },
+      "secondaryCTA": {
+        "text": "Donate Now",
+        "path": "/get-involved/donate"
+      }
+    },
+    "globalCTA": {
+      "supportHotline": {
+        "text": "24/7 Support Hotline",
+        "phone": "(303) 808-3437"
+      },
+      "donate": {
+        "text": "Support Our Mission",
+        "path": "/get-involved/donate"
+      }
+    },
+    "footer": {
+      "sections": [
+        "quickLinks",
+        "contact",
+        "social",
+        "newsletter"
+      ]
+    }
+  },
+  "theme": {
+    "colors": {
+      "primary": "#0066cc",
+      "secondary": "#004d99",
+      "accent": "#ff6b6b",
+      "background": "#ffffff",
+      "text": "#333333"
+    },
+    "fonts": {
+      "heading": "Montserrat",
+      "body": "Open Sans"
+    }
+  },
+  "features": {
+    "darkMode": true,
+    "newsletter": true,
+    "search": true,
+    "socialShare": true,
+    "accessibility": {
+      "highContrast": true,
+      "textResize": true,
+      "screenReader": true
+    }
+  }
+}
