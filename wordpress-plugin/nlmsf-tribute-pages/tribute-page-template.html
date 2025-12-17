@@ -1,0 +1,46 @@
+<!-- NLMSF Tribute Page Display - Elementor Custom Block -->
+<!-- This block displays an individual tribute page on the frontend -->
+<!-- Usage: Add this block to a page and set the data-tribute-slug attribute to the tribute's slug -->
+
+<div class="nlmsf-tribute-display" data-tribute-slug="TRIBUTE-SLUG-HERE">
+    <!-- Tribute content will be loaded here via JavaScript -->
+    <div class="nlmsf-loading">
+        <div class="nlmsf-loading-spinner"></div>
+        <p>Loading tribute page...</p>
+    </div>
+</div>
+
+<!-- Instructions for Use -->
+<script>
+// INSTRUCTIONS:
+// 1. Replace "TRIBUTE-SLUG-HERE" with the actual slug of the tribute page you want to display
+// 2. The slug can be found in the admin interface (e.g., "john-smith")
+// 3. Example: <div class="nlmsf-tribute-display" data-tribute-slug="john-smith">
+//
+// The JavaScript will automatically:
+// - Load the tribute data
+// - Display the image, name, and biography
+// - Show the donation form with [give_form id=4740]
+// - Display all donors for this tribute
+</script>
+
+<!-- Tribute Page Listing Template (Optional) -->
+<!-- This can be used on a page to show all published tribute pages -->
+<!--
+<div class="nlmsf-tributes-listing">
+    <div class="nlmsf-tributes-header">
+        <h1 class="nlmsf-tributes-main-title">In Loving Memory</h1>
+        <p style="color: #6b7280; font-size: 1.125rem; margin-top: 1rem;">
+            Honor the legacy of those we've lost by making a donation in their memory.
+        </p>
+    </div>
+    
+    <div class="nlmsf-tributes-grid">
+        <div class="nlmsf-loading">
+            <div class="nlmsf-loading-spinner"></div>
+            <p>Loading tribute pages...</p>
+        </div>
+    </div>
+</div>
+-->
+

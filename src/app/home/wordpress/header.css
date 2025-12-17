@@ -1,0 +1,910 @@
+/* NLMSF WordPress Header/Navbar Styles - Simple clean version */
+
+/* Variables */
+:root {
+  --navbar-height: 10%; /* Height of the navbar */
+  --dropdown-buffer: 20px; /* Buffer zone height for dropdowns */
+}
+
+/* Direct color values as per design protocol */
+.nlmsf-container-header {
+  max-width: 1480px;
+  height: 120%;
+  margin: 0 auto;
+  padding: 0 1rem; /* More horizontal padding on mobile */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-container {
+    padding: 0 2rem; /* More breathing room on desktop */
+  }
+}
+
+/* Navbar - Matching specifications from memory */
+.nlmsf-navbar {
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 200;
+  position: relative;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 0; /* Slightly less padding on mobile */
+  height: auto; /* Allow height to adjust for two rows */
+  min-height: 60px; /* Smaller on mobile */
+  box-sizing: border-box;
+  overflow: visible; /* Allow dropdowns to be visible */
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-navbar {
+    padding: 1rem 0; /* Increased vertical padding for two rows on desktop */
+    min-height: calc(var(--navbar-height) + 30px); /* Increased for two rows on desktop */
+  }
+}
+
+/* Logo - Matching specifications from memory */
+.nlmsf-logo {
+  display: flex;
+  align-items: center;
+  height: 50px; /* h-16 equivalent */
+  overflow: visible;
+}
+
+.nlmsf-logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nlmsf-logo-img {
+  width: 150px; /* Much larger on smaller screens */
+  max-height: 100px;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-logo-img {
+    width: 150px; /* Even larger on desktop */
+    max-height: 150px;
+  }
+}
+
+/* Desktop Navigation - Hidden on mobile, visible on desktop */
+.nlmsf-desktop-nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-desktop-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .nlmsf-menu-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.nlmsf-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.75rem; /* Reduced from 2rem to make menu more compact */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: center;
+}
+
+.nlmsf-menu-row-1 {
+  margin-bottom: 0.5rem;
+}
+
+.nlmsf-menu-row-2 {
+  margin-top: 0.5rem;
+}
+
+.nlmsf-menu-item {
+  position: relative; /* Changed back to relative for proper dropdown functionality */
+  display: flex;
+  justify-content: center;
+}
+
+.nlmsf-menu-link {
+  display: inline-block;
+  padding: 0.2rem 0.2rem; /* Reduced horizontal padding */
+  color: #374151;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.8825rem; /* Slightly smaller font size */
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Dropdown indicator for menu items with dropdowns */
+.nlmsf-has-dropdown > .nlmsf-menu-link {
+  position: relative;
+  padding-right: 1.1rem; /* Add space for the dropdown icon */
+}
+
+.nlmsf-has-dropdown > .nlmsf-menu-link::after {
+  content: '';
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: solid #6a3ea1;
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.nlmsf-menu-link:hover {
+  background-color: #6a3ea1;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.nlmsf-has-dropdown > .nlmsf-menu-link:hover::after {
+  border-color: #ffffff;
+  transform: translateY(-40%) rotate(45deg);
+}
+
+/* Dropdown Menus */
+.nlmsf-has-dropdown {
+  position: relative;
+}
+
+/* Dropdown wrapper for better positioning */
+.nlmsf-dropdown-wrapper {
+  position: fixed; /* Fixed position to center on page */
+  top: var(--navbar-height); /* Position right below navbar */
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* Increased transition time and added delay for better usability */
+  transition: opacity 0.3s ease 0.1s, visibility 0.3s ease 0.1s;
+  z-index: 1000;
+  /* Added padding to create larger hover target area */
+  padding-top: 20px;
+}
+
+/* Buffer area to prevent dropdown from disappearing */
+.nlmsf-has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Increased buffer height for easier mouse movement */
+  z-index: 99;
+}
+
+/* Dropdown positioning */
+.nlmsf-dropdown {
+  width: 100vw; /* Full viewport width */
+  max-width: 100%; /* No max-width limitation */
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  border-left: none;
+  border-right: none;
+  border-radius: 0; /* Remove border radius for full-width appearance */
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-top: 0;
+  max-height: calc(100vh - var(--navbar-height) - 20px);
+  overflow-y: auto;
+  /* Add padding to create larger click target areas */
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+/* Show dropdown on hover - with !important to ensure it works */
+.nlmsf-has-dropdown:hover .nlmsf-dropdown-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Keep dropdown visible when hovering the dropdown itself */
+.nlmsf-dropdown-wrapper:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Add additional hover area to maintain dropdown visibility */
+.nlmsf-has-dropdown:hover::after {
+  content: '';
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  width: 100%;
+  height: 50px; /* Increased buffer height */
+  z-index: 99;
+}
+
+/* Ensure the dropdown has the correct width and is centered */
+.nlmsf-has-dropdown .nlmsf-dropdown {
+  width: 100% !important;
+  min-width: 100% !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Ensure hover state persists when moving to dropdown */
+.nlmsf-dropdown-wrapper:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure menu items with dropdowns have hover state */
+.nlmsf-menu-item.nlmsf-has-dropdown {
+  cursor: pointer;
+}
+
+
+
+/* All dropdowns are centered under the navbar */
+
+/* Dropdown content styling */
+.nlmsf-dropdown-content {
+  padding: 1.75rem 2rem; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px; /* Constrain inner content width */
+  margin: 0 auto; /* Center the inner content */
+}
+
+/* Row-based categories layout */
+.nlmsf-dropdown-categories {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to keep all in one row */
+  gap: 2rem; /* Increased gap between columns */
+  justify-content: center; /* Center the categories */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding-bottom: 0.5rem; /* Space for scrollbar if needed */
+  scrollbar-width: thin; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  margin: 0 auto; /* Center the container */
+  width: 100%; /* Full width */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.nlmsf-dropdown-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.nlmsf-category-column {
+  flex: 0 1 160px; /* Increased width for columns */
+  min-width: 150px;
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.5rem; /* Increased horizontal margin */
+}
+
+.nlmsf-category-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6a3ea1; /* Purple color from design protocol */
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #6a3ea1;
+  white-space: nowrap; /* Prevent title from wrapping */
+  text-align: center; /* Center the title */
+}
+
+.nlmsf-category-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Center the links */
+}
+
+.nlmsf-category-links li {
+  margin-bottom: 0.5rem;
+}
+
+.nlmsf-dropdown-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: 700; /* Increased weight */
+  color: #6a3ea1;
+  margin-bottom: 1rem; /* Increased margin */
+  padding-bottom: 0.5rem; /* Increased padding */
+  border-bottom: 2px solid #6a3ea1; /* Thicker border with brand color */
+}
+
+/* Section Styles */
+.nlmsf-section {
+  margin-bottom: 1.5rem;
+}
+
+.nlmsf-section-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem; /* Increased font size */
+  font-weight: 700; /* Increased weight */
+  color: #6a3ea1; /* Purple color from design protocol */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #6a3ea1; /* Match brand color */
+}
+
+.nlmsf-subsection {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.nlmsf-subsection-title {
+  font-size: 0.95rem; /* Increased font size */
+  font-weight: 600; /* Increased weight */
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  border-left: 3px solid #6a3ea1; /* Left border for visual hierarchy */
+}
+
+/* Row and Column Layout */
+.nlmsf-dropdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Increased gap */
+  margin-bottom: 1rem; /* Increased margin */
+}
+
+.nlmsf-dropdown-column {
+  flex: 1;
+  min-width: 160px; /* Increased min-width */
+}
+
+/* Links */
+.nlmsf-dropdown-link {
+  display: block;
+  padding: 0.5rem 0.25rem; /* Increased padding */
+  color: #4b5563;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem; /* Slightly reduced font size */
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.3; /* Slightly reduced line height */
+  white-space: normal; /* Allow text to wrap in columns */
+  text-align: center; /* Center the text */
+}
+
+.nlmsf-dropdown-link:hover {
+  color: #6a3ea1;
+  background-color: rgba(106, 62, 161, 0.05); /* Subtle background on hover */
+  border-radius: 4px;
+}
+
+/* Featured Links */
+.nlmsf-featured-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nlmsf-featured-link:hover {
+  background-color: rgba(106, 62, 161, 0.05);
+  border-color: rgba(106, 62, 161, 0.2);
+}
+
+.nlmsf-featured-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: rgba(106, 62, 161, 0.1);
+  color: #6a3ea1;
+}
+
+.nlmsf-featured-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nlmsf-featured-content span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Contact and Donate Buttons */
+.nlmsf-actions {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.nlmsf-phone-link {
+  display: flex;
+  align-items: center;
+  color: #6a3ea1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-phone-link:hover {
+  color: #5a2e91;
+}
+
+.nlmsf-phone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  color: #6a3ea1;
+}
+
+.nlmsf-donate-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #6a3ea1;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-donate-button:hover {
+  background-color: #5a2e91;
+}
+
+.nlmsf-icon-guide {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+
+.nlmsf-icon-trials {
+  background-color: #fce7f3;
+  color: #db2777;
+}
+
+.nlmsf-icon-support {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.nlmsf-icon-transportation {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.nlmsf-icon-insurance {
+  background-color: #dbeafe;
+  color: #3b82f6;
+}
+
+/* Actions Section */
+.nlmsf-actions {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-actions {
+    display: flex;
+  }
+}
+
+.nlmsf-phone-link {
+  display: flex;
+  align-items: center;
+  color: #6a3ea1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-phone-link:hover {
+  color: #7d52b5;
+}
+
+.nlmsf-phone-icon {
+  margin-right: 0.375rem;
+}
+
+.nlmsf-donate-button {
+  display: inline-block;
+  background-color: #6a3ea1;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.nlmsf-donate-button:hover {
+  background-color: #7d52b5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu Toggle */
+.nlmsf-mobile-toggle {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-mobile-toggle {
+    display: none;
+  }
+}
+
+.nlmsf-menu-icon {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: #6a3ea1;
+}
+
+.nlmsf-menu-icon:before,
+.nlmsf-menu-icon:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #6a3ea1;
+  transition: all 0.2s ease;
+}
+
+.nlmsf-menu-icon:before {
+  top: -8px;
+}
+
+.nlmsf-menu-icon:after {
+  bottom: -8px;
+}
+
+/* Mobile Navigation - Sheet style like in Next.js */
+.nlmsf-mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 300; /* Higher z-index to ensure it's above everything */
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: block; /* Ensure it's displayed on mobile */
+  padding-bottom: 2rem; /* Add padding at bottom for better scrolling */
+}
+
+.nlmsf-mobile-nav.active {
+  transform: translateX(0);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.nlmsf-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  height: 80px; /* Increased height for the mobile logo */
+  overflow: visible;
+}
+
+.nlmsf-mobile-logo {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.nlmsf-mobile-logo-img {
+  width: 160px;
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.1));
+}
+
+.nlmsf-mobile-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6a3ea1;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-mobile-close:hover,
+.nlmsf-mobile-close:active {
+  background-color: #f3f4f6;
+}
+
+.nlmsf-mobile-contact-info {
+  padding: 0.75rem 1rem;
+  background-color: rgba(106, 62, 161, 0.05);
+  margin: 0 1rem 1rem;
+  border-radius: 0.375rem;
+}
+
+.nlmsf-mobile-phone {
+  display: flex;
+  align-items: center;
+  color: #6a3ea1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nlmsf-mobile-phone i {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.nlmsf-mobile-menu {
+  padding: 1rem;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.nlmsf-mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.nlmsf-mobile-menu ul li {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.nlmsf-mobile-menu ul li a {
+  display: block;
+  padding: 1rem 0.5rem;
+  color: #374151;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nlmsf-mobile-menu ul li a:active {
+  background-color: #f3f4f6;
+  color: #6a3ea1;
+}
+
+.nlmsf-mobile-dropdown {
+  position: relative;
+}
+
+.nlmsf-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nlmsf-dropdown-toggle:after {
+  content: '';
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: solid #6a3ea1;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.3s ease, border-color 0.2s ease;
+}
+
+.nlmsf-mobile-dropdown.open .nlmsf-dropdown-toggle:after {
+  transform: translateY(-30%) rotate(-135deg);
+}
+
+.nlmsf-mobile-dropdown.open > .nlmsf-dropdown-toggle {
+  color: #6a3ea1;
+  font-weight: 600;
+}
+
+.nlmsf-mobile-submenu-wrapper {
+  display: none;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+}
+
+.nlmsf-mobile-category {
+  margin-bottom: 1rem;
+}
+
+.nlmsf-mobile-category h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6a3ea1;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  letter-spacing: 0.05em;
+}
+
+.nlmsf-mobile-submenu {
+  padding-left: 0.5rem;
+  list-style: none;
+}
+
+.nlmsf-mobile-submenu li {
+  border-bottom: none !important;
+}
+
+.nlmsf-mobile-submenu li a {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-radius: 0.25rem;
+}
+
+.nlmsf-mobile-submenu li a:active {
+  background-color: #f3f4f6;
+  color: #6a3ea1;
+}
+
+.nlmsf-mobile-featured {
+  margin-top: 1.5rem;
+}
+
+.nlmsf-mobile-featured h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6a3ea1;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  letter-spacing: 0.05em;
+}
+
+.nlmsf-mobile-featured-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nlmsf-mobile-featured-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-mobile-featured-item:active {
+  background-color: #f3f4f6;
+}
+
+.nlmsf-featured-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.nlmsf-featured-icon.blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.nlmsf-featured-icon.purple {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.nlmsf-featured-icon.green {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.nlmsf-featured-icon.amber {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.nlmsf-featured-icon i {
+  font-size: 0.75rem;
+}
+
+.nlmsf-mobile-donate {
+  background-color: #6a3ea1;
+  color: #ffffff !important;
+  border-radius: 9999px;
+  padding: 0.75rem 1rem !important;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.nlmsf-mobile-donate:active {
+  background-color: #5a2e91;
+  transform: translateY(1px);
+}
+
+.nlmsf-mobile-contact {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nlmsf-mobile-phone {
+  display: flex;
+  align-items: center;
+  color: #6a3ea1;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: rgba(106, 62, 161, 0.05);
+  padding: 1rem;
+  border-radius: 0.375rem;
+}
+
+.nlmsf-mobile-phone .nlmsf-phone-icon {
+  margin-right: 0.5rem;
+  color: #6a3ea1;
+}

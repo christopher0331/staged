@@ -1,0 +1,684 @@
+/* NLMSF Board Members Page - WordPress Styles
+   Following NLMSF design protocol with direct color values */
+
+/* Hero Section Styles */
+.nlmsf-hero-section {
+  background: #f0f7ff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.nlmsf-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nlmsf-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+}
+
+.nlmsf-resource-tag {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #2b82ea;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  position: relative;
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nlmsf-hero-description {
+  color: #4b5563;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Content Section Styles */
+.nlmsf-content-section {
+  padding: 2rem 0;
+  background-color: #f9fafb;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .nlmsf-content-section {
+    padding: 2rem 0;
+  }
+}
+
+.nlmsf-content-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Board Content Area */
+.nlmsf-board-content {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 1200px;
+}
+
+/* Board Member Section Styles */
+.nlmsf-member-section {
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.nlmsf-section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Board Members Grid */
+.nlmsf-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .nlmsf-members-grid {
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-members-grid {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nlmsf-members-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* Leadership - Blue */
+.nlmsf-section-leadership .nlmsf-section-title {
+  background: linear-gradient(to right, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Medical - Purple */
+.nlmsf-section-medical .nlmsf-section-title {
+  background: linear-gradient(to right, #7e22ce, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Outreach - Teal */
+.nlmsf-section-outreach {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.nlmsf-section-outreach .nlmsf-section-title {
+  background: linear-gradient(to right, #0d9488, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nlmsf-section-outreach .nlmsf-members-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Support - Pink */
+.nlmsf-section-support .nlmsf-section-title {
+  background: linear-gradient(to right, #be185d, #db2777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nlmsf-section-description {
+  color: #4b5563;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+/* Board Member Card Styles */
+.nlmsf-member-grid-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid;
+  padding: 1.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .nlmsf-member-grid-card {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Leadership - Blue */
+.nlmsf-member-leadership {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.nlmsf-member-leadership .nlmsf-member-title {
+  color: #1d4ed8;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.nlmsf-member-leadership .nlmsf-link {
+  color: #2563eb;
+}
+
+.nlmsf-member-leadership .nlmsf-link:hover {
+  color: #1e40af;
+}
+
+/* Medical - Purple */
+.nlmsf-member-medical {
+  background-color: #faf5ff;
+  border-color: #e9d5ff;
+}
+
+.nlmsf-member-medical .nlmsf-member-title {
+  color: #7e22ce;
+  border-bottom: 1px solid #e9d5ff;
+}
+
+.nlmsf-member-medical .nlmsf-link {
+  color: #9333ea;
+}
+
+.nlmsf-member-medical .nlmsf-link:hover {
+  color: #6b21a8;
+}
+
+/* Outreach - Teal */
+.nlmsf-member-outreach {
+  background-color: #f0fdfa;
+  border-color: #99f6e4;
+}
+
+.nlmsf-member-outreach .nlmsf-member-title {
+  color: #0d9488;
+  border-bottom: 1px solid #99f6e4;
+}
+
+.nlmsf-member-outreach .nlmsf-link {
+  color: #14b8a6;
+}
+
+.nlmsf-member-outreach .nlmsf-link:hover {
+  color: #0f766e;
+}
+
+/* Support - Pink */
+.nlmsf-member-support {
+  background-color: #fdf2f8;
+  border-color: #fbcfe8;
+}
+
+.nlmsf-member-support .nlmsf-member-title {
+  color: #be185d;
+  border-bottom: 1px solid #fbcfe8;
+}
+
+.nlmsf-member-support .nlmsf-link {
+  color: #db2777;
+}
+
+.nlmsf-member-support .nlmsf-link:hover {
+  color: #9d174d;
+}
+
+.nlmsf-member-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.nlmsf-member-role {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Member Photo/Initials */
+.nlmsf-member-photo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-member-photo-leadership {
+  background: linear-gradient(to right, #1e40af, #3b82f6);
+}
+
+.nlmsf-member-photo-medical {
+  background: linear-gradient(to right, #7e22ce, #8b5cf6);
+}
+
+.nlmsf-member-photo-outreach {
+  background: linear-gradient(to right, #0d9488, #14b8a6);
+}
+
+.nlmsf-member-photo-support {
+  background: linear-gradient(to right, #be185d, #db2777);
+}
+
+.nlmsf-member-initials {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Read More Buttons */
+.nlmsf-read-more {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+  width: 100%;
+}
+
+.nlmsf-read-more-leadership {
+  background-color: #3b82f6;
+}
+
+.nlmsf-read-more-leadership:hover {
+  background-color: #1d4ed8;
+}
+
+.nlmsf-read-more-medical {
+  background-color: #8b5cf6;
+}
+
+.nlmsf-read-more-medical:hover {
+  background-color: #7c3aed;
+}
+
+.nlmsf-read-more-outreach {
+  background-color: #14b8a6;
+}
+
+.nlmsf-read-more-outreach:hover {
+  background-color: #0d9488;
+}
+
+.nlmsf-read-more-support {
+  background-color: #ec4899;
+}
+
+.nlmsf-read-more-support:hover {
+  background-color: #db2777;
+}
+
+.nlmsf-member-bio {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.nlmsf-member-org-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Sidebar Styles */
+.nlmsf-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.nlmsf-sidebar-container {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.nlmsf-sidebar-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+}
+
+.nlmsf-sidebar-nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.nlmsf-sidebar-link {
+  display: block;
+  color: #4b5563;
+  padding: 0.75rem 0.5rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+/* Color-coded sidebar links for each member type */
+.nlmsf-sidebar-link-leadership {
+  color: #1d4ed8;
+  border-left-color: #bfdbfe;
+}
+
+.nlmsf-sidebar-link-leadership:hover {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border-left-color: #1d4ed8;
+}
+
+.nlmsf-sidebar-link-medical {
+  color: #7e22ce;
+  border-left-color: #e9d5ff;
+}
+
+.nlmsf-sidebar-link-medical:hover {
+  background-color: #faf5ff;
+  color: #6b21a8;
+  border-left-color: #7e22ce;
+}
+
+.nlmsf-sidebar-link-outreach {
+  color: #0d9488;
+  border-left-color: #99f6e4;
+}
+
+.nlmsf-sidebar-link-outreach:hover {
+  background-color: #f0fdfa;
+  color: #0f766e;
+  border-left-color: #0d9488;
+}
+
+.nlmsf-sidebar-link-support {
+  color: #be185d;
+  border-left-color: #fbcfe8;
+}
+
+.nlmsf-sidebar-link-support:hover {
+  background-color: #fdf2f8;
+  color: #9d174d;
+  border-left-color: #be185d;
+}
+
+/* Section headers */
+.nlmsf-category-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.nlmsf-category-title-leadership {
+  color: #1d4ed8;
+}
+
+.nlmsf-category-title-medical {
+  color: #7e22ce;
+}
+
+.nlmsf-category-title-outreach {
+  color: #0d9488;
+}
+
+.nlmsf-category-title-support {
+  color: #be185d;
+}
+
+/* Denver Support Section */
+.nlmsf-denver-support {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #fef3c7;
+}
+
+.nlmsf-support-title {
+  color: #d97706;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.nlmsf-support-text {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.nlmsf-support-button {
+  display: inline-block;
+  background-color: #f59e0b;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-support-button:hover {
+  background-color: #d97706;
+}
+
+/* Resources Section */
+.nlmsf-resources {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #bfdbfe;
+}
+
+.nlmsf-resources-title {
+  color: #3b82f6;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.nlmsf-resources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nlmsf-resources-link {
+  display: block;
+  color: #4b5563;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-resources-link:hover {
+  color: #3b82f6;
+}
+
+/* Modal Styles */
+.nlmsf-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nlmsf-modal.active {
+  display: block;
+  opacity: 1;
+}
+
+.nlmsf-modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  max-width: 650px;
+  width: 90%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.nlmsf-modal.active .nlmsf-modal-content {
+  transform: translateY(0);
+}
+
+.nlmsf-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-modal-close:hover {
+  color: #4b5563;
+}
+
+.nlmsf-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nlmsf-modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.nlmsf-modal-title {
+  color: #4b5563;
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+}
+
+.nlmsf-modal-body {
+  padding: 1.5rem;
+}
+
+.nlmsf-modal-body p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.nlmsf-modal-body .nlmsf-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .nlmsf-hero-section {
+    padding: 4rem 2rem;
+  }
+  
+  .nlmsf-hero-title {
+    font-size: 3rem;
+  }
+  
+  .nlmsf-content-section {
+    padding: 3rem 2rem;
+  }
+
+  .nlmsf-modal-content {
+    margin: 5% auto;
+    max-width: 700px;
+  }
+}

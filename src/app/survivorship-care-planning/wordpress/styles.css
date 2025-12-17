@@ -1,0 +1,732 @@
+/* NLMSF Survivorship Care Planning - WordPress Styles */
+
+/* ------ General Styles ------ */
+.survivorship-content {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #374151;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ------ Hero Section ------ */
+.survivorship-hero {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #ddd6fe 100%); /* purple-50 to purple-100 to purple-200 */
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.resource-tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.25rem 1rem;
+  background-color: #e9d5ff; /* purple-200 */
+  color: #7e22ce; /* purple-700 */
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.resource-tag:hover {
+  background-color: #d8b4fe; /* purple-300 */
+}
+
+.hero-title {
+  color: #7e22ce; /* purple-700 */
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+  color: #4b5563; /* gray-600 */
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.hero-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-card p {
+  color: #374151; /* gray-700 */
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ------ Sidebar Styles ------ */
+.survivorship-sidebar {
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(79, 70, 229, 0.2);
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #4b5563;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  transform: translateX(5px);
+}
+
+.sidebar-support-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 0.5rem;
+  color: #713f12;
+}
+
+.sidebar-support-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #78350f;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-support-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: #b45309;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-support-button:hover {
+  background-color: #92400e;
+}
+
+.sidebar-contact {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ------ Content Section Styles ------ */
+.content-section {
+  margin-bottom: 2.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  padding: 1.25rem 1.5rem;
+  color: white;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.section-body {
+  padding: 1.5rem;
+  background-color: white;
+}
+
+/* Style variations for different sections */
+.introduction-section .section-header {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.introduction-section .section-body {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.why-important-section .section-header {
+  background: linear-gradient(90deg, #8b5cf6 0%, #a855f7 100%);
+}
+
+.why-important-section .section-body {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+}
+
+.information-section .section-header {
+  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 100%);
+}
+
+.information-section .section-body {
+  background: linear-gradient(90deg, rgba(13, 148, 136, 0.05) 0%, rgba(20, 184, 166, 0.05) 100%);
+}
+
+.use-plan-section .section-header {
+  background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+}
+
+.use-plan-section .section-body {
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+}
+
+.resources-section .section-header {
+  background: linear-gradient(90deg, #e11d48 0%, #fb7185 100%);
+}
+
+.resources-section .section-body {
+  background: linear-gradient(90deg, rgba(225, 29, 72, 0.05) 0%, rgba(251, 113, 133, 0.05) 100%);
+}
+
+.planning-models-section .section-header {
+  background: linear-gradient(90deg, #d97706 0%, #f59e0b 100%);
+}
+
+.planning-models-section .section-body {
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
+
+.follow-up-section .section-header {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 100%);
+}
+
+.follow-up-section .section-body {
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.05) 0%, rgba(79, 70, 229, 0.05) 100%);
+}
+
+.examples-section .section-header {
+  background: linear-gradient(90deg, #06b6d4 0%, #0ea5e9 100%);
+}
+
+.examples-section .section-body {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
+}
+
+.denver-resources-section .section-header {
+  background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.denver-resources-section .section-body {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0%, rgba(251, 191, 36, 0.05) 100%);
+}
+
+/* ------ Content Elements Styles ------ */
+
+/* Introduction */
+.introduction-section p {
+  margin-bottom: 1rem;
+}
+
+/* Why Important */
+.info-box {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-left: 4px solid #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-radius: 0.375rem;
+}
+
+/* Information Needed */
+.info-list {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.info-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+/* Use of Plan */
+.important-note {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background-color: rgba(79, 70, 229, 0.1);
+  border-left: 4px solid #4f46e5;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  color: #4338ca;
+}
+
+/* Related Resources */
+.resource-intro {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #e11d48;
+  font-weight: 500;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+.resource-item {
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.resource-item:hover {
+  transform: translateX(5px);
+}
+
+.resource-item a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #e11d48;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.resource-item a:hover {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #be123c;
+}
+
+.resource-arrow {
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  color: #e11d48;
+}
+
+.note-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(225, 29, 72, 0.1);
+  border-left: 4px solid #e11d48;
+  border-radius: 0.375rem;
+  color: #9f1239;
+}
+
+/* Planning Models */
+.models-intro {
+  color: #d97706;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.models-content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.models-content p {
+  margin-bottom: 1rem;
+}
+
+.models-links {
+  margin-top: 1.5rem;
+}
+
+.models-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(90deg, #d97706 0%, #f59e0b 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.models-button:hover {
+  background: linear-gradient(90deg, #b45309 0%, #d97706 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.models-url {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.models-url a {
+  color: #d97706;
+  text-decoration: none;
+}
+
+.models-url a:hover {
+  text-decoration: underline;
+}
+
+/* Follow-up Care */
+.follow-up-subtitle {
+  color: #4f46e5;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.follow-up-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.follow-up-icon {
+  background-color: rgba(79, 70, 229, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.icon-document {
+  width: 2rem;
+  height: 2rem;
+  stroke: #4f46e5;
+  stroke-width: 2;
+  fill: none;
+}
+
+.icon-globe {
+  width: 2rem;
+  height: 2rem;
+  stroke: #06b6d4;
+  stroke-width: 2;
+  fill: none;
+}
+
+.follow-up-highlight {
+  font-weight: 600;
+}
+
+.follow-up-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.follow-up-button:hover {
+  background: linear-gradient(90deg, #4338ca 0%, #4f46e5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.follow-up-url {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  color: #6b7280;
+}
+
+.follow-up-url a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.follow-up-url a:hover {
+  text-decoration: underline;
+}
+
+/* Examples Section */
+.examples-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.25rem;
+}
+
+.example-item {
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.example-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancer-net .example-header {
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+  padding: 1rem 1.25rem;
+}
+
+.care-planning .example-header {
+  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 100%);
+  padding: 1rem 1.25rem;
+}
+
+.example-title {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.example-body {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: white;
+}
+
+.example-icon {
+  background-color: rgba(6, 182, 212, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.example-content p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.cancer-net .example-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.cancer-net .example-button:hover {
+  background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
+  transform: translateY(-2px);
+}
+
+.care-planning .example-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.care-planning .example-button:hover {
+  background: linear-gradient(90deg, #0f766e 0%, #0d9488 100%);
+  transform: translateY(-2px);
+}
+
+.example-url {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  color: #6b7280;
+}
+
+.example-url a {
+  text-decoration: none;
+}
+
+.cancer-net .example-url a {
+  color: #2563eb;
+}
+
+.care-planning .example-url a {
+  color: #0d9488;
+}
+
+.example-url a:hover {
+  text-decoration: underline;
+}
+
+/* Denver-specific Resources */
+.denver-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.denver-resource-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.denver-resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.denver-resource-card h3 {
+  color: #b45309;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.denver-resource-card p {
+  margin-bottom: 1.25rem;
+}
+
+.denver-resource-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.denver-resource-link:hover {
+  background: linear-gradient(90deg, #d97706 0%, #f59e0b 100%);
+  transform: translateY(-2px);
+}
+
+/* ------ Responsive Styles ------ */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .follow-up-content, .example-body {
+    flex-direction: column;
+  }
+  
+  .example-icon, .follow-up-icon {
+    margin-bottom: 1rem;
+  }
+  
+  .denver-resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .denver-resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ------ Print Styles ------ */
+@media print {
+  .survivorship-hero {
+    background: none;
+    color: #000;
+    padding: 1rem 0;
+    box-shadow: none;
+  }
+  
+  .hero-title {
+    color: #000;
+    text-shadow: none;
+  }
+  
+  .hero-subtitle {
+    color: #333;
+  }
+  
+  .survivorship-sidebar {
+    display: none;
+  }
+  
+  .content-section {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .section-header {
+    background: none !important;
+    color: #000;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .section-title {
+    color: #000;
+  }
+  
+  .section-body {
+    background: none !important;
+  }
+  
+  a, .resource-arrow, .follow-up-highlight, .models-button, 
+  .follow-up-button, .example-button, .denver-resource-link {
+    color: #000 !important;
+    background: none !important;
+    text-decoration: underline !important;
+    box-shadow: none !important;
+  }
+}

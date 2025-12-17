@@ -1,0 +1,118 @@
+<!-- NLMSF Patient Video Testimonials - Simplified Inline Version -->
+<section class="video-testimonial-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Patient Perspectives</span>
+      <h2 class="section-title">One Patient to Another</h2>
+    </div>
+    
+    <div class="video-content-wrapper">
+      <!-- Video Player -->
+      <div class="video-player">
+        <iframe 
+          src="https://www.youtube.com/embed/P5tsdOm-U0I?rel=0" 
+          title="Dr. Mitch Achee - NLMSF Medical Advisory Board Chairman" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      
+      <!-- Video Caption -->
+      <div class="video-caption">
+        <h3>Dr. Mitch Achee</h3>
+        <div class="speaker-roles">
+          <span class="role-tag">Medical Professional</span>
+          <span class="role-tag">LMS Survivor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include this CSS inline to avoid conflicts with existing styles -->
+<style>
+  .video-testimonial-section {
+    padding: 3rem 0;
+    background: #f8fafc;
+    margin: 2rem 0;
+  }
+  
+  .video-testimonial-section .section-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #8b5cf6, #6366f1);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+  }
+  
+  .video-testimonial-section .section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2rem;
+  }
+  
+  .video-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .video-caption {
+    padding: 1.5rem;
+    background: white;
+  }
+  
+  .video-caption h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+  
+  .speaker-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .role-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    color: white;
+    background: #4f46e5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .video-testimonial-section .section-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>

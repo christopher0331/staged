@@ -1,0 +1,188 @@
+<!-- Events Sidebar Navigation -->
+<div class="sidebar-container">
+    <div class="sidebar-nav">
+        <h3 class="sidebar-title">Events Navigation</h3>
+        <ul class="nav-links">
+            <li>
+                <a href="#get-involved" class="nav-link" 
+                   onmouseover="this.style.backgroundColor='#f3e8ff'; this.style.color='#7c3aed';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-heart"></i>
+                    <span>Get Involved</span>
+                </a>
+            </li>
+            <li>
+                <a href="#awareness-recognition" class="nav-link"
+                   onmouseover="this.style.backgroundColor='#fef3c7'; this.style.color='#d97706';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-award"></i>
+                    <span>Awareness Recognition</span>
+                </a>
+            </li>
+            <li>
+                <a href="#community-events" class="nav-link"
+                   onmouseover="this.style.backgroundColor='#e0f2fe'; this.style.color='#0369a1';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Community Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="#fundraising" class="nav-link"
+                   onmouseover="this.style.backgroundColor='#dcfce7'; this.style.color='#16a34a';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-donate"></i>
+                    <span>Fundraising Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="#memorial-events" class="nav-link"
+                   onmouseover="this.style.backgroundColor='#fef3c7'; this.style.color='#d97706';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-mountain"></i>
+                    <span>Memorial Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="#support-groups" class="nav-link"
+                   onmouseover="this.style.backgroundColor='#f0fdfa'; this.style.color='#0d9488';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-users"></i>
+                    <span>Support Groups</span>
+                </a>
+            </li>
+            <li>
+                <a href="#monthly-membership" class="nav-link"
+                   onmouseover="this.style.backgroundColor='#f3e8ff'; this.style.color='#7c3aed';" 
+                   onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                    <i class="fas fa-handshake"></i>
+                    <span>Monthly Membership</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="sidebar-cta">
+        <div class="cta-content">
+            <div class="cta-icon">
+                <i class="fas fa-calendar-plus"></i>
+            </div>
+            <h4 class="cta-title">Host an Event</h4>
+            <p class="cta-description">Interested in organizing a fundraising event for NLMSF? We'd love to help you make a difference in the LMS community.</p>
+            <a href="https://nlmsf.org/contact/" class="cta-button">Get Started</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.sidebar-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-nav {
+    padding: 24px;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #7c3aed 0%, #4338ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #6b7280;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link i {
+    margin-right: 12px;
+    width: 16px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    transform: translateX(4px);
+}
+
+.sidebar-cta {
+    background: linear-gradient(135deg, #7c3aed 0%, #4338ca 100%);
+    padding: 24px;
+    text-align: center;
+    color: white;
+}
+
+.cta-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 20px;
+}
+
+.cta-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.cta-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #e0e7ff;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: #7c3aed;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #f3e8ff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .sidebar-container {
+        position: static;
+        margin-bottom: 32px;
+    }
+}
+</style>

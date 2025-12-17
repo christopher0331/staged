@@ -1,0 +1,97 @@
+<!-- NLMSF Patient Video Testimonials - Direct Full Width Approach -->
+<section class="video-section">
+  <div class="container">
+    <div class="section-header text-center mb-4">
+      <span class="section-badge">Patient Perspectives</span>
+      <h2 class="section-title">One Patient to Another</h2>
+    </div>
+    
+    <!-- Direct Full Width Video -->
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/P5tsdOm-U0I?rel=0" 
+        title="Dr. Mitch Achee - NLMSF Medical Advisory Board Chairman" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      ></iframe>
+    </div>
+    
+    <!-- Simple Caption -->
+    <div class="video-caption">
+      <h3>Dr. Mitch Achee - Medical Professional & LMS Survivor</h3>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Standalone styles that won't conflict with existing CSS */
+  .video-section {
+    padding: 3rem 0;
+    background: #f8fafc;
+    margin: 2rem 0;
+  }
+  
+  .video-section .section-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #8b5cf6, #6366f1);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+  }
+  
+  .video-section .section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .video-caption {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .video-caption h3 {
+    font-size: 1.25rem;
+    color: #4338ca;
+    margin: 0;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-4 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Ensure these styles override any conflicting ones */
+  .container {
+    max-width: 1400px !important; /* Force a wider container */
+    padding: 0 1.5rem !important;
+    margin: 0 auto !important;
+  }
+</style>

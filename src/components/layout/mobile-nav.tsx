@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, Phone, Search, X, ChevronRight, BookOpen, Beaker, Users, Car, Shield } from "lucide-react"
 
@@ -41,13 +42,23 @@ export function MobileNav({ items }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent side="left" className="w-full h-full bg-white p-0">
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between border-b px-4 py-3">
+          <div className="flex items-center justify-between border-b px-4 py-2 bg-white">
             <Link
               href="/"
-              className="flex items-center space-x-2"
+              className="flex items-center"
               onClick={() => setOpen(false)}
             >
-              <span className="text-xl font-bold text-nlmsf-purple">NLMSF</span>
+              <div className="w-auto h-7 relative overflow-hidden">
+                <Image 
+                  src="/nlmsf-new-logo.png" 
+                  alt="NLMSF Logo" 
+                  width={100} 
+                  height={28} 
+                  className="object-contain" 
+                  priority
+                  style={{ filter: 'drop-shadow(0px 1px 2px rgba(0,0,0,0.1))' }}
+                />
+              </div>
             </Link>
             <Button
               variant="ghost"

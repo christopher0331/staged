@@ -42,14 +42,14 @@ export default function StagingGradingPage() {
               <OverviewSection />
             </div>
 
-            <div id="staging" className="bg-white rounded-xl shadow-lg overflow-hidden p-6">
-              <h2 className="text-2xl font-bold text-indigo-800 mb-6 bg-gradient-to-r from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">Cancer Staging</h2>
-              <StagingSection />
-            </div>
-
             <div id="grading" className="bg-white rounded-xl shadow-lg overflow-hidden p-6">
               <h2 className="text-2xl font-bold text-teal-800 mb-6 bg-gradient-to-r from-teal-50 to-teal-100 p-4 rounded-lg border border-teal-200">Cancer Grading</h2>
               <GradingSection />
+            </div>
+
+            <div id="staging" className="bg-white rounded-xl shadow-lg overflow-hidden p-6">
+              <h2 className="text-2xl font-bold text-indigo-800 mb-6 bg-gradient-to-r from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">Cancer Staging</h2>
+              <StagingSection />
             </div>
 
             <div id="differences" className="bg-white rounded-xl shadow-lg overflow-hidden p-6">

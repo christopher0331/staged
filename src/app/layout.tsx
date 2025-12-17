@@ -61,7 +61,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-gradient-to-r from-white via-purple-50 to-white shadow-sm">
-            <div className="container max-w-7xl px-4 sm:px-6 lg:px-8 flex h-20 items-center">
+            <div className="container max-w-7xl px-4 sm:px-6 lg:px-18 flex h-24 items-center">
               <MainNav items={navigationConfig} />
             </div>
           </header>

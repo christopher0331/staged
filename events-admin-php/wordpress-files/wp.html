@@ -1,0 +1,83 @@
+<!-- NLMSF Events Admin - Elementor Custom Block -->
+<!-- This block provides the admin interface for managing events -->
+
+<!-- NLMSF Admin - Elementor Custom Block -->
+<!-- This block provides the admin interface for managing events and education videos -->
+
+<div class="nlmsf-admin">
+    <div class="nlmsf-admin-header">
+        <h1 class="nlmsf-admin-title">Content Management</h1>
+        <p class="nlmsf-admin-subtitle">Manage events and education videos</p>
+    </div>
+
+    <!-- Admin Tabs -->
+    <div class="nlmsf-admin-tabs">
+        <button class="nlmsf-tab-button active" data-tab="events">
+            <i class="fas fa-calendar-alt"></i>
+            Events
+        </button>
+        <button class="nlmsf-tab-button" data-tab="videos">
+            <i class="fas fa-video"></i>
+            Education Videos
+        </button>
+    </div>
+
+    <!-- Events Tab Content -->
+    <div id="events-tab" class="nlmsf-tab-content active">
+
+    <!-- Add Event Section -->
+    <div class="nlmsf-add-event-section">
+        <h2 class="nlmsf-section-title">
+            <i class="fas]]=INVALID
+
+<!-- Loading Styles -->
+<style>
+.nlmsf-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #6b7280;
+}
+
+.nlmsf-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #7e22ce;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<!-- Initialize Events Admin -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the NLMSF Events Manager is loaded
+    if (typeof nlmsfEvents !== 'undefined') {
+        nlmsfEvents.loadEventsForAdmin();
+    } else {
+        console.error('NLMSF Events Manager not loaded. Make sure the plugin is activated.');
+        
+        // Show error message to user
+        const container = document.querySelector('.nlmsf-events-list');
+        if (container) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: #ef4444; background: #fef2f2; border-radius: 0.5rem; border: 1px solid #fecaca;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Plugin Not Loaded</h3>
+                    <p>The NLMSF Events Manager plugin is not active. Please activate the plugin to use this feature.</p>
+                </div>
+            `;
+        }
+    }
+});
+</script>

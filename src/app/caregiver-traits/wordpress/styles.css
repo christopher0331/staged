@@ -1,0 +1,425 @@
+/* NLMSF Caregiver Traits Page - WordPress Styles
+   Following NLMSF design protocol with direct color values */
+
+/* Hero Section Styles */
+.nlmsf-hero-section {
+  background: #f0f7ff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.nlmsf-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nlmsf-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+}
+
+.nlmsf-resource-tag {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #2b82ea;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-resource-tag:hover {
+  background-color: #bae6fd;
+}
+
+.nlmsf-hero-title {
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+}
+
+.nlmsf-hero-subtitle {
+  color: #4b5563;
+  font-size: 1.25rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+}
+
+/* Content Section Styles */
+.nlmsf-content-section {
+  padding: 2rem 1.5rem;
+}
+
+.nlmsf-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nlmsf-introduction {
+  margin-bottom: 2.5rem;
+}
+
+.nlmsf-section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #bae6fd;
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nlmsf-intro-text {
+  color: #4b5563;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Traits Cards */
+.nlmsf-traits-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Base trait card styles */
+.nlmsf-trait-card {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  scroll-margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.nlmsf-trait-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.nlmsf-trait-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Compassion - Blue */
+.nlmsf-trait-compassion {
+  background-color: #eff6ff;
+}
+
+.nlmsf-trait-compassion .nlmsf-trait-title {
+  color: #1d4ed8;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.nlmsf-trait-compassion .nlmsf-link {
+  color: #2563eb;
+}
+
+.nlmsf-trait-compassion .nlmsf-link:hover {
+  color: #1e40af;
+}
+
+/* Patience - Teal */
+.nlmsf-trait-patience {
+  background-color: #f0fdfa;
+}
+
+.nlmsf-trait-patience .nlmsf-trait-title {
+  color: #0d9488;
+  border-bottom: 1px solid #99f6e4;
+}
+
+.nlmsf-trait-patience .nlmsf-link {
+  color: #14b8a6;
+}
+
+.nlmsf-trait-patience .nlmsf-link:hover {
+  color: #0f766e;
+}
+
+/* Dependability - Purple */
+.nlmsf-trait-dependability {
+  background-color: #faf5ff;
+}
+
+.nlmsf-trait-dependability .nlmsf-trait-title {
+  color: #7e22ce;
+  border-bottom: 1px solid #e9d5ff;
+}
+
+.nlmsf-trait-dependability .nlmsf-link {
+  color: #9333ea;
+}
+
+.nlmsf-trait-dependability .nlmsf-link:hover {
+  color: #6b21a8;
+}
+
+/* Flexibility - Pink */
+.nlmsf-trait-flexibility {
+  background-color: #fdf2f8;
+}
+
+.nlmsf-trait-flexibility .nlmsf-trait-title {
+  color: #be185d;
+  border-bottom: 1px solid #fbcfe8;
+}
+
+.nlmsf-trait-flexibility .nlmsf-link {
+  color: #db2777;
+}
+
+.nlmsf-trait-flexibility .nlmsf-link:hover {
+  color: #9d174d;
+}
+
+.nlmsf-trait-description {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.nlmsf-link {
+  color: #2b82ea;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-link:hover {
+  color: #6a3ea1;
+}
+
+/* Sidebar Styles */
+.nlmsf-sidebar {
+  padding: 1.5rem;
+}
+
+.nlmsf-sidebar-container {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.nlmsf-sidebar-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+}
+
+.nlmsf-sidebar-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.nlmsf-sidebar-link {
+  display: block;
+  color: #4b5563;
+  padding: 0.75rem 0.5rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+/* Default hover state */
+.nlmsf-sidebar-link:hover {
+  background-color: #e0f2fe;
+  color: #2b82ea;
+}
+
+/* Color-coded sidebar links for each trait */
+.nlmsf-sidebar-link-compassion {
+  color: #1d4ed8;
+  border-left-color: #bfdbfe;
+}
+
+.nlmsf-sidebar-link-compassion:hover {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border-left-color: #1d4ed8;
+}
+
+.nlmsf-sidebar-link-patience {
+  color: #0d9488;
+  border-left-color: #99f6e4;
+}
+
+.nlmsf-sidebar-link-patience:hover {
+  background-color: #f0fdfa;
+  color: #0f766e;
+  border-left-color: #0d9488;
+}
+
+.nlmsf-sidebar-link-dependability {
+  color: #7e22ce;
+  border-left-color: #e9d5ff;
+}
+
+.nlmsf-sidebar-link-dependability:hover {
+  background-color: #faf5ff;
+  color: #6b21a8;
+  border-left-color: #7e22ce;
+}
+
+.nlmsf-sidebar-link-flexibility {
+  color: #be185d;
+  border-left-color: #fbcfe8;
+}
+
+.nlmsf-sidebar-link-flexibility:hover {
+  background-color: #fdf2f8;
+  color: #9d174d;
+  border-left-color: #be185d;
+}
+
+/* Denver Support Section */
+.nlmsf-denver-support {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #fef3c7;
+}
+
+.nlmsf-support-title {
+  color: #d97706;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.nlmsf-support-text {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.nlmsf-support-button {
+  display: inline-block;
+  background-color: #f59e0b;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-support-button:hover {
+  background-color: #d97706;
+}
+
+/* Resources Section */
+.nlmsf-resources {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #bfdbfe;
+}
+
+.nlmsf-resources-title {
+  color: #3b82f6;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.nlmsf-resources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nlmsf-resources-link {
+  display: block;
+  color: #4b5563;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-resources-link:hover {
+  color: #3b82f6;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .nlmsf-hero-section {
+    padding: 4rem 2rem;
+  }
+  
+  .nlmsf-hero-title {
+    font-size: 3rem;
+  }
+  
+  .nlmsf-content-section {
+    padding: 3rem 2rem;
+  }
+  
+  .nlmsf-traits-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-traits-section {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Layout for when sidebar is present */
+  .with-sidebar {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the order to put sidebar on left */
+    gap: 2rem;
+  }
+  
+  .with-sidebar .nlmsf-content-container {
+    flex: 2;
+  }
+  
+  .with-sidebar .nlmsf-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    height: fit-content;
+  }
+}

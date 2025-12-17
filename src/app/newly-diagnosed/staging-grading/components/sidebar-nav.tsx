@@ -30,6 +30,16 @@ const sections: SectionLink[] = [
     ]
   },
   { 
+    id: 'grading', 
+    label: 'Cancer Grading', 
+    icon: Scale, 
+    color: 'text-teal-600',
+    subsections: [
+      { id: 'grading-definition', label: 'Definition & Purpose', parentId: 'grading' },
+      { id: 'grading-systems', label: 'Grading Systems', parentId: 'grading' }
+    ]
+  },
+  { 
     id: 'staging', 
     label: 'Cancer Staging', 
     icon: Target, 
@@ -41,23 +51,12 @@ const sections: SectionLink[] = [
     ]
   },
   { 
-    id: 'grading', 
-    label: 'Cancer Grading', 
-    icon: Scale, 
-    color: 'text-teal-600',
-    subsections: [
-      { id: 'grading-definition', label: 'Definition & Purpose', parentId: 'grading' },
-      { id: 'grading-systems', label: 'Grading Systems', parentId: 'grading' }
-    ]
-  },
-  { 
     id: 'differences', 
     label: 'Key Differences', 
     icon: Diff, 
     color: 'text-purple-600',
     subsections: [
-      { id: 'comparison-table', label: 'Side-by-Side Comparison', parentId: 'differences' },
-      { id: 'clinical-examples', label: 'Clinical Examples', parentId: 'differences' }
+      { id: 'comparison-table', label: 'Side-by-Side Comparison', parentId: 'differences' }
     ]
   },
   { 

@@ -1,0 +1,90 @@
+<!-- Patient-Driven Research Sidebar Navigation -->
+<nav class="page-nav">
+    <div class="nav-section section-introduction">
+        <a href="#count-me-in" class="nav-link">Count Me In Project</a>
+        <a href="#pattern-org" class="nav-link">Pattern.org</a>
+        <a href="#cure-id" class="nav-link">CURE ID Initiative</a>
+    </div>
+    
+    <div class="nav-section section-participation">
+        <a href="#patient-initiatives" class="nav-link">Patient-Driven Initiatives</a>
+        <a href="#cmi-details" class="nav-link">Count Me In Details</a>
+        <a href="#cmi-news" class="nav-link">Latest Updates</a>
+        <a href="#who-can-join" class="nav-link">Who Can Join</a>
+    </div>
+    
+    <div class="nav-section section-resources">
+        <a href="#denver-support" class="nav-link">Denver Resources</a>
+    </div>
+</nav>
+
+<script>
+    // Add smooth scrolling for navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Set initial active state based on scroll position
+        updateActiveNavLink();
+        
+        // Update active state on scroll
+        window.addEventListener('scroll', updateActiveNavLink);
+        
+        function updateActiveNavLink() {
+            const scrollPosition = window.scrollY;
+            
+            // Find all section elements that have IDs matching our nav links
+            const sections = [];
+            navLinks.forEach(link => {
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    sections.push({
+                        element: targetElement,
+                        link: link
+                    });
+                }
+            });
+            
+            // Sort sections by their position on the page
+            sections.sort((a, b) => a.element.offsetTop - b.element.offsetTop);
+            
+            // Find the current section based on scroll position
+            let currentSection = null;
+            for (let i = 0; i < sections.length; i++) {
+                if (sections[i].element.offsetTop - 120 <= scrollPosition) {
+                    currentSection = sections[i];
+                } else if (i === 0 && sections[i].element.offsetTop - 120 > scrollPosition) {
+                    currentSection = sections[i];
+                    break;
+                } else {
+                    break;
+                }
+            }
+            
+            if (currentSection) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                currentSection.link.classList.add('active');
+            }
+        }
+    });
+</script>

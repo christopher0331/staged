@@ -1,0 +1,582 @@
+/* Sarcoma Clinical Care Team Page Styles */
+
+/* ====== HERO SECTION ====== */
+.care-team-hero {
+    background: linear-gradient(to bottom, #ffffff, #e0f2fe);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #0284c7, #7e22ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: #334155;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+.hero-decoration-1 {
+    width: 30rem;
+    height: 30rem;
+    background: linear-gradient(to bottom right, #7dd3fc, #c4b5fd);
+    top: -15rem;
+    right: -10rem;
+}
+
+.hero-decoration-2 {
+    width: 20rem;
+    height: 20rem;
+    background: linear-gradient(to top right, #fda4af, #67e8f9);
+    bottom: -10rem;
+    left: -5rem;
+}
+
+/* ====== CONTENT SECTION ====== */
+.care-team-content {
+    padding: 3rem 0;
+}
+
+.main-content {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.intro-card {
+    background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #bae6fd;
+}
+
+.intro-card p {
+    color: #334155;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.intro-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Team Sections */
+.team-section {
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.medical-section .section-header {
+    background: linear-gradient(to right, #0ea5e9, #0284c7);
+}
+
+.surgical-section .section-header {
+    background: linear-gradient(to right, #8b5cf6, #6d28d9);
+}
+
+.radiation-section .section-header {
+    background: linear-gradient(to right, #10b981, #059669);
+}
+
+.icon-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-wrapper i {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    padding: 0 1.5rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .team-members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .team-members {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.team-member {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.medical-section .team-member {
+    border-top: 4px solid #0ea5e9;
+}
+
+.surgical-section .team-member {
+    border-top: 4px solid #8b5cf6;
+}
+
+.radiation-section .team-member {
+    border-top: 4px solid #10b981;
+}
+
+.team-member h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.medical-section .team-member h3 {
+    color: #0284c7;
+}
+
+.surgical-section .team-member h3 {
+    color: #6d28d9;
+}
+
+.radiation-section .team-member h3 {
+    color: #059669;
+}
+
+.team-member p {
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Conclusion Card */
+.conclusion-card {
+    background: linear-gradient(to right, #ede9fe, #f0f9ff);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    border: 1px solid #c7d2fe;
+}
+
+.conclusion-card p {
+    color: #334155;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #7e22ce, #0ea5e9);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #6d28d9, #0284c7);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ====== SIDEBAR SECTION ====== */
+.sidebar {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #0ea5e9, #7e22ce) 1;
+    color: #1e293b;
+}
+
+/* On This Page Navigation Styles */
+.page-nav {
+    position: sticky;
+    top: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 1.25rem;
+    max-width: 280px;
+}
+
+.page-nav .sidebar-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+    border-image: none;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.page-nav .sidebar-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 3px;
+    background-color: #8b5cf6; /* Purple */
+}
+
+.nav-section {
+    margin-bottom: 1.5rem;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: #6b7280;
+    padding: 0.25rem 0;
+    transition: all 0.2s ease;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.nav-link:hover {
+    color: #8b5cf6;
+}
+
+.nav-heading {
+    font-weight: 500;
+    color: #374151;
+    position: relative;
+    padding-left: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.nav-sublink {
+    padding-left: 1.5rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+}
+
+/* Section color indicators */
+.section-diagnosis .nav-heading {
+    border-left: 4px solid #8b5cf6; /* Purple */
+}
+
+.section-treatment .nav-heading {
+    border-left: 4px solid #3b82f6; /* Blue */
+}
+
+.section-during .nav-heading {
+    border-left: 4px solid #14b8a6; /* Teal */
+}
+
+.section-after .nav-heading {
+    border-left: 4px solid #f59e0b; /* Amber/Orange */
+}
+
+/* Active state for links */
+.nav-link.active {
+    font-weight: 500;
+}
+
+.section-diagnosis .nav-link.active {
+    color: #8b5cf6; /* Purple */
+}
+
+.section-treatment .nav-link.active {
+    color: #3b82f6; /* Blue */
+}
+
+.section-during .nav-link.active {
+    color: #14b8a6; /* Teal */
+}
+
+.section-after .nav-link.active {
+    color: #f59e0b; /* Amber/Orange */
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.sidebar-subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.featured-resource {
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.featured-image {
+    max-width: 150px;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    color: #0ea5e9;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.75rem;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.text-link i {
+    margin-right: 0.5rem;
+}
+
+.quick-help {
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+}
+
+.help-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.help-item:last-child {
+    margin-bottom: 0;
+}
+
+.help-item i {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(to bottom right, #0ea5e9, #7e22ce);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.help-details {
+    flex: 1;
+}
+
+.help-details strong {
+    display: block;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.help-details a {
+    color: #0ea5e9;
+    text-decoration: none;
+}
+
+.help-details a:hover {
+    text-decoration: underline;
+}
+
+.denver-support {
+    background: linear-gradient(to bottom right, #e0f2fe, #ede9fe);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(to right, #0ea5e9, #7e22ce);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(to right, #0284c7, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #f1f5f9;
+    color: #0ea5e9;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #0ea5e9;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ====== RESPONSIVE STYLES ====== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+    }
+    
+    .icon-wrapper {
+        margin-bottom: 0.75rem;
+    }
+    
+    .team-member {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1.125rem;
+    }
+    
+    .care-team-hero {
+        padding: 3rem 1rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .intro-card,
+    .conclusion-card {
+        padding: 1.5rem;
+    }
+    
+    .sidebar {
+        padding: 1.25rem;
+    }
+}

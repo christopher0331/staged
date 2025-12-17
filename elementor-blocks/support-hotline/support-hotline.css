@@ -1,0 +1,270 @@
+/* Support Hotline Section Styles */
+.support-hotline-section {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #6B46C1;
+  margin: 0 0 24px 0;
+  background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hotline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Primary Contact */
+.primary-contact {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6B46C1 0%, #553C9A 100%);
+  padding: 24px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(107, 70, 193, 0.3);
+}
+
+.contact-content {
+  position: relative;
+  z-index: 10;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.contact-label {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.primary-phone {
+  display: block;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: opacity 0.3s ease;
+  line-height: 1;
+}
+
+.primary-phone:hover {
+  opacity: 0.9;
+}
+
+.availability {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Decorative elements */
+.decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.decoration-1 {
+  top: 0;
+  right: 0;
+  width: 128px;
+  height: 128px;
+  transform: translate(64px, -64px);
+}
+
+.decoration-2 {
+  bottom: 0;
+  left: 0;
+  width: 96px;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translate(-48px, 48px);
+}
+
+/* Alternative Contact */
+.alternative-contact {
+  padding: 16px;
+  background: #F3F4F6;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.alternative-contact .contact-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.alternative-contact .phone-icon {
+  width: 16px;
+  height: 16px;
+  color: #6B46C1;
+  margin-right: 8px;
+}
+
+.alternative-contact .contact-label {
+  font-weight: 600;
+  color: #6B46C1;
+  font-size: 16px;
+  margin: 0;
+}
+
+.alternative-phone {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #6B46C1;
+  text-decoration: none;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.alternative-phone:hover {
+  color: #553C9A;
+}
+
+.contact-description {
+  font-size: 14px;
+  color: #4B5563;
+  margin: 0;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: white;
+  border: 2px solid #6B46C1;
+  color: #6B46C1;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background: #6B46C1;
+  color: white;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+/* Emergency Notice */
+.emergency-notice {
+  padding: 12px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+}
+
+.emergency-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warning-icon {
+  width: 20px;
+  height: 20px;
+  color: #DC2626;
+  margin-top: 2px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.emergency-text {
+  flex: 1;
+  text-align: center;
+}
+
+.emergency-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7F1D1D;
+  margin: 0 0 4px 0;
+}
+
+.emergency-description {
+  font-size: 12px;
+  color: #991B1B;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .primary-contact {
+    padding: 20px;
+  }
+  
+  .primary-phone {
+    font-size: 36px;
+  }
+  
+  .alternative-phone {
+    font-size: 24px;
+  }
+  
+  .quick-actions {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .action-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .emergency-notice {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .primary-phone {
+    font-size: 28px;
+  }
+  
+  .alternative-phone {
+    font-size: 20px;
+  }
+}

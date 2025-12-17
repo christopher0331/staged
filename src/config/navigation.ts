@@ -64,6 +64,11 @@ export const navigationConfig: MainNavItem[] = [
             description: "Essential guidance for navigating your LMS diagnosis and treatment journey."
           },
           {
+            title: "Care Team Q's",
+            href: "/newly-diagnosed/care-team-questions",
+            description: "Important questions to ask your care team throughout your LMS treatment journey."
+          },
+          {
             title: "Second Opinions",
             href: "/newly-diagnosed/second-opinions",
             description: "Understanding when and how to seek a second opinion for your LMS diagnosis or treatment plan."
@@ -114,6 +119,11 @@ export const navigationConfig: MainNavItem[] = [
         title: "Research & Clinical Trials",
         href: "/resources/research",
         description: "Stay informed about the latest LMS research and clinical trial opportunities."
+      },
+      {
+        title: "Scattered Light Spring Songfest",
+        href: "/resources/events/scattered-light-songfest",
+        description: "Join us for a special event in Madison, Wisconsin to celebrate Jon Rosenblum's fight against LMS and support research."
       }
     ]
   },

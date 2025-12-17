@@ -1,0 +1,495 @@
+/* 
+ * Newly Diagnosed Page Styles
+ * Following NLMSF design protocol with direct color values and gradient backgrounds
+ */
+
+/* Global Styles */
+:root {
+  /* Using direct color values as per protocol */
+  --nlmsf-purple: #800080;
+  --nlmsf-purple-light: #9932CC;
+  --nlmsf-purple-dark: #4B0082;
+  --nlmsf-blue: #1E90FF;
+  --nlmsf-blue-light: #87CEFA;
+  --nlmsf-blue-dark: #0000CD;
+  --nlmsf-teal: #20B2AA;
+  --nlmsf-amber: #FFD700;
+  --nlmsf-green: #99cc00;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #800080;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #4B0082;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #800080 0%, #9932CC 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: white;
+  color: #800080;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Section */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Resource Cards */
+.resource-cards {
+  margin-bottom: 40px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #800080;
+}
+
+.card-description {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  color: #800080;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.card-button i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card-button:hover {
+  color: #4B0082;
+}
+
+.card-button:hover i {
+  transform: translateX(5px);
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: linear-gradient(to right, #f9f9f9, #f0f0f0);
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.welcome-heading {
+  color: #99cc00;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.welcome-text {
+  color: #800080;
+  font-size: 1.1rem;
+}
+
+/* Video Section */
+.video-section {
+  margin-bottom: 40px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Denver Support Section */
+.denver-support {
+  background: linear-gradient(to right, #f0e6ff, #e6f0ff);
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.support-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.support-icon {
+  background-color: #800080;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.support-content {
+  flex-grow: 1;
+}
+
+.support-title {
+  color: #800080;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.support-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.support-button {
+  background-color: #800080;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.support-button:hover {
+  background-color: #4B0082;
+  color: white;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.sidebar-widget {
+  margin-bottom: 40px;
+}
+
+.widget-title {
+  color: #800080;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.widget-content {
+  color: #555;
+}
+
+/* Donation Widget */
+.donate-image {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.donate-image img {
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+.donate-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.donate-link a {
+  word-break: break-all;
+}
+
+.donate-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.social-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #800080;
+  color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icon.facebook a:hover {
+  background-color: #3b5998;
+}
+
+.social-icon.twitter a:hover {
+  background-color: #1da1f2;
+}
+
+.social-icon.youtube a:hover {
+  background-color: #ff0000;
+}
+
+/* NLMSF Logo */
+.nlmsf-logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.nlmsf-logo img {
+  max-width: 180px;
+}
+
+.nlmsf-info {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.nlmsf-links {
+  text-align: center;
+}
+
+/* Peri Section */
+.peri-image {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.peri-image img {
+  max-width: 180px;
+  border-radius: 50%;
+}
+
+.peri-quote {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.peri-button {
+  display: inline-block;
+  background-color: #800080;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.peri-button:hover {
+  background-color: #4B0082;
+  color: white;
+}
+
+/* Certifications */
+.certifications {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.certification-seals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.certification-seals img {
+  max-height: 80px;
+}
+
+.certification-text {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .support-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .support-icon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .certification-seals {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hero-section {
+  animation: fadeIn 1s ease-out;
+}
+
+.card {
+  animation: slideUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.4s;
+}

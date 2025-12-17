@@ -1,0 +1,155 @@
+/* NLMSF WordPress Footer Styles - Simple column layout */
+
+.nlmsf-footer {
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 40px 0;
+}
+
+.nlmsf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Footer columns layout - 4 columns in a single row */
+.nlmsf-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+}
+
+.nlmsf-footer-column {
+  flex-shrink: 0;
+}
+
+/* Footer headings */
+.nlmsf-footer-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6a3ea1; /* NLMSF Purple */
+  margin: 0 0 16px 0;
+}
+
+/* Footer links */
+.nlmsf-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.nlmsf-footer-links li {
+  margin-bottom: 16px;
+}
+
+.nlmsf-footer-links a {
+  color: #4b5563; /* Gray 600 */
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-footer-links a:hover {
+  color: #8b5cf6; /* Purple light */
+}
+
+
+
+/* Footer divider - separator line that doesn't span the full width */
+.nlmsf-footer-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0 auto 30px;
+  width: 90%;
+  max-width: 1000px;
+  clear: both;
+  display: block;
+}
+
+/* Footer bottom section */
+.nlmsf-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+  clear: both;
+  font-size: 14px;
+}
+
+.nlmsf-footer-copyright p {
+  margin: 0;
+  color: #6a3ea1; /* NLMSF Purple */
+}
+
+.nlmsf-footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.nlmsf-footer-legal a {
+  color: #4b5563; /* Gray 600 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-footer-legal a:hover {
+  color: #8b5cf6; /* Purple light */
+}
+
+/* Support hotline */
+.nlmsf-footer-hotline p {
+  margin: 0;
+  color: #4b5563; /* Gray 600 */
+}
+
+.nlmsf-footer-hotline a {
+  color: #6a3ea1; /* NLMSF Purple */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-footer-hotline a:hover {
+  color: #8b5cf6; /* Purple light */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .nlmsf-footer-columns {
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: auto;
+    padding-bottom: 16px;
+  }
+  
+  .nlmsf-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .nlmsf-footer-legal {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nlmsf-footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .nlmsf-footer-legal {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}

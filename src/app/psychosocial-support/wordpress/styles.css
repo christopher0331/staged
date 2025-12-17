@@ -1,0 +1,716 @@
+/* Styles for Psychosocial Support WordPress Components */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Hero Component Styles */
+.hero {
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    padding: 3rem 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd6fe;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.badge i {
+    color: #7e22ce;
+    margin-right: 0.5rem;
+}
+
+.badge span {
+    color: #374151;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #7e22ce, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 1rem 0;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(to right, #7e22ce, #a855f7);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-tag {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+.feature-tag.purple {
+    background-color: #f5f3ff;
+    color: #7e22ce;
+    border: 1px solid #ddd6fe;
+}
+
+.feature-tag.rose {
+    background-color: #fff1f2;
+    color: #be185d;
+    border: 1px solid #fecdd3;
+}
+
+.feature-tag.indigo {
+    background-color: #eef2ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+}
+
+.feature-tag i {
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.intro-panel {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-panel p {
+    margin: 0 0 1rem 0;
+    color: #374151;
+}
+
+.intro-panel p:last-child {
+    margin-bottom: 0;
+}
+
+/* Sidebar Component Styles */
+.page-nav {
+    position: sticky;
+    top: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem 1rem;
+    max-width: 240px;
+    margin-left: auto;
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+/* Nav Section and Link Styles */
+.nav-section {
+    margin-bottom: 1rem;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: #4b5563;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: #7e22ce;
+    border-left-color: #7e22ce;
+}
+
+/* Section color indicators */
+.section-challenges .nav-link {
+    border-left-color: #8b5cf6; /* Purple */
+}
+
+.section-support .nav-link {
+    border-left-color: #6366f1; /* Indigo */
+}
+
+.section-counseling .nav-link {
+    border-left-color: #ec4899; /* Pink */
+}
+
+.section-nlmsf .nav-link {
+    border-left-color: #a855f7; /* Purple */
+}
+
+.section-resources .nav-link {
+    border-left-color: #14b8a6; /* Teal */
+}
+
+/* Active state for links */
+.nav-link.active {
+    font-weight: 600;
+}
+
+.section-challenges .nav-link.active {
+    color: #7e22ce;
+}
+
+.section-support .nav-link.active {
+    color: #4f46e5;
+}
+
+.section-counseling .nav-link.active {
+    color: #be185d;
+}
+
+.section-nlmsf .nav-link.active {
+    color: #9333ea;
+}
+
+.section-resources .nav-link.active {
+    color: #0d9488;
+}
+
+/* Main Content Component Styles */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+}
+
+.section-title.purple {
+    color: #7e22ce;
+    border-color: #e9d5ff;
+}
+
+.section-title.indigo {
+    color: #4338ca;
+    border-color: #c7d2fe;
+}
+
+.section-title.rose {
+    color: #be185d;
+    border-color: #fecdd3;
+}
+
+.section-title.teal {
+    color: #0f766e;
+    border-color: #99f6e4;
+}
+
+.content-panel {
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid;
+    margin-bottom: 2rem;
+}
+
+.content-panel.purple {
+    background: linear-gradient(to right, #f5f3ff, #ede9fe);
+    border-color: #ddd6fe;
+}
+
+.content-panel.indigo {
+    background: linear-gradient(to right, #eef2ff, #e0e7ff);
+    border-color: #c7d2fe;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icon-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.icon-circle i {
+    color: white;
+}
+
+.icon-circle.purple {
+    background-color: #8b5cf6;
+}
+
+.icon-circle.indigo {
+    background-color: #6366f1;
+}
+
+.icon-circle.rose {
+    background-color: #ec4899;
+}
+
+.icon-circle.teal {
+    background-color: #14b8a6;
+}
+
+.panel-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.panel-header p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.panel-header h3 + p {
+    margin-top: 0.25rem;
+}
+
+.panel-text {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.bullet-list li {
+    display: flex;
+    align-items: flex-start;
+}
+
+.bullet-list li::before {
+    content: '';
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+}
+
+.bullet-list.indigo li::before {
+    background-color: #6366f1;
+}
+
+/* Note Box Styles */
+.note-box {
+    display: flex;
+    background-color: #f5f3ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.note-icon {
+    color: #7e22ce;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.note-content h4 {
+    color: #7e22ce;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.note-content p {
+    color: #6b7280;
+    margin: 0;
+    font-size: 0.925rem;
+}
+
+/* Challenges Grid Styles */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.challenge-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #ddd6fe;
+}
+
+.challenge-icon {
+    color: #8b5cf6;
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.challenge-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* Counseling Options Styles */
+.counseling-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.counseling-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.counseling-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.individual {
+    border-top: 4px solid #ec4899;
+}
+
+.couples {
+    border-top: 4px solid #8b5cf6;
+}
+
+.group {
+    border-top: 4px solid #6366f1;
+}
+
+.counseling-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.counseling-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+}
+
+.individual .counseling-icon {
+    background-color: #ec4899;
+}
+
+.couples .counseling-icon {
+    background-color: #8b5cf6;
+}
+
+.group .counseling-icon {
+    background-color: #6366f1;
+}
+
+.counseling-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.counseling-content {
+    color: #4b5563;
+}
+
+.counseling-content h4 {
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1rem;
+    color: #111827;
+}
+
+.benefit-list {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.benefit-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.benefit-list li::before {
+    content: '•';
+    position: absolute;
+    left: -1rem;
+    color: #ec4899;
+}
+
+/* NLMSF Programs Styles */
+.nlmsf-programs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.program-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.program-icon {
+    font-size: 2rem;
+    color: #7e22ce;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.program-content {
+    flex-grow: 1;
+}
+
+.program-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    color: #7e22ce;
+}
+
+.program-content p {
+    margin: 0 0 1rem 0;
+    color: #4b5563;
+}
+
+.program-cta {
+    background-color: #f5f3ff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border-left: 4px solid #7e22ce;
+}
+
+.program-cta p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.program-cta a {
+    color: #7e22ce;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.program-cta a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Card Styles */
+.contact-card {
+    background: linear-gradient(to right, #f0fdfa, #ccfbf1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #99f6e4;
+    margin-bottom: 2rem;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #0f766e;
+}
+
+.contact-header i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.contact-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.contact-info p {
+    margin: 0 0 1rem 0;
+    color: #374151;
+}
+
+.contact-details {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.contact-person {
+    margin-bottom: 0.75rem;
+}
+
+.contact-name {
+    font-weight: 600;
+    color: #111827;
+    font-size: 1.125rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-phone, .contact-email {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #0f766e;
+    transition: all 0.2s ease;
+}
+
+.contact-phone:hover, .contact-email:hover {
+    color: #0d9488;
+}
+
+.contact-phone i, .contact-email i {
+    margin-right: 0.5rem;
+}
+
+.resources-note {
+    background-color: #f9fafb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.resources-note p {
+    margin: 0 0 1rem 0;
+    color: #4b5563;
+}
+
+.resources-note p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .counseling-options {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .nlmsf-programs {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-nav {
+        position: relative;
+        max-width: none;
+        margin: 0 0 2rem 0;
+    }
+    
+    .program-card {
+        flex-direction: column;
+    }
+    
+    .program-icon {
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+    
+    .challenge-card {
+        min-height: auto;
+    }
+}

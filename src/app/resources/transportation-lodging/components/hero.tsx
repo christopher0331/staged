@@ -5,17 +5,17 @@ import { Car, Plane, Building } from "lucide-react";
 export function Hero() {
   return (
     <div className="mb-12 text-center max-w-3xl mx-auto">
-      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 text-white text-sm font-medium shadow-md">
+      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-sm font-medium shadow-md">
         <Car className="h-4 w-4" />
         <span>Patient Resources</span>
       </div>
       
-      <h1 className="mb-6 text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-600 via-teal-600 to-green-600 bg-clip-text text-transparent">
+      <h1 className="mb-6 text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
         Transportation & Lodging Resources
       </h1>
       
       <div className="flex justify-center mb-8">
-        <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full"></div>
+        <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
       </div>
       
       <p className="mx-auto max-w-2xl text-xl text-gray-700">
@@ -27,11 +27,11 @@ export function Hero() {
           <Car className="h-5 w-5" />
           <span>Local Transportation</span>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-700 rounded-lg shadow-sm">
+        <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg shadow-sm">
           <Plane className="h-5 w-5" />
           <span>Distant Transportation</span>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-lg shadow-sm">
+        <div className="flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-700 rounded-lg shadow-sm">
           <Building className="h-5 w-5" />
           <span>Lodging Options</span>
         </div>

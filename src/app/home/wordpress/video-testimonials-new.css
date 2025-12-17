@@ -1,0 +1,291 @@
+/**
+ * NLMSF Video Testimonials Styles - Column Layout
+ * CSS for WordPress-compatible patient video testimonials
+ */
+
+/* Video Testimonials Section */
+.nlmsf-video-testimonials {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 50%, #eff6ff 100%);
+  overflow: hidden;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.nlmsf-video-testimonials::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
+  top: -100px;
+  left: -100px;
+  border-radius: 50%;
+}
+
+.nlmsf-video-testimonials::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(147, 51, 234, 0) 70%);
+  bottom: -200px;
+  right: -200px;
+  border-radius: 50%;
+}
+
+.nlmsf-container {
+  max-width: 1600px; /* Much wider container for the video */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+.nlmsf-video-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nlmsf-video-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nlmsf-video-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+.nlmsf-video-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #1e293b, #334155);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+/* Full-Width Video Player */
+.nlmsf-video-player {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  height: 100%;
+}
+
+.nlmsf-video-wrapper {
+  width: 100%;
+  position: relative;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.nlmsf-video-wrapper::before {
+  content: '';
+  display: block;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.nlmsf-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.nlmsf-video-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nlmsf-video-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.nlmsf-video-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.nlmsf-role-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  color: white;
+}
+
+.nlmsf-role-badge.medical {
+  background: #2563eb; /* Blue */
+}
+
+.nlmsf-role-badge.survivor {
+  background: #9333ea; /* Purple */
+}
+
+.nlmsf-role-badge.board {
+  background: #0d9488; /* Teal */
+}
+
+.nlmsf-role-badge.creative {
+  background: #e11d48; /* Rose */
+}
+
+.nlmsf-role-badge.advisor {
+  background: #d97706; /* Amber */
+}
+
+.nlmsf-video-quote {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid #e2e8f0;
+  font-style: italic;
+}
+
+.nlmsf-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #4338ca, #6366f1);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+
+.nlmsf-video-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+.nlmsf-video-link i {
+  font-size: 0.875rem;
+}
+
+/* Animation for the Video Card */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nlmsf-video-player {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .nlmsf-video-title {
+    font-size: 2rem;
+  }
+  
+  .nlmsf-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nlmsf-video-testimonials {
+    padding: 2rem 0;
+  }
+  
+  .nlmsf-video-title {
+    font-size: 1.75rem;
+  }
+  
+  .nlmsf-video-info {
+    padding: 1.5rem;
+  }
+  
+  .nlmsf-video-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .nlmsf-video-quote {
+    font-size: 1rem;
+    padding-left: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .nlmsf-video-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .nlmsf-video-roles {
+    gap: 0.25rem;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .nlmsf-role-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nlmsf-video-title {
+    font-size: 1.5rem;
+  }
+  
+  .nlmsf-video-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .nlmsf-video-wrapper::before {
+    padding-bottom: 65%; /* Slightly taller for mobile */
+  }
+  
+  .nlmsf-video-info {
+    padding: 1.25rem;
+  }
+}

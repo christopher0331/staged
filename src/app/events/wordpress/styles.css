@@ -1,0 +1,984 @@
+/* Styles for Events WordPress Components */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Hero Component Styles */
+.hero {
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    padding: 3rem 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd6fe;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.badge i {
+    color: #7e22ce;
+    margin-right: 0.5rem;
+}
+
+.badge span {
+    color: #374151;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #7e22ce, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 1rem 0;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(to right, #7e22ce, #a855f7);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-tag {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+.feature-tag.purple {
+    background-color: #f5f3ff;
+    color: #7e22ce;
+    border: 1px solid #ddd6fe;
+}
+
+.feature-tag.rose {
+    background-color: #fff1f2;
+    color: #be185d;
+    border: 1px solid #fecdd3;
+}
+
+.feature-tag.indigo {
+    background-color: #eef2ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+}
+
+.feature-tag i {
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Main Content Component Styles */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+}
+
+.section-title.purple {
+    color: #7e22ce;
+    border-color: #e9d5ff;
+}
+
+.section-title.indigo {
+    color: #4338ca;
+    border-color: #c7d2fe;
+}
+
+.section-title.rose {
+    color: #be185d;
+    border-color: #fecdd3;
+}
+
+.section-title.teal {
+    color: #0f766e;
+    border-color: #99f6e4;
+}
+
+.section-title.amber {
+    color: #d97706;
+    border-color: #fde68a;
+}
+
+.content-panel {
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid;
+    margin-bottom: 2rem;
+}
+
+.content-panel.purple {
+    background: linear-gradient(to right, #f5f3ff, #ede9fe);
+    border-color: #ddd6fe;
+}
+
+.content-panel.indigo {
+    background: linear-gradient(to right, #eef2ff, #e0e7ff);
+    border-color: #c7d2fe;
+}
+
+.content-panel.rose {
+    background: linear-gradient(to right, #fff1f2, #fce7f3);
+    border-color: #fecdd3;
+}
+
+.content-panel.teal {
+    background: linear-gradient(to right, #f0fdfa, #ccfbf1);
+    border-color: #99f6e4;
+}
+
+.content-panel.amber {
+    background: linear-gradient(to right, #fffbeb, #fef3c7);
+    border-color: #fde68a;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icon-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.icon-circle i {
+    color: white;
+}
+
+.icon-circle.purple {
+    background-color: #8b5cf6;
+}
+
+.icon-circle.indigo {
+    background-color: #6366f1;
+}
+
+.icon-circle.rose {
+    background-color: #ec4899;
+}
+
+.icon-circle.teal {
+    background-color: #14b8a6;
+}
+
+.icon-circle.amber {
+    background-color: #f59e0b;
+}
+
+.icon-circle.green {
+    background-color: #10b981;
+}
+
+.panel-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.panel-header p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.panel-header h3 + p {
+    margin-top: 0.25rem;
+}
+
+.panel-text {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Research Roundtable Styles */
+.roundtable-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.roundtable-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid #ddd6fe;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.roundtable-badge i {
+    color: #6366f1;
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.roundtable-badge span {
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.roundtable-description {
+    font-size: 1.1rem;
+    color: #374151;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+.roundtable-gallery {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+.gallery-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.roundtable-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.roundtable-item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.roundtable-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.roundtable-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #f8fafc;
+    transition: transform 0.3s ease;
+}
+
+.roundtable-item:hover img {
+    transform: scale(1.02);
+}
+
+.roundtable-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+}
+
+.year-badge {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.city-badge {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.inaugural-badge {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-self: flex-end;
+}
+
+.event-link:hover {
+    color: #9333ea;
+}
+
+.event-link i {
+    margin-right: 0.5rem;
+}
+
+/* Recognition Section with Image */
+.recognition-section {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #fde68a;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.recognition-image {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.recognition-image img {
+    width: 100%;
+    height: auto;
+}
+
+.recognition-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 1rem;
+}
+
+.recognition-content p {
+    color: #374151;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.recognition-content a {
+    color: #d97706;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.recognition-content a:hover {
+    text-decoration: underline;
+}
+
+/* Monthly Membership CTA */
+.membership-cta {
+    background: linear-gradient(to right, #f5f3ff, #ede9fe);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd6fe;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.membership-cta h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #7e22ce;
+    margin-bottom: 1rem;
+}
+
+.membership-cta p {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #7e22ce;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #9333ea;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #7e22ce;
+    text-decoration: none;
+    border: 2px solid #7e22ce;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #7e22ce;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Sidebar Component Styles */
+.page-nav {
+    position: sticky;
+    top: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem 1rem;
+    max-width: 240px;
+    margin-left: auto;
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.nav-section {
+    margin-bottom: 1rem;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: #4b5563;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: #7e22ce;
+    border-left-color: #7e22ce;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-nav {
+        position: relative;
+        max-width: none;
+        margin: 0 0 2rem 0;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recognition-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+.recognition-footer {
+    display: flex;
+    align-items: center;
+    color: #d97706;
+    font-weight: 500;
+    margin-top: 32px;
+}
+
+.recognition-footer i {
+    margin-right: 8px;
+}
+
+/* Events Grid Section */
+.events-section {
+    padding: 64px 0;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3e8ff 100%);
+}
+
+.events-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.events-intro {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.events-intro p {
+    font-size: 20px;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 32px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.event-image {
+    position: relative;
+    height: 256px;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+}
+
+.event-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    z-index: 2;
+}
+
+.event-badge.fundraiser {
+    background: rgba(139, 92, 246, 0.8);
+}
+
+.event-badge.tribute {
+    background: rgba(99, 102, 241, 0.8);
+}
+
+.event-badge.golf {
+    background: rgba(34, 197, 94, 0.8);
+}
+
+.event-badge.memorial {
+    background: rgba(245, 158, 11, 0.8);
+}
+
+.event-badge.support {
+    background: rgba(20, 184, 166, 0.8);
+}
+
+.event-content {
+    padding: 24px;
+}
+
+.event-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.event-description {
+    color: #6b7280;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.event-link {
+    display: inline-flex;
+    align-items: center;
+    color: #4338ca;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.event-link:hover {
+    color: #312e81;
+}
+
+.event-link i {
+    margin-right: 8px;
+}
+
+.event-info {
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.event-info i {
+    margin-right: 8px;
+}
+
+/* Monthly Membership Section */
+.monthly-membership {
+    padding: 64px 0;
+    background: linear-gradient(135deg, #7c3aed 0%, #4338ca 50%, #2563eb 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.monthly-membership .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.membership-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.membership-text {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #e0e7ff;
+    line-height: 1.6;
+}
+
+.membership-text.large {
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.commitment-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.commitment-box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.commitment-box p {
+    color: #e0e7ff;
+    line-height: 1.6;
+}
+
+.membership-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn-primary {
+    padding: 12px 32px;
+    background: white;
+    color: #7c3aed;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #f3e8ff;
+}
+
+.btn-secondary {
+    padding: 12px 32px;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #7c3aed;
+}
+
+.membership-image {
+    position: relative;
+}
+
+.roundtable-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.roundtable-image img {
+    width: 100%;
+    height: auto;
+}
+
+.roundtable-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(124, 58, 237, 0.5) 0%, transparent 100%);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.floating-element {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.floating-element.top-right {
+    top: -16px;
+    right: -16px;
+    width: 96px;
+    height: 96px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.floating-element.bottom-left {
+    bottom: -16px;
+    left: -16px;
+    width: 128px;
+    height: 128px;
+    background: rgba(196, 181, 253, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .recognition-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .membership-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .recognition-content {
+        padding: 32px 24px;
+    }
+    
+    .recognition-title {
+        font-size: 1.5rem;
+    }
+    
+    .involvement-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-tags {
+        font-size: 16px;
+    }
+    
+    .membership-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-hero {
+        padding: 60px 0;
+    }
+    
+    .events-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .get-involved,
+    .awareness-recognition,
+    .events-section,
+    .monthly-membership {
+        padding: 48px 0;
+    }
+    
+    .membership-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+    }
+}

@@ -1,0 +1,61 @@
+/* Pathology Guide Card Styles */
+.pathology-guide-card {
+    margin: 2.5rem 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    padding: 1.5rem;
+}
+
+.highlight-card {
+    background: linear-gradient(to right bottom, #f5f3ff, #ede9fe);
+    border-left: 6px solid #7e22ce;
+}
+
+.term-heading {
+    color: #7e22ce;
+    margin: 1.75rem 0 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(126, 34, 206, 0.2);
+}
+
+.term-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.term-box {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.term-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(126, 34, 206, 0.1);
+}
+
+.term-box h5 {
+    color: #7e22ce;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.term-box p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .term-boxes {
+        grid-template-columns: 1fr;
+    }
+}

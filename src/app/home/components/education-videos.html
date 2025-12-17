@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Videos & Resources</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Education Videos Section */
+    .education-videos-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 50%, #eff6ff 100%);
+      overflow: hidden;
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .education-videos-section::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
+      top: -100px;
+      left: -100px;
+      border-radius: 50%;
+    }
+
+    .education-videos-section::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(147, 51, 234, 0) 70%);
+      bottom: -200px;
+      right: -200px;
+      border-radius: 50%;
+    }
+
+    .education-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header Styles */
+    .education-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .education-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(to right, #8b5cf6, #6366f1);
+      color: white;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+      transform: translateY(0);
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .education-badge:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.4);
+    }
+
+    .education-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0 0 1.5rem 0;
+      background: linear-gradient(to right, #4338ca, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+    }
+
+    .education-description {
+      font-size: 1.125rem;
+      color: #4b5563;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Main Content Layout */
+    .education-content {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sidebar Categories */
+    .education-sidebar {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 2rem;
+    }
+
+    .sidebar-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .category-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .category-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .category-button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 0.5rem;
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .category-button:hover {
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    .category-button.active {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      border-color: #6366f1;
+    }
+
+    .category-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-count {
+      margin-left: auto;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .category-button.active .category-count {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover .video-thumbnail img {
+      transform: scale(1.05);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .play-button i {
+      color: white;
+      font-size: 1.5rem;
+      margin-left: 4px;
+    }
+
+    .video-card:hover .play-button {
+      background: rgba(99, 102, 241, 0.9);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .video-duration {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .video-info {
+      padding: 1.5rem;
+    }
+
+    .video-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.4;
+    }
+
+    .video-description {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .video-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .video-category {
+      background: #f3f4f6;
+      color: #6b7280;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-weight: 500;
+    }
+
+    .video-date {
+      display: flex;
+      align-items: center;
+    }
+
+    .video-date i {
+      margin-right: 0.25rem;
+    }
+
+    /* Modal Styles */
+    .video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-modal.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+    }
+
+    .close-modal {
+      background: transparent;
+      border: none;
+      color: #6b7280;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .close-modal:hover {
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    .close-modal i {
+      font-size: 1.5rem;
+    }
+
+    .modal-body {
+      padding: 0;
+    }
+
+    .video-iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    .modal-footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .video-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .action-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #6366f1;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .action-button:hover {
+      background: #4f46e5;
+      transform: translateY(-1px);
+    }
+
+    .action-button.secondary {
+      background: #f3f4f6;
+      color: #6b7280;
+    }
+
+    .action-button.secondary:hover {
+      background: #e5e7eb;
+      color: #1f2937;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .education-content {
+        grid-template-columns: 250px 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .education-container {
+        padding: 0 1rem;
+      }
+      
+      .education-videos-section {
+        padding: 3rem 0;
+      }
+      
+      .education-header {
+        margin-bottom: 2rem;
+      }
+      
+      .education-title {
+        font-size: 2rem;
+      }
+      
+      .education-description {
+        font-size: 1rem;
+      }
+      
+      .education-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .education-sidebar {
+        position: static;
+        order: 2;
+      }
+      
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        order: 1;
+      }
+      
+      .video-iframe {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .education-videos-section {
+        padding: 2rem 0;
+      }
+      
+      .education-title {
+        font-size: 1.75rem;
+      }
+      
+      .video-card {
+        margin: 0 0.5rem;
+      }
+      
+      .modal-content {
+        margin: 1rem;
+      }
+      
+      .video-iframe {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Education Videos Section -->
+  <section class="education-videos-section">
+    <div class="education-container">
+      <div class="education-header">
+        <span class="education-badge">Educational Resources</span>
+        <h2 class="education-title">Important Videos & Education</h2>
+        <p class="education-description">
+          Access our comprehensive library of educational videos, webinars, and resources 
+          designed to help patients, caregivers, and healthcare providers better understand LMS.
+        </p>
+      </div>
+      
+      <div class="education-content">
+        <!-- Sidebar Categories -->
+        <div class="education-sidebar">
+          <h3 class="sidebar-title">Categories</h3>
+          <ul class="category-list">
+            <li class="category-item">
+              <button class="category-button active" data-category="all">
+                <div class="category-icon">
+                  <i class="fas fa-play-circle"></i>
+                </div>
+                All Videos
+                <span class="category-count">12</span>
+              </button>
+            </li>
+            <li class="category-item">
+              <button class="category-button" data-category="patient-education">
+                <div class="category-icon">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                Patient Education
+                <span class="category-count">4</span>
+              </button>
+            </li>
+            <li class="category-item">
+              <button class="category-button" data-category="medical-research">
+                <div class="category-icon">
+                  <i class="fas fa-microscope"></i>
+                </div>
+                Medical Research
+                <span class="category-count">3</span>
+              </button>
+            </li>
+            <li class="category-item">
+              <button class="category-button" data-category="caregiver-support">
+                <div class="category-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                Caregiver Support
+                <span class="category-count">2</span>
+              </button>
+            </li>
+            <li class="category-item">
+              <button class="category-button" data-category="webinars">
+                <div class="category-icon">
+                  <i class="fas fa-video"></i>
+                </div>
+                Webinars
+                <span class="category-count">3</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Video Grid -->
+        <div class="video-grid" id="videoGrid">
+          <!-- Video 1: Understanding LMS -->
+          <div class="video-card" data-category="patient-education" data-video-id="P5tsdOm-U0I">
+            <div class="video-thumbnail">
+              <img src="https://img.youtube.com/vi/P5tsdOm-U0I/maxresdefault.jpg" alt="Understanding Leiomyosarcoma">
+              <div class="play-button">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-duration">8:45</div>
+            </div>
+            <div class="video-info">
+              <h4 class="video-title">Understanding Leiomyosarcoma: A Patient's Guide</h4>
+              <p class="video-description">Dr. Mitch Achee explains the basics of LMS diagnosis, treatment options, and what patients need to know.</p>
+              <div class="video-meta">
+                <span class="video-category">Patient Education</span>
+                <span class="video-date">
+                  <i class="fas fa-calendar"></i>
+                  March 2024
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 2: Research Update -->
+          <div class="video-card" data-category="medical-research" data-video-id="azkHE80lvto">
+            <div class="video-thumbnail">
+              <img src="https://img.youtube.com/vi/azkHE80lvto/maxresdefault.jpg" alt="LMS Research Update">
+              <div class="play-button">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-duration">12:30</div>
+            </div>
+            <div class="video-info">
+              <h4 class="video-title">Latest LMS Research and Clinical Trials</h4>
+              <p class="video-description">An overview of recent research breakthroughs and ongoing clinical trials in leiomyosarcoma treatment.</p>
+              <div class="video-meta">
+                <span class="video-category">Medical Research</span>
+                <span class="video-date">
+                  <i class="fas fa-calendar"></i>
+                  February 2024
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 3: Caregiver Support -->
+          <div class="video-card" data-category="caregiver-support" data-video-id="lXVRLYplcRI">
+            <div class="video-thumbnail">
+              <img src="https://img.youtube.com/vi/lXVRLYplcRI/maxresdefault.jpg" alt="Caregiver Support">
+              <div class="play-button">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-duration">15:20</div>
+            </div>
+            <div class="video-info">
+              <h4 class="video-title">Supporting Your Loved One Through LMS</h4>
+              <p class="video-description">Practical advice for caregivers on how to provide emotional and practical support during the LMS journey.</p>
+              <div class="video-meta">
+                <span class="video-category">Caregiver Support</span>
+                <span class="video-date">
+                  <i class="fas fa-calendar"></i>
+                  January 2024
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 4: Treatment Options -->
+          <div class="video-card" data-category="patient-education" data-video-id="P5tsdOm-U0I">
+            <div class="video-thumbnail">
+              <img src="https://img.youtube.com/vi/P5tsdOm-U0I/maxresdefault.jpg" alt="Treatment Options">
+              <div class="play-button">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-duration">10:15</div>
+            </div>
+            <div class="video-info">
+              <h4 class="video-title">LMS Treatment Options and Side Effects</h4>
+              <p class="video-description">Comprehensive overview of available treatments, their benefits, and managing side effects.</p>
+              <div class="video-meta">
+                <span class="video-category">Patient Education</span>
+                <span class="video-date">
+                  <i class="fas fa-calendar"></i>
+                  December 2023
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 5: Webinar -->
+          <div class="video-card" data-category="webinars" data-video-id="azkHE80lvto">
+            <div class="video-thumbnail">
+              <img src="https://img.youtube.com/vi/azkHE80lvto/maxresdefault.jpg" alt="LMS Webinar">
+              <div class="play-button">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-duration">45:30</div>
+            </div>
+            <div class="video-info">
+              <h4 class="video-title">LMS Community Webinar: Q&A Session</h4>
+              <p class="video-description">Monthly community webinar featuring expert panel answering patient and caregiver questions.</p>
+              <div class="video-meta">
+                <span class="video-category">Webinars</span>
+                <span class="video-date">
+                  <i class="fas fa-calendar"></i>
+                  November 2023
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 6: Survivor Story -->
+          <div class="video-card" data-category="patient-education" data-video-id="lXVRLYplcRI">
+            <div class="video-thumbnail">
+              <img src="https://img.youtube.com/vi/lXVRLYplcRI/maxresdefault.jpg" alt="Survivor Story">
+              <div class="play-button">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-duration">6:45</div>
+            </div>
+            <div class="video-info">
+              <h4 class="video-title">My LMS Journey: A Survivor's Story</h4>
+              <p class="video-description">Personal account of living with and surviving leiomyosarcoma, offering hope and inspiration.</p>
+              <div class="video-meta">
+                <span class="video-category">Patient Education</span>
+                <span class="video-date">
+                  <i class="fas fa-calendar"></i>
+                  October 2023
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Video Title</h3>
+        <button class="close-modal" onclick="closeVideoModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe class="video-iframe" id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <div class="video-actions">
+          <a href="#" class="action-button" id="youtubeLink" target="_blank">
+            <i class="fab fa-youtube"></i>
+            Watch on YouTube
+          </a>
+          <a href="#" class="action-button secondary" id="shareLink">
+            <i class="fas fa-share"></i>
+            Share Video
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Category filtering
+    document.addEventListener('DOMContentLoaded', function() {
+      const categoryButtons = document.querySelectorAll('.category-button');
+      const videoCards = document.querySelectorAll('.video-card');
+      const videoGrid = document.getElementById('videoGrid');
+
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          
+          // Update active button
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter videos
+          videoCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Video modal functionality
+      const videoModal = document.getElementById('videoModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const videoIframe = document.getElementById('videoIframe');
+      const youtubeLink = document.getElementById('youtubeLink');
+      const shareLink = document.getElementById('shareLink');
+
+      videoCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const videoId = this.getAttribute('data-video-id');
+          const title = this.querySelector('.video-title').textContent;
+          const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+          const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+          
+          modalTitle.textContent = title;
+          videoIframe.src = embedUrl;
+          youtubeLink.href = youtubeUrl;
+          shareLink.href = youtubeUrl;
+          
+          videoModal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close modal
+      window.closeVideoModal = function() {
+        videoModal.classList.remove('open');
+        videoIframe.src = '';
+        document.body.style.overflow = '';
+      };
+
+      // Close modal on backdrop click
+      videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) {
+          closeVideoModal();
+        }
+      });
+
+      // Close modal on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('open')) {
+          closeVideoModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

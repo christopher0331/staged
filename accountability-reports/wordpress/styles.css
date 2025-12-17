@@ -1,0 +1,783 @@
+/* NLMSF Accountability Reports Page Styles */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #7e22ce 0%, #4338ca 50%, #059669 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    background: linear-gradient(45deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    border-radius: 2px;
+    margin: 1rem auto;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #ffffff; /* Increased contrast on gradient */
+}
+
+.hero-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff; /* Increased contrast on gradient */
+}
+
+/* Floating Decorations */
+.hero-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 40px;
+    height: 40px;
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Table of Contents */
+.toc-section {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid #7e22ce;
+}
+
+.toc-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.toc-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    background: white;
+    color: #4338ca; /* Darker indigo for better contrast on white */
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.toc-link:hover {
+    background: #4338ca; /* Match darker indigo for improved contrast */
+    color: white;
+    transform: translateX(5px);
+    border-left-color: #fbbf24;
+}
+
+/* Content Sections */
+.content-section {
+    margin-bottom: 4rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.section-title {
+    background: linear-gradient(135deg, #7e22ce 0%, #4338ca 100%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 2rem;
+    margin: 0;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+.section-content {
+    padding: 2rem;
+}
+
+/* Subsections */
+.subsection {
+    margin-bottom: 3rem;
+}
+
+.subsection-title {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    margin: 0 0 2rem 0;
+    border-radius: 8px;
+}
+
+.subsection-content {
+    padding: 0 1rem;
+}
+
+/* Researcher Cards */
+.researcher-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #6366f1;
+    transition: all 0.3s ease;
+}
+
+.researcher-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+}
+
+.researcher-card.featured {
+    border-left-color: #dc2626;
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.researcher-card h4 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.researcher-affiliation {
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.research-project {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #06b6d4;
+    margin-bottom: 1rem;
+}
+
+.research-description {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #0ea5e9;
+}
+
+/* Funding Items */
+.funding-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #10b981;
+    transition: all 0.3s ease;
+}
+
+.funding-item:hover {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+    transform: translateY(-1px);
+}
+
+.funding-item h4 {
+    color: #065f46;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Workgroups */
+.workgroups {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #0ea5e9;
+    margin-top: 1rem;
+}
+
+.workgroups ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.workgroups li {
+    background: white;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border-left: 2px solid #06b6d4;
+}
+
+/* Resources Grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.resource-item {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.resource-item h4 {
+    color: #92400e;
+    margin-bottom: 1rem;
+}
+
+.hotline-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #dc2626;
+    margin: 1rem 0;
+}
+
+/* Community Note */
+.note-section {
+    margin-top: 3rem;
+}
+
+.community-note {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 2px solid #f87171;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.community-note h4 {
+    color: #dc2626;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Drug Initiative Section */
+.drug-section .section-title {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.collaboration-item {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 1px solid #fca5a5;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #dc2626;
+    transition: all 0.3s ease;
+}
+
+.collaboration-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.15);
+}
+
+.collaboration-item h4 {
+    color: #7f1d1d;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+/* Collaborations Section */
+.collaborations-section .section-title {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.new-collaboration {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.new-collaboration h3 {
+    color: #065f46;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.pan-sarcoma-groups {
+    margin-top: 2rem;
+}
+
+.group-item {
+    background: white;
+    border: 1px solid #d1fae5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #10b981;
+}
+
+.group-item h4 {
+    color: #065f46;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Resources Section */
+.resources-section .section-title {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #7dd3fc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #0891b2;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.15);
+}
+
+.resource-card h4 {
+    color: #0c4a6e;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Improve body text contrast on light blue card */
+.resource-card p,
+.resource-card li {
+    color: #0c4a6e;
+}
+
+.resource-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.resource-card li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-card li::before {
+    content: '→';
+    color: #0891b2;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.hotline-card {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-color: #f59e0b;
+    border-left-color: #d97706;
+    text-align: center;
+}
+
+.hotline-card h4 {
+    color: #92400e;
+}
+
+.hotline-card .hotline-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #7f1d1d; /* Darker red for better contrast on yellow */
+    margin: 1rem 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Programs Section */
+.programs-section .section-title {
+    background: linear-gradient(135deg, #7e22ce 0%, #581c87 100%);
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.program-card {
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #7e22ce;
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.15);
+}
+
+.program-card h4 {
+    color: #581c87;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.program-card p {
+    line-height: 1.6;
+    color: #312e81; /* Darker indigo for better contrast on light purple */
+}
+
+/* Grant Notes */
+.grant-note {
+    font-style: italic;
+    color: #6b7280;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #d1d5db;
+    margin-bottom: 1.5rem;
+}
+
+/* Foundation Work List */
+.foundation-work-list {
+    list-style: none;
+    padding: 0;
+}
+
+.foundation-work-list li {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #0ea5e9;
+    position: relative;
+}
+
+.foundation-work-list li::before {
+    content: '→';
+    color: #0ea5e9;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: sticky;
+    top: 2rem;
+}
+
+.sidebar-nav {
+    padding: 1.5rem;
+}
+
+.sidebar-title {
+    background: linear-gradient(135deg, #7e22ce 0%, #4338ca 100%);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    text-align: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateX(3px);
+    border-left-color: #fbbf24;
+}
+
+.sidebar-link i {
+    width: 16px;
+    text-align: center;
+}
+
+/* Denver Resources Special Styling */
+.denver-resources .sidebar-link {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #92400e;
+    font-weight: 600;
+}
+
+.denver-resources .sidebar-link:hover {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+/* Sidebar CTA */
+.sidebar-cta {
+    border-top: 1px solid #e5e7eb;
+}
+
+.cta-box {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #7e22ce 0%, #4338ca 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-box h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.cta-box p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.cta-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cta-btn.primary {
+    background: #dc2626;
+    color: white;
+}
+
+.cta-btn.primary:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.cta-btn.secondary {
+    background: #4338ca; /* Solid high-contrast button */
+    color: #ffffff;
+    border: 1px solid #3730a3;
+}
+
+.cta-btn.secondary:hover {
+    background: #3730a3;
+    transform: translateY(-1px);
+}
+
+.contact-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hotline {
+    font-size: 0.85rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-tags {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .toc-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .researcher-card,
+    .funding-item {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .sidebar-cta .cta-buttons {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}

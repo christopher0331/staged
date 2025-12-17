@@ -1,0 +1,393 @@
+<!-- Content Component for Find Specialist Page -->
+<div class="content">
+    <!-- Additional Resources & Community Section -->
+    <div class="content-section community-resources-section">
+        <div class="community-description">
+            <p>We're offering all the information we have about finding sarcoma specialists on this page, but you can also join our communities and subscribe to our newsletter and bi-weekly snapshots (delivered the same way) to stay up to date and get immediate support outside of our webpage resources.</p>
+        </div>
+        
+        <div class="community-resources-grid">
+            <!-- Facebook Groups -->
+            <div class="community-resource-card facebook-groups">
+                <div class="resource-header">
+                    <div class="resource-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook Groups</h3>
+                </div>
+                
+                <div class="facebook-groups-list">
+                    <div class="facebook-group-item">
+                        <div class="group-info">
+                            <h4>NLMSF Group</h4>
+                        </div>
+                        <a href="https://www.facebook.com/groups/nlmsf" class="group-link" target="_blank">Join</a>
+                    </div>
+                    
+                    <div class="facebook-group-item">
+                        <div class="group-info">
+                            <h4>Stand Up to LMS</h4>
+                        </div>
+                        <a href="https://www.facebook.com/groups/standuptolms" class="group-link" target="_blank">Join</a>
+                    </div>
+                    
+                    <div class="facebook-group-item">
+                        <div class="group-info">
+                            <h4>Cancer Sucks - LMS</h4>
+                        </div>
+                        <a href="https://www.facebook.com/groups/cancersuckslms" class="group-link" target="_blank">Join</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="community-resource-card newsletter-signup">
+                <div class="resource-header">
+                    <div class="resource-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Newsletter & Snapshots</h3>
+                </div>
+                
+                <div class="newsletter-form">
+                    <form action="/api/send-email" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter-events" name="preferences" value="events" checked>
+                            <label for="newsletter-events">Events</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter-research" name="preferences" value="research" checked>
+                            <label for="newsletter-research">Research</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter-community" name="preferences" value="community" checked>
+                            <label for="newsletter-community">Community</label>
+                        </div>
+                        <button type="submit" class="newsletter-submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why a Sarcoma Specialist Section -->
+    <section id="why-specialist" class="content-section">
+        <h2 class="section-title">Why You Need a Sarcoma Specialist</h2>
+        <div class="section-content">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Sarcomas Require Specialized Care</h3>
+                </div>
+                <p>Leiomyosarcoma (LMS) is a rare cancer that many general oncologists may see only a few times in their entire career. Sarcoma specialists have extensive experience treating these rare cancers and stay current with the latest treatment approaches.</p>
+                <ul class="benefit-list">
+                    <li><strong>Accurate diagnosis:</strong> Specialists are more likely to correctly identify and stage your sarcoma</li>
+                    <li><strong>Treatment expertise:</strong> Knowledge of the most effective protocols for different types and stages of LMS</li>
+                    <li><strong>Access to clinical trials:</strong> Information about innovative treatments that may not be widely available</li>
+                    <li><strong>Multidisciplinary approach:</strong> Coordination with surgical oncologists, radiation oncologists, and other specialists</li>
+                </ul>
+            </div>
+            
+            <blockquote class="testimonial">
+                <p>"Finding a sarcoma specialist completely changed my treatment plan. My local oncologist recommended one approach, but the specialist at a sarcoma center suggested a different protocol that proved much more effective for my specific case."</p>
+                <cite>— Sarah, LMS Survivor</cite>
+            </blockquote>
+        </div>
+    </section>
+    
+    <!-- Finding a Specialist Section -->
+    <section id="finding-specialist" class="content-section">
+        <h2 class="section-title">Finding a Specialist</h2>
+        <div class="section-content">
+            <p class="section-intro">There are several ways to find sarcoma specialists who have experience treating leiomyosarcoma. The following resources can help you connect with expert care.</p>
+            
+            <!-- Sarcoma Centers Subsection -->
+            <div id="sarcoma-centers" class="subsection">
+                <h3 class="subsection-title">Sarcoma Centers of Excellence</h3>
+                <p>Sarcoma Centers of Excellence are medical facilities that specialize in the diagnosis and treatment of sarcomas. These centers typically have teams of specialists who work together to provide comprehensive care.</p>
+                
+                <div class="centers-grid">
+                    <div class="center-card">
+                        <div class="center-icon">
+                            <i class="fas fa-hospital-alt"></i>
+                        </div>
+                        <div class="center-content">
+                            <h4>NCI-Designated Cancer Centers</h4>
+                            <p>The National Cancer Institute recognizes centers with exceptional research and treatment capabilities.</p>
+                            <a href="https://www.cancer.gov/research/infrastructure/cancer-centers/find" class="resource-link" target="_blank">Find NCI Centers <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="center-card">
+                        <div class="center-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="center-content">
+                            <h4>Sarcoma Alliance Centers</h4>
+                            <p>The Sarcoma Alliance maintains a list of sarcoma specialists and treatment centers.</p>
+                            <a href="https://sarcomaalliance.org/resources/find-a-specialist/" class="resource-link" target="_blank">Sarcoma Alliance Directory <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="denver-cta">
+                    <div class="denver-cta-header">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Denver Sarcoma Center of Excellence</h4>
+                    </div>
+                    <p>The University of Colorado Cancer Center is recognized for its expertise in sarcoma treatment. Their multidisciplinary team includes surgical oncologists, medical oncologists, radiation oncologists, and pathologists who specialize in sarcoma care.</p>
+                    <a href="#" class="denver-cta-button">Learn About UC Cancer Center</a>
+                </div>
+            </div>
+            
+            <!-- Oncologists Subsection -->
+            <div id="oncologists" class="subsection">
+                <h3 class="subsection-title">Sarcoma Oncologists</h3>
+                <p>Sarcoma oncologists are doctors who specialize in the medical treatment of sarcomas. They typically have additional training and experience in treating these rare cancers.</p>
+                
+                <div class="specialist-finder">
+                    <h4>Finding a Sarcoma Oncologist</h4>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://www.cancer.net/find-cancer-doctor" target="_blank">
+                                <i class="fas fa-user-md"></i>
+                                <span>ASCO's Cancer.Net Doctor Database</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.lmsdr.org/resources/physicians/" target="_blank">
+                                <i class="fas fa-user-md"></i>
+                                <span>LMS Direct Research Foundation Physician List</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.leiomyosarcoma.info/physicians.html" target="_blank">
+                                <i class="fas fa-user-md"></i>
+                                <span>Leiomyosarcoma Support & Direct Research Foundation</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Second Opinion Subsection -->
+            <div id="second-opinion" class="subsection">
+                <h3 class="subsection-title">Getting a Second Opinion</h3>
+                <p>Even if you've already seen an oncologist, getting a second opinion from a sarcoma specialist is highly recommended. This is especially important for rare cancers like leiomyosarcoma.</p>
+                
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>When to Get a Second Opinion</h3>
+                    </div>
+                    <ul class="check-list">
+                        <li>After initial diagnosis, before starting treatment</li>
+                        <li>If you're unsure about your treatment plan</li>
+                        <li>If your cancer isn't responding to treatment</li>
+                        <li>Before undergoing major surgery</li>
+                        <li>If you're considering a clinical trial</li>
+                    </ul>
+                </div>
+                
+                <p>Many insurance plans cover second opinions, and some even require them before certain treatments. Check with your insurance provider about their policy on second opinions.</p>
+                
+                <div class="tip-box">
+                    <div class="tip-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Tip: Prepare for Your Second Opinion</h4>
+                    </div>
+                    <p>Before your appointment, gather all your medical records, including:</p>
+                    <ul>
+                        <li>Pathology reports</li>
+                        <li>Imaging studies (CT scans, MRIs, etc.)</li>
+                        <li>Lab results</li>
+                        <li>Current treatment plan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Questions to Ask Section -->
+    <section id="questions" class="content-section">
+        <h2 class="section-title">Questions to Ask Your Specialist</h2>
+        <div class="section-content">
+            <p class="section-intro">Preparing questions in advance can help you make the most of your appointment with a sarcoma specialist. Here are some important questions to consider asking:</p>
+            
+            <div class="questions-grid">
+                <div class="question-card">
+                    <div class="question-header">
+                        <i class="fas fa-diagnoses"></i>
+                        <h4>About Your Diagnosis</h4>
+                    </div>
+                    <ul class="question-list">
+                        <li>What type and subtype of leiomyosarcoma do I have?</li>
+                        <li>What is the stage and grade of my cancer?</li>
+                        <li>Has my diagnosis been confirmed by a pathologist who specializes in sarcomas?</li>
+                        <li>What additional tests do you recommend?</li>
+                    </ul>
+                </div>
+                
+                <div class="question-card">
+                    <div class="question-header">
+                        <i class="fas fa-procedures"></i>
+                        <h4>About Treatment Options</h4>
+                    </div>
+                    <ul class="question-list">
+                        <li>What treatment options do you recommend and why?</li>
+                        <li>What are the goals of treatment (cure, control, comfort)?</li>
+                        <li>What are the potential side effects of each treatment?</li>
+                        <li>Are there any clinical trials I should consider?</li>
+                    </ul>
+                </div>
+                
+                <div class="question-card">
+                    <div class="question-header">
+                        <i class="fas fa-user-md"></i>
+                        <h4>About Your Specialist</h4>
+                    </div>
+                    <ul class="question-list">
+                        <li>How many LMS patients have you treated?</li>
+                        <li>Do you work with a multidisciplinary team?</li>
+                        <li>How do you stay current with the latest LMS treatments?</li>
+                        <li>Who should I contact with questions between appointments?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="download-box">
+                <i class="fas fa-file-download"></i>
+                <div class="download-content">
+                    <h4>Printable Question Guide</h4>
+                    <p>Download our comprehensive list of questions to bring to your appointment.</p>
+                </div>
+                <a href="#" class="download-button">Download PDF</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Insurance Considerations Section -->
+    <section id="insurance" class="content-section">
+        <h2 class="section-title">Insurance Considerations</h2>
+        <div class="section-content">
+            <p class="section-intro">Navigating insurance coverage for specialist care can be challenging. Here are some important considerations and tips:</p>
+            
+            <div class="insurance-grid">
+                <div class="insurance-card">
+                    <div class="insurance-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="insurance-content">
+                        <h4>In-Network vs. Out-of-Network</h4>
+                        <p>Check if the specialist is in your insurance network. Out-of-network care may have higher costs, but many plans make exceptions for rare cancer specialists.</p>
+                        <div class="tip">
+                            <strong>Tip:</strong> Ask your insurance company about their exception process for rare cancer treatment.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="insurance-card">
+                    <div class="insurance-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <div class="insurance-content">
+                        <h4>Prior Authorization</h4>
+                        <p>Many treatments require prior authorization from your insurance company. Your specialist's office can help with this process.</p>
+                        <div class="tip">
+                            <strong>Tip:</strong> Start the authorization process as early as possible to avoid treatment delays.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="insurance-card">
+                    <div class="insurance-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="insurance-content">
+                        <h4>Financial Assistance</h4>
+                        <p>If you're concerned about costs, ask about financial assistance programs. Many cancer centers have financial counselors who can help.</p>
+                        <div class="tip">
+                            <strong>Tip:</strong> Organizations like the Patient Advocate Foundation can help navigate insurance challenges.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resources Section -->
+    <section id="resources" class="content-section">
+        <h2 class="section-title">Additional Resources</h2>
+        <div class="section-content">
+            <div class="resources-grid">
+                <a href="https://www.cancer.gov/rare-brain-spine-tumor/research/rare-brain-spine-clinic" class="resource-card indigo" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h4>NCI Rare Tumor Clinic</h4>
+                        <p>Information about the NCI's clinic for rare tumors, including sarcomas</p>
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                
+                <a href="https://www.cancer.org/cancer/types/soft-tissue-sarcoma/treating/by-stage.html" class="resource-card blue" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h4>American Cancer Society</h4>
+                        <p>Information about sarcoma treatment approaches by stage</p>
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                
+                <a href="https://sarcomaalliance.org/resources/financial-assistance/" class="resource-card teal" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h4>Financial Assistance</h4>
+                        <p>Sarcoma Alliance's guide to financial resources for patients</p>
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                
+                <a href="#" class="resource-card rose">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h4>Denver Sarcoma Support Group</h4>
+                        <p>Connect with other sarcoma patients in the Denver area</p>
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Image Section with CTA -->
+    <section class="featured-image-section">
+        <div class="featured-image">
+            <img src="/images/doctor-patient-consultation.jpg" alt="Doctor consulting with patient">
+        </div>
+        <div class="image-overlay">
+            <h3>Need Help Finding a Specialist?</h3>
+            <p>Our patient navigators can help you connect with sarcoma specialists and understand your treatment options.</p>
+            <div class="cta-buttons">
+                <a href="#" class="primary-cta">Contact a Navigator</a>
+                <a href="#" class="secondary-cta">Join Our Community</a>
+            </div>
+        </div>
+    </section>
+</div>

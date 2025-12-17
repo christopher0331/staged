@@ -1,0 +1,375 @@
+/* NLMSF News Tracker Custom CSS for Elementor */
+
+/* Hero Section Styles */
+.news-tracker-hero h1 {
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.news-tracker-hero p {
+    color: #4b5563;
+    font-size: 18px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Sidebar Styles */
+.news-tracker-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.news-tracker-sidebar h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.news-tracker-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.news-tracker-sidebar li {
+    margin-bottom: 8px;
+}
+
+.news-tracker-sidebar a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.news-tracker-sidebar a:hover {
+    background-color: #f3f4f6;
+    color: #6d28d9;
+}
+
+.news-tracker-cta {
+    margin-top: 25px;
+    padding: 16px;
+    background: linear-gradient(to bottom right, #ede9fe, #e0e7ff);
+    border-radius: 8px;
+    border: 1px solid #e9d5ff;
+}
+
+.news-tracker-cta h3 {
+    font-weight: 600;
+    color: #6d28d9;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.news-tracker-cta p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 12px;
+}
+
+.news-tracker-cta a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to right, #8b5cf6, #6366f1);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.news-tracker-cta a:hover {
+    background: linear-gradient(to right, #7c3aed, #4f46e5);
+    text-decoration: none;
+}
+
+/* Content Section Styles */
+.news-tracker-intro {
+    margin-bottom: 30px;
+}
+
+.news-tracker-intro .section-icon {
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.news-tracker-intro .section-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.news-tracker-intro h2 {
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Newsletter Sections */
+.news-tracker-year {
+    margin-bottom: 40px;
+}
+
+.news-tracker-year h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+/* 2025 Newsletter Cards - Purple Theme */
+.newsletter-2025 .newsletter-card {
+    background: linear-gradient(to bottom right, #f5f3ff, #ede9fe);
+    border: 1px solid #ddd6fe;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.newsletter-2025 .newsletter-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.newsletter-2025 .newsletter-title {
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* 2024 Newsletter Cards - Teal Theme */
+.newsletter-2024 .newsletter-card {
+    background: linear-gradient(to bottom right, #ccfbf1, #cffafe);
+    border: 1px solid #99f6e4;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.newsletter-2024 .newsletter-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.newsletter-2024 .newsletter-title {
+    color: #0d9488;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* 2023 Newsletter Cards - Pink Theme */
+.newsletter-2023 .newsletter-card {
+    background: linear-gradient(to bottom right, #fce7f3, #fecdd3);
+    border: 1px solid #fbcfe8;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.newsletter-2023 .newsletter-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.newsletter-2023 .newsletter-title {
+    color: #be185d;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* Common Newsletter Card Styles */
+.newsletter-card {
+    display: block;
+    text-decoration: none;
+}
+
+.newsletter-card:hover {
+    text-decoration: none;
+}
+
+.newsletter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.newsletter-date {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.newsletter-description {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* View More Button and Toggle Functionality */
+.newsletter-view-more {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.newsletter-view-more button {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.newsletter-view-more button:hover {
+    color: #7c3aed;
+}
+
+.newsletter-view-more button svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+}
+
+.newsletter-view-more button[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Newsletter grid structure */
+.newsletter-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .newsletter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .newsletter-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Newsletter card common styles */
+.newsletter-card {
+    display: block;
+    text-decoration: none;
+}
+
+.newsletter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.newsletter-date {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.newsletter-description {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* Additional newsletters section */
+.newsletter-additional {
+    display: none;
+}
+
+.newsletter-additional.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Denver-specific section - Amber theme */
+.denver-resources {
+    background: linear-gradient(to bottom right, #fef3c7, #fde68a);
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.denver-resources h3 {
+    color: #b45309;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.denver-resources p {
+    color: #78350f;
+    margin-bottom: 16px;
+}
+
+.denver-resources .resource-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.denver-resources .resource-button {
+    background: linear-gradient(to right, #f59e0b, #d97706);
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.denver-resources .resource-button:hover {
+    background: linear-gradient(to right, #d97706, #b45309);
+    transform: translateY(-2px);
+}

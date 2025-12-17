@@ -1,0 +1,108 @@
+/* Research Initiatives Styles (direct color values, gradients, responsive) */
+
+:root { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: #4338ca; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Hero */
+.ri-hero { position: relative; overflow: hidden; background: linear-gradient(135deg, #7e22ce 0%, #4338ca 35%, #0ea5e9 100%); color: #fff; border-radius: 16px; padding: 56px 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+.ri-hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.ri-hero-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 12px; border-radius: 999px; font-weight: 600; margin-bottom: 12px; }
+.ri-hero-title { font-size: 40px; line-height: 1.1; margin: 8px 0 10px; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+.ri-hero-sub { max-width: 800px; margin: 0 auto 18px; font-size: 18px; opacity: 0.95; }
+.ri-hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.ri-btn { display: inline-block; padding: 10px 16px; border-radius: 10px; font-weight: 700; transition: transform .15s ease, box-shadow .15s ease, background .2s; text-align: center; }
+.ri-btn-primary { background: #6a3ea1; color: #fff; box-shadow: 0 6px 16px rgba(106,62,161,0.35); }
+.ri-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 20px rgba(106,62,161,0.4); }
+.ri-btn-outline { background: transparent; border: 2px solid #fff; color: #fff; }
+.ri-hero-decor { position: absolute; inset: -20%; background: radial-gradient(600px 300px at 20% 20%, rgba(255,255,255,0.18), transparent 60%), radial-gradient(600px 300px at 80% 30%, rgba(255,255,255,0.14), transparent 60%); pointer-events: none; }
+
+/* Sections */
+.ri-section { margin: 32px auto; max-width: 1100px; padding: 0 16px; }
+.ri-section-title { color: #111827; font-size: 26px; margin: 0 0 14px; padding: 10px 14px; border-radius: 12px; color: #fff; }
+.gradient-purple { background: linear-gradient(90deg, #7e22ce, #4338ca); }
+.gradient-indigo { background: linear-gradient(90deg, #4338ca, #3730a3); }
+.gradient-teal { background: linear-gradient(90deg, #10b981, #047857); }
+.gradient-pink { background: linear-gradient(90deg, #ec4899, #be185d); }
+.gradient-blue { background: linear-gradient(90deg, #0ea5e9, #2563eb); }
+.gradient-amber { background: linear-gradient(90deg, #f59e0b, #b45309); }
+
+/* Cards & grids */
+.ri-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
+.ri-hover:hover { box-shadow: 0 10px 24px rgba(0,0,0,0.08); transform: translateY(-1px); }
+.ri-center { text-align: center; }
+.ri-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.ri-grid-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+/* Person blocks */
+.ri-person { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: start; }
+.ri-person img { width: 120px; height: 120px; object-fit: cover; border-radius: 10px; }
+.ri-person-info h4 { margin: 0 0 6px; font-size: 18px; color: #111827; }
+/* Small inline badges next to names */
+.ri-person-info h4 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ri-badge-logo { height: 22px; width: auto; display: inline-block; vertical-align: middle; border-radius: 4px; background: #fff; border: 1px solid #e5e7eb; padding: 2px 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+
+.ri-person-sm { display: grid; grid-template-columns: 80px 1fr; gap: 10px; align-items: center; margin-bottom: 8px; }
+.ri-person-sm img { width: 80px; height: 86px; object-fit: cover; border-radius: 8px; }
+.ri-person-text { color: #111827; }
+
+/* Quotes */
+.ri-quote img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin-bottom: 8px; }
+.ri-quote h3 { margin: 6px 0 8px; font-size: 16px; color: #1f2937; }
+.ri-quote p { color: #374151; }
+
+/* Logos */
+.ri-logos { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 18px; 
+  align-items: center; 
+  margin-bottom: 16px;
+}
+.ri-logos img { 
+  max-height: 130px; 
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  margin: 0 auto; 
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e5e7eb; 
+  border-radius: 12px; 
+  padding: 14px 16px; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+  transition: transform .15s ease, box-shadow .15s ease, filter .2s ease;
+  filter: saturate(0.95) contrast(1.06);
+}
+.ri-logos img:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  filter: saturate(1.05) contrast(1.08);
+}
+.ri-logos.small img { max-height: 120px; }
+
+/* Notes */
+.ri-note { border-left: 4px solid #e5e7eb; padding: 12px 14px; border-radius: 8px; background: #f9fafb; }
+.ri-note-green { border-color: #10b981; background: #ecfdf5; }
+
+/* Sidebar */
+.ri-sidebar { position: sticky; top: 24px; display: grid; gap: 16px; }
+.ri-side-nav { display: grid; gap: 8px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px; }
+.ri-side-link { display: grid; grid-auto-flow: column; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; color: #4338ca; background: #f8fafc; border: 1px solid transparent; transition: background .15s, transform .15s; }
+.ri-side-link:hover { background: #eef2ff; transform: translateX(2px); }
+.ri-side-cta { background: linear-gradient(135deg, #7e22ce, #4338ca); color: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 8px 22px rgba(67,56,202,0.25); }
+.ri-side-cta h3 { margin: 0 0 6px; }
+.w-full { width: 100%; display: inline-block; }
+
+/* Layout helpers for Elementor/WordPress columns */
+@media (min-width: 900px) {
+  .ri-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ri-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .ri-hero-title { font-size: 30px; }
+  .ri-hero-sub { font-size: 16px; }
+  .ri-person { grid-template-columns: 80px 1fr; }
+}

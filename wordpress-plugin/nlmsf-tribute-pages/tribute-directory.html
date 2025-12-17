@@ -1,0 +1,73 @@
+<!-- NLMSF Tribute Pages Directory -->
+<div class="nlmsf-tribute-directory">
+    <!-- Header Section -->
+    <div class="nlmsf-directory-header">
+        <h1 class="nlmsf-directory-title">
+            <i class="fas fa-heart"></i>
+            Tribute Pages
+        </h1>
+        <p class="nlmsf-directory-subtitle">
+            Honor and remember loved ones through our community tribute pages
+        </p>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="nlmsf-directory-controls">
+        <div class="nlmsf-search-container">
+            <input type="text" id="nlmsf-tribute-search" class="nlmsf-search-input" 
+                   placeholder="Search tribute pages...">
+            <i class="fas fa-search nlmsf-search-icon"></i>
+        </div>
+        
+        <div class="nlmsf-filter-container">
+            <select id="nlmsf-sort-select" class="nlmsf-filter-select">
+                <option value="name-asc">Name (A-Z)</option>
+                <option value="name-desc">Name (Z-A)</option>
+                <option value="date-desc">Most Recent</option>
+                <option value="date-asc">Oldest First</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div class="nlmsf-directory-loading" id="nlmsf-directory-loading">
+        <div class="nlmsf-loading-spinner"></div>
+        <p>Loading tribute pages...</p>
+    </div>
+
+    <!-- No Results State -->
+    <div class="nlmsf-no-results" id="nlmsf-no-results" style="display: none;">
+        <div class="nlmsf-no-results-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <h3>No tribute pages found</h3>
+        <p>Try adjusting your search terms or check back later.</p>
+    </div>
+
+    <!-- Tribute Grid -->
+    <div class="nlmsf-tributes-grid" id="nlmsf-tributes-grid">
+        <!-- Tribute cards will be populated here -->
+    </div>
+
+    <!-- Pagination (if needed for large lists) -->
+    <div class="nlmsf-pagination" id="nlmsf-pagination" style="display: none;">
+        <button class="nlmsf-pagination-btn" id="nlmsf-prev-page" disabled>
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </button>
+        <span class="nlmsf-pagination-info" id="nlmsf-pagination-info"></span>
+        <button class="nlmsf-pagination-btn" id="nlmsf-next-page">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize tribute directory
+    if (typeof nlmsfTribute !== 'undefined') {
+        nlmsfTribute.initTributeDirectory();
+    }
+});
+</script>

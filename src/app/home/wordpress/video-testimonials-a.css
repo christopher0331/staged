@@ -1,0 +1,339 @@
+/**
+ * NLMSF Video Testimonials Styles
+ * CSS for WordPress-compatible patient video testimonials carousel
+ */
+
+/* Video Testimonials Section */
+.nlmsf-video-testimonials-a {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 50%, #eff6ff 100%);
+  overflow: hidden;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.nlmsf-video-testimonials-a::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
+  top: -100px;
+  left: -100px;
+  border-radius: 50%;
+}
+
+.nlmsf-video-testimonials-a::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(147, 51, 234, 0) 70%);
+  bottom: -200px;
+  right: -200px;
+  border-radius: 50%;
+}
+
+.nlmsf-container-a {
+  max-width: 1200px; /* Reduced from 1600px to make video less large */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+.nlmsf-video-header-a {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nlmsf-video-badge-a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nlmsf-video-badge-a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.4);
+}
+
+.nlmsf-video-title-a {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
+  background: linear-gradient(to right, #4338ca, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.nlmsf-video-description-a {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Carousel Controls */
+.nlmsf-carousel-controls-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.nlmsf-carousel-prev-a,
+.nlmsf-carousel-next-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: white;
+  border: none;
+  border-radius: 9999px;
+  color: #4338ca;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.nlmsf-carousel-prev-a:hover,
+.nlmsf-carousel-next-a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.2);
+  background: #4338ca;
+  color: white;
+}
+
+.nlmsf-carousel-indicators-a {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nlmsf-indicator-a {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nlmsf-indicator-a.active {
+  background: #6366f1;
+  transform: scale(1.2);
+}
+
+/* Carousel Slides */
+.nlmsf-carousel-slides-a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nlmsf-video-slide-a {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.nlmsf-video-slide-a.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Video Card Styles */
+.nlmsf-video-card-a {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .nlmsf-video-card-a {
+    flex-direction: row;
+  }
+}
+
+.nlmsf-video-wrapper-a {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .nlmsf-video-wrapper-a {
+    width: 50%; /* Video takes half the space in desktop */
+  }
+}
+
+.nlmsf-video-wrapper-a iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.nlmsf-video-info-a {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .nlmsf-video-info-a {
+    width: 50%; /* Info takes half the space in desktop */
+  }
+}
+
+.nlmsf-video-info-a h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.nlmsf-video-roles-a {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.nlmsf-role-badge-a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.nlmsf-role-badge-a.medical {
+  background: #2563eb;
+}
+
+.nlmsf-role-badge-a.survivor {
+  background: #9333ea;
+}
+
+.nlmsf-role-badge-a.board {
+  background: #0d9488;
+}
+
+.nlmsf-role-badge-a.creative {
+  background: #e11d48;
+}
+
+.nlmsf-role-badge-a.advisor {
+  background: #d97706;
+}
+
+.nlmsf-video-quote-a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid #e5e7eb;
+}
+
+.nlmsf-video-link-a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(to right, #4338ca, #6366f1);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin-top: auto;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+
+.nlmsf-video-link-a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+.nlmsf-video-link-a i {
+  font-size: 0.875rem;
+}
+
+/* Footer Section */
+.nlmsf-video-footer-a {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.nlmsf-video-footer-a p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.nlmsf-view-all-button-a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #6366f1;
+  text-decoration: none;
+  border: 2px solid #6366f1;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nlmsf-view-all-button-a:hover {
+  background: #6366f1;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.3);
+}
+
+/* Animations */
+@keyframes card-shadow-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.nlmsf-video-slide-a.active .nlmsf-video-card-a {
+  animation: card-shadow-pulse 4s infinite ease-in-out;
+}

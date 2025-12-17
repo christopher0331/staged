@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NLMSF - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font awesome for icons (equivalent to lucide-react) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Event Modal Styles -->
+  <style>
+    /* Event Actions Styling */
+    .event-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .event-link, .event-modal-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .event-link {
+      background-color: #0EA5E9; /* Blue color instead of purple */
+      color: white;
+    }
+    
+    .event-modal-btn {
+      background-color: #e5e7eb; /* Light gray background */
+      color: #4b5563; /* Dark gray text */
+    }
+    
+    .event-link:hover, .event-modal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Quick Access Section Styling */
+    .quick-access-section {
+      padding: 40px 0;
+      background-color: #f9fafb; /* Very light gray background */
+    }
+    
+    .quick-access-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    
+    .quick-access-column h2 {
+      color: #1e293b; /* Dark slate color */
+      margin-bottom: 20px;
+      font-size: 22px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+    
+    .quick-access-column h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #0EA5E9; /* Blue underline */
+    }
+    
+    .link-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .link-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .link-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    .link-card h3 {
+      color: #1e293b;
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    
+    .link-card p {
+      color: #64748b;
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    /* Phone Number Styling */
+    .primary-contact, .alt-contact {
+      text-align: center;
+      background-color: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .primary-contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(to right, #f0f9ff, #bae6fd, #e0f2fe); /* Very light blue gradient */
+    }
+    
+    .alt-contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(to right, #f0f9ff, #dbeafe, #eff6ff); /* Even lighter blue gradient */
+    }
+    
+    .primary-contact h3, .alt-contact h3 {
+      margin-top: 15px;
+      color: #1e293b;
+    }
+    
+    .phone-number {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0EA5E9;
+      text-decoration: none;
+      margin: 10px 0 5px;
+      padding: 5px 15px 15px;
+      transition: all 0.2s ease;
+    }
+    
+    .phone-number:hover {
+      color: #0284C7;
+      transform: scale(1.05);
+    }
+    
+    /* Event Card Styling */
+    .event-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .event-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8fafc;
+      color: #475569;
+      padding: 10px;
+      border-radius: 6px;
+      min-width: 60px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .event-date .month {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    
+    .event-date .day {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    .event-details {
+      flex: 1;
+    }
+    
+    .event-details h3 {
+      margin-bottom: 4px;
+    }
+    
+    .event-details p {
+      margin-bottom: 8px;
+    }
+    
+    /* Event Modal Styling */
+    .event-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    
+    .event-modal-content {
+      background-color: white;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .event-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px;
+      border-bottom: 1px solid #e5e7eb;
+      background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%); /* Purple gradient */
+      color: white;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    
+    .event-modal-header h3 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    
+    .close-event-modal {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .close-event-modal:hover {
+      transform: rotate(90deg);
+    }
+    
+    .event-modal-body {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    @media (min-width: 768px) {
+      .event-modal-body {
+        flex-direction: row;
+      }
+    }
+    
+    .event-modal-details {
+      flex: 1;
+      min-width: 220px;
+      padding: 20px;
+      background-color: #f9fafb;
+      border-radius: 6px;
+    }
+    
+    .event-modal-details p {
+      margin: 10px 0;
+    }
+    
+    .event-modal-description {
+      flex: 2;
+    }
+    
+    .event-modal-description h4 {
+      margin: 20px 0 10px;
+      font-size: 18px;
+      color: #4F46E5; /* Purple color */
+    }
+    
+    .event-modal-description h4:first-child {
+      margin-top: 0;
+    }
+    
+    .event-modal-description ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    
+    .event-modal-description li {
+      margin-bottom: 8px;
+    }
+    
+    .event-modal-actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+    .event-modal-register {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%); /* Blue gradient */
+      color: white;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .event-modal-register:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-image">
+        <img src="https://nlmsf.org/wp-content/uploads/2020/09/unnamed-6.png" alt="NLMSF Hero Image">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container relative">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>Supporting the LMS Community Since 1997</span>
+          </div>
+          <h1>National LeioMyoSarcoma Foundation</h1>
+          <p>
+            Providing education, advocacy, support, and research for the LMS
+            Community as we move forward in the quest for the cure.
+          </p>
+          <div class="hero-buttons">
+            <a href="/support" class="btn btn-primary">Get Support</a>
+            <a href="/get-involved/donate" class="btn btn-outline">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access-section">
+      <div class="container">
+        <div class="quick-access-grid">
+          <!-- For Patients -->
+          <div class="quick-access-column">
+            <h2>For Patients & Caregivers</h2>
+            <div class="link-cards">
+              <a href="/newly-diagnosed/what-is-lms" class="link-card">
+                <h3>Understanding LMS</h3>
+                <p>Learn about diagnosis, treatment, and care options</p>
+              </a>
+              <a href="/support" class="link-card">
+                <h3>Support Services</h3>
+                <p>Connect with our community and get help</p>
+              </a>
+              <a href="/find-a-sarcoma-specialist" class="link-card">
+                <h3>Find a Specialist</h3>
+                <p>Locate LMS experts near you</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Emergency Support -->
+          <div class="quick-access-column">
+            <h2>24/7 Support Hotline</h2>
+            <div class="link-cards">
+              <div class="link-card primary-contact">
+                <h3>Primary Contact</h3>
+                <a href="tel:+13038083437" class="phone-number">(303) 808-3437</a>
+              </div>
+              <div class="link-card alt-contact">
+                <h3>Alternative Contact</h3>
+                <a href="tel:+13037830924" class="phone-number">(303) 783-0924</a>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- Upcoming Events -->
+          <div class="quick-access-column">
+            <h2>Upcoming Events</h2>
+            <div class="link-cards">
+              <!-- Event 1 -->
+              <div class="link-card event-card">
+                <div class="event-date">
+                  <span class="month">APR</span>
+                  <span class="day">02</span>
+                </div>
+                <div class="event-details">
+                  <h3>Dr. Edmund Bartlett - Soft Tissue Sarcoma</h3>
+                  <p>Online - 3:30 pm ET</p>
+                  <div class="event-actions">
+                    <a href="https://us02web.zoom.us/meeting/register/kQcBPkvEQeuQmdSBSWdpyw#/registration" class="event-link">Register</a>
+                    <a href="#" class="event-modal-btn" data-modal="event-modal-1">Details</a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Event 2 -->
+              <div class="link-card event-card">
+                <div class="event-date">
+                  <span class="month">APR</span>
+                  <span class="day">21</span>
+                </div>
+                <div class="event-details">
+                  <h3>Dr. Marissa Nucci - LMS Research</h3>
+                  <p>Online - 3:30 pm ET</p>
+                  <div class="event-actions">
+                    <a href="#" class="event-modal-btn" data-modal="event-modal-2">Details</a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Event 3 -->
+              <div class="link-card event-card">
+                <div class="event-date">
+                  <span class="month">APR</span>
+                  <span class="day">29</span>
+                </div>
+                <div class="event-details">
+                  <h3>Caregiving Counts</h3>
+                  <p>Online - 5:00 pm ET</p>
+                  <div class="event-actions">
+                    <a href="https://us02web.zoom.us/meeting/register/F-r77IeLQcufJWKbTfvcSA" class="event-link">Register</a>
+                    <a href="#" class="event-modal-btn" data-modal="event-modal-3">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Resources Section -->
+    <section class="featured-resources-section">
+      <div class="container">
+        <h2>Featured Resources</h2>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">
+              <i class="fa fa-book-medical"></i>
+            </div>
+            <h3>Understanding Your Pathology Report</h3>
+            <p>Learn how to interpret your LMS pathology report and what your results mean.</p>
+            <a href="/resources/pathology-report" class="resource-link">Read More <i class="fa fa-arrow-right"></i></a>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">
+              <i class="fa fa-laptop-medical"></i>
+            </div>
+            <h3>Clinical Trial Guide</h3>
+            <p>Find current LMS clinical trials and understand how to qualify for participation.</p>
+            <a href="/resources/clinical-trials" class="resource-link">Read More <i class="fa fa-arrow-right"></i></a>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">
+              <i class="fa fa-users"></i>
+            </div>
+            <h3>Support Groups</h3>
+            <p>Connect with others in the LMS community through our various support groups.</p>
+            <a href="/resources/support-groups" class="resource-link">Read More <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+      <div class="container">
+            
+        <div class="mission-content">
+            
+          <div class="mission-text">
+              
+            <h2>Our Mission</h2>
+            <p>The National LeioMyoSarcoma Foundation (NLMSF) is dedicated to supporting patients, caregivers, and survivors affected by LMS through education, advocacy, and research funding.</p>
+            <p>We strive to enhance the quality of life for those affected by LMS and accelerate research toward effective treatments and ultimately a cure.</p>
+            <a href="/our-board" class="btn btn-primary">Learn More About Us</a>
+            
+          </div>
+          <div class="mission-image">
+            <img src="https://nlmsf.org/wp-content/uploads/2025/03/ChatGPT-Image-Mar-30-2025-01_58_30-PM.png" alt="NLMSF Team and Volunteers">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">28+</div>
+            <div class="stat-label">Years Supporting Patients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">Patients Assisted</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$2M+</div>
+            <div class="stat-label">Research Funding</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="section-header">
+            <h2 class="section-title blue">Our Partners</h2>
+            <p class="section-subtitle">Working together with leading organizations to advance LMS research and patient care</p>
+        </div>
+        
+        <div class="partners-carousel-container">
+            <!-- Carousel Navigation Buttons -->
+            <button class="carousel-nav prev-button" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <button class="carousel-nav next-button" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Partners Carousel -->
+            <div class="partners-carousel">
+                <div class="partners-slide active">
+                    <div class="partners-grid">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-32.jpg" alt="Partner 1">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/7-asco.jpg" alt="ASCO">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-36.jpg" alt="Partner 3">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-3.png" alt="Partner 4">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-34.jpg" alt="Partner 5">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2021/02/ECOG.jpg" alt="ECOG">
+                        </a>
+                    </div>
+                </div>
+                <div class="partners-slide">
+                    <div class="partners-grid">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-33.jpg" alt="Partner 7">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-35.jpg" alt="Partner 8">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2021/03/Pcori.jpg" alt="PCORI">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/cb0a477898aea87bc1af0e7ddeaea647-1.png" alt="Partner 10">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-2.png" alt="Partner 11">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/Sarcoma-Oncology-Center.jpg" alt="Sarcoma Oncology Center">
+                        </a>
+                    </div>
+                </div>
+                <div class="partners-slide">
+                    <div class="partners-grid">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/12/lazarex.jpg" alt="Lazarex">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-6.png" alt="Partner 14">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-6.jpg" alt="Partner 15">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-38.jpg" alt="Partner 16">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2020/11/unnamed-74-1.jpg" alt="Partner 17">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2021/11/CountmeIn.jpg" alt="Count Me In">
+                        </a>
+                    </div>
+                </div>
+                <div class="partners-slide">
+                    <div class="partners-grid">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2022/03/University-of-Mannheim.jpg" alt="University of Mannheim">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2022/03/USC.jpg" alt="USC">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2022/03/royal-marsden.jpg" alt="Royal Marsden">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-logo">
+                            <img src="https://nlmsf.org/wp-content/uploads/2022/03/McGill.jpg" alt="McGill University">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
+            </div>
+        </div>
+        
+        <div class="view-all-partners">
+            <button class="view-all-button">
+                View all our partners and collaborators
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <!-- Partners Modal -->
+        <div id="partners-modal" class="partners-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="partners-modal-title">All Partners & Collaborators</h3>
+                    <button id="close-modal" class="close-modal" aria-label="Close modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="all-partners-grid">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-32.jpg" alt="Partner 1">
+                            </div>
+                            <span class="partner-name">Partner 1</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/7-asco.jpg" alt="ASCO">
+                            </div>
+                            <span class="partner-name">ASCO</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-36.jpg" alt="Partner 3">
+                            </div>
+                            <span class="partner-name">Partner 3</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-3.png" alt="Partner 4">
+                            </div>
+                            <span class="partner-name">Partner 4</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-34.jpg" alt="Partner 5">
+                            </div>
+                            <span class="partner-name">Partner 5</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2021/02/ECOG.jpg" alt="ECOG">
+                            </div>
+                            <span class="partner-name">ECOG</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-33.jpg" alt="Partner 7">
+                            </div>
+                            <span class="partner-name">Partner 7</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-35.jpg" alt="Partner 8">
+                            </div>
+                            <span class="partner-name">Partner 8</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2021/03/Pcori.jpg" alt="PCORI">
+                            </div>
+                            <span class="partner-name">PCORI</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/cb0a477898aea87bc1af0e7ddeaea647-1.png" alt="Partner 10">
+                            </div>
+                            <span class="partner-name">Partner 10</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-2.png" alt="Partner 11">
+                            </div>
+                            <span class="partner-name">Partner 11</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/Sarcoma-Oncology-Center.jpg" alt="Sarcoma Oncology Center">
+                            </div>
+                            <span class="partner-name">Sarcoma Oncology Center</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/12/lazarex.jpg" alt="Lazarex">
+                            </div>
+                            <span class="partner-name">Lazarex</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-6.png" alt="Partner 14">
+                            </div>
+                            <span class="partner-name">Partner 14</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/download-6.jpg" alt="Partner 15">
+                            </div>
+                            <span class="partner-name">Partner 15</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/05/unnamed-38.jpg" alt="Partner 16">
+                            </div>
+                            <span class="partner-name">Partner 16</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2020/11/unnamed-74-1.jpg" alt="Partner 17">
+                            </div>
+                            <span class="partner-name">Partner 17</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2021/11/CountmeIn.jpg" alt="Count Me In">
+                            </div>
+                            <span class="partner-name">Count Me In</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2022/03/University-of-Mannheim.jpg" alt="University of Mannheim">
+                            </div>
+                            <span class="partner-name">University of Mannheim</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2022/03/USC.jpg" alt="USC">
+                            </div>
+                            <span class="partner-name">USC</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2022/03/royal-marsden.jpg" alt="Royal Marsden">
+                            </div>
+                            <span class="partner-name">Royal Marsden</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                            <div class="partner-logo-container">
+                                <img src="https://nlmsf.org/wp-content/uploads/2022/03/McGill.jpg" alt="McGill University">
+                            </div>
+                            <span class="partner-name">McGill University</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button class="close-button">Close</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners JavaScript -->    
+    <script>
+    // Partners Carousel and Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Elements
+    const carousel = document.querySelector('.partners-carousel');
+    const slides = document.querySelectorAll('.partners-slide');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const indicators = document.querySelector('.carousel-indicators');
+    const viewAllButton = document.querySelector('.view-all-button');
+    const partnersModal = document.querySelector('.partners-modal');
+    const closeModalButton = document.querySelector('.close-modal');
+    const closeButton = document.querySelector('.close-button');
+    
+    // Variables
+    let currentSlide = 0;
+    let slideCount = slides.length;
+    let autoSlideInterval;
+    
+    // Create indicators
+    if (indicators && slideCount > 0) {
+        for (let i = 0; i < slideCount; i++) {
+            const indicator = document.createElement('button');
+            indicator.classList.add('indicator');
+            indicator.setAttribute('aria-label', `Go to slide ${i+1}`);
+            indicator.dataset.slideIndex = i;
+            
+            if (i === 0) {
+                indicator.classList.add('active');
+            }
+            
+            indicator.addEventListener('click', function() {
+                goToSlide(parseInt(this.dataset.slideIndex));
+            });
+            
+            indicators.appendChild(indicator);
+        }
+    }
+    
+    // Initialize auto-sliding
+    startAutoSlide();
+    
+    // Event Listeners
+    if (prevButton) {
+        prevButton.addEventListener('click', prevSlide);
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', nextSlide);
+    }
+    
+    if (viewAllButton) {
+        viewAllButton.addEventListener('click', openModal);
+    }
+    
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', closeModal);
+    }
+    
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+    
+    // Close modal when clicking outside content
+    if (partnersModal) {
+        partnersModal.addEventListener('click', function(e) {
+            if (e.target === partnersModal) {
+                closeModal();
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && partnersModal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+    
+    // Pause auto-sliding when hovering over carousel
+    if (carousel) {
+        carousel.addEventListener('mouseenter', function() {
+            stopAutoSlide();
+        });
+        
+        carousel.addEventListener('mouseleave', function() {
+            startAutoSlide();
+        });
+    }
+    
+    // Functions
+    function goToSlide(index) {
+        // Remove active class from all slides and indicators
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        const allIndicators = document.querySelectorAll('.indicator');
+        allIndicators.forEach(ind => ind.classList.remove('active'));
+        
+        // Add active class to current slide and indicator
+        slides[index].classList.add('active');
+        
+        if (allIndicators[index]) {
+            allIndicators[index].classList.add('active');
+        }
+        
+        // Update current slide index
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        let nextIndex = currentSlide + 1;
+        if (nextIndex >= slideCount) {
+            nextIndex = 0;
+        }
+        goToSlide(nextIndex);
+    }
+    
+    function prevSlide() {
+        let prevIndex = currentSlide - 1;
+        if (prevIndex < 0) {
+            prevIndex = slideCount - 1;
+        }
+        goToSlide(prevIndex);
+    }
+    
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    
+    function openModal() {
+        if (partnersModal) {
+            partnersModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeModal() {
+        if (partnersModal) {
+            partnersModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+    </script>
+    
+    
+
+    <!-- Medical Expert Endorsement Section -->
+    <section class="expert-endorsement-section">
+      <div class="container">
+        <div class="expert-endorsement">
+          <div class="expert-image">
+            <img src="https://nlmsf.org/wp-content/uploads/2021/02/Dr-pollack.jpg" alt="Dr. Raphael Pollock">
+          </div>
+          <div class="expert-content">
+            <h3 class="expert-name">Dr. Raphael Pollock, M.D., Ph.D</h3>
+            <p class="expert-title">James Cancer Center, Ohio State Univ
+            </p>
+            <blockquote class="expert-quote">
+              "The NLSMF provides a vital link between the community, including LMS patients, and the oncology researchers who work tirelessly to help develop a better understanding of this rare disease, with the direct intent to provide sorely needed new therapeutic approaches. The LMS Research Roundtable process provides this unique and heretofore mission function, and for this reason we are so very grateful to Annie and Mitch Achee for providing the inspiration and resources needed to forge this connection"
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Medical Expert Endorsement Section -->
+    <section class="expert-endorsement-section">
+      <div class="container">
+        <div class="expert-endorsement">
+          <div class="expert-image">
+            <img src="https://nlmsf.org/wp-content/uploads/2021/02/Dr-Singh.jpg" alt="Dr. Arun Singh, M.D.">
+          </div>
+          <div class="expert-content">
+            <h3 class="expert-name">Arun Singh, M.D.</h3>
+            <p class="expert-title">Associate Professor Sarcoma Service Division of Hematology</p>
+            <blockquote class="expert-quote">
+              "The National Leiomyosarcoma Foundation is an important organization that strives to gather a critical mass of patients, scientists, patient advocates and physicians to learn more about this rare disease. Within the NLMSF, the LMS Research Roundtable organizes cutting edge research in this area and strives to innovate the ways that this disease is treated."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    
+    <!-- NLMSF Patient Video Testimonials Section -->
+    <section class="nlmsf-video-testimonials-a">
+      <div class="nlmsf-container-a">
+        <div class="nlmsf-video-header-a">
+          <span class="nlmsf-video-badge-a">Patient Perspectives</span>
+          <h2 class="nlmsf-video-title-a">One Patient to Another</h2>
+          <p class="nlmsf-video-description-a">
+            Hear directly from LMS survivors and specialists who have been where you are. 
+            Their stories provide insight, guidance, and hope for your journey.
+          </p>
+        </div>
+        
+        <div class="nlmsf-video-carousel-a">
+          <!-- Video Carousel Controls -->
+          <div class="nlmsf-carousel-controls-a">
+            <button class="nlmsf-carousel-prev-a" aria-label="Previous video">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="nlmsf-carousel-indicators-a">
+              <span class="nlmsf-indicator-a active" data-slide="0"></span>
+              <span class="nlmsf-indicator-a" data-slide="1"></span>
+              <span class="nlmsf-indicator-a" data-slide="2"></span>
+            </div>
+            <button class="nlmsf-carousel-next-a" aria-label="Next video">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          
+          <!-- Video Carousel Slides -->
+          <div class="nlmsf-carousel-slides-a">
+            <!-- Slide 1: Dr. Mitch Achee -->
+            <div class="nlmsf-video-slide-a active">
+              <div class="nlmsf-video-card-a">
+                <div class="nlmsf-video-wrapper-a">
+                  <iframe 
+                    src="https://www.youtube.com/embed/P5tsdOm-U0I?rel=0" 
+                    title="Dr. Mitch Achee - NLMSF Medical Advisory Board Chairman" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="nlmsf-video-info-a">
+                  <h3>Dr. Mitch Achee</h3>
+                  <p class="nlmsf-video-roles-a">
+                    <span class="nlmsf-role-badge-a medical">Diagnostic Radiologist</span>
+                    <span class="nlmsf-role-badge-a survivor">LMS Survivor</span>
+                    <span class="nlmsf-role-badge-a board">Chairman, NLMSF Medical Advisory Board</span>
+                  </p>
+                  <p class="nlmsf-video-quote-a">
+                    "As both a medical professional and an LMS survivor, I understand the importance of accurate information and community support in navigating this complex journey."
+                  </p>
+                  <a href="https://www.youtube.com/watch?v=P5tsdOm-U0I" class="nlmsf-video-link-a" target="_blank">
+                    Watch Full Video <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 2: Tembi Locke -->
+            <div class="nlmsf-video-slide-a">
+              <div class="nlmsf-video-card-a">
+                <div class="nlmsf-video-wrapper-a">
+                  <iframe 
+                    src="https://www.youtube.com/embed/azkHE80lvto?rel=0" 
+                    title="Tembi Locke - Actress and Author" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="nlmsf-video-info-a">
+                  <h3>Tembi Locke</h3>
+                  <p class="nlmsf-video-roles-a">
+                    <span class="nlmsf-role-badge-a creative">Actress & Author</span>
+                    <span class="nlmsf-role-badge-a advisor">NLMSF Technical Advisor</span>
+                  </p>
+                  <p class="nlmsf-video-quote-a">
+                    "From Scratch chronicles my personal LMS journey with my husband. The NLMSF provided invaluable guidance, which is why I selected them as the technical advisor for the Netflix adaptation of my memoir."
+                  </p>
+                  <a href="https://www.youtube.com/watch?v=azkHE80lvto" class="nlmsf-video-link-a" target="_blank">
+                    Watch Full Video <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3: Chandalyn Williams -->
+            <div class="nlmsf-video-slide-a">
+              <div class="nlmsf-video-card-a">
+                <div class="nlmsf-video-wrapper-a">
+                  <iframe 
+                    src="https://www.youtube.com/embed/lXVRLYplcRI?rel=0" 
+                    title="Chandalyn Williams - NLMSF Board Member" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="nlmsf-video-info-a">
+                  <h3>Chandalyn Williams, Ph.D</h3>
+                  <p class="nlmsf-video-roles-a">
+                    <span class="nlmsf-role-badge-a board">NLMSF Board Member</span>
+                  </p>
+                  <p class="nlmsf-video-quote-a">
+                    "The NLMSF serves as a guiding light to face the LMS journey. Their resources and community support make a significant difference in the lives of patients and caregivers."
+                  </p>
+                  <a href="https://www.youtube.com/watch?v=lXVRLYplcRI" class="nlmsf-video-link-a" target="_blank">
+                    Watch Full Video <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="nlmsf-video-footer-a">
+          <p>These personal stories offer unique insights from those who understand what you're going through. <br>Remember, you're not alone on this journey.</p>
+          <!--<a href="#all-videos" class="nlmsf-view-all-button-a">-->
+          <!--  View All Patient Videos <i class="fas fa-angle-right"></i>-->
+          <!--</a>-->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Join Our Mission To Support The LMS Community</h2>
+          <p>Your support makes a real difference in the lives of patients and families affected by LMS.</p>
+          <div class="cta-buttons">
+            <a href="/get-involved/donate" class="btn btn-primary">Donate Now</a>
+            <a href="/get-involved/volunteer" class="btn btn-outline">Volunteer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Slider Functionality Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const prevButton = document.querySelector('.nlmsf-carousel-prev-a');
+      const nextButton = document.querySelector('.nlmsf-carousel-next-a');
+      const slides = document.querySelectorAll('.nlmsf-video-slide-a');
+      const indicators = document.querySelectorAll('.nlmsf-indicator-a');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === index);
+        });
+        indicators.forEach((indicator, idx) => {
+          indicator.classList.toggle('active', idx === index);
+        });
+      }
+
+      prevButton.addEventListener('click', function() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      });
+
+      nextButton.addEventListener('click', function() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      });
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+    });
+  </script>
+
+  <!-- Event Modals -->
+  <div id="event-modal-1" class="event-modal">
+    <div class="event-modal-content">
+      <div class="event-modal-header">
+        <h3>Dr. Edmund Bartlett - Soft Tissue Sarcoma Treatment</h3>
+        <button class="close-event-modal" data-modal="event-modal-1"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="event-modal-body">
+        <div class="event-modal-details">
+          <p><strong>Date:</strong> April 2, 2025</p>
+          <p><strong>Time:</strong> 3:30 PM - 5:00 PM (ET)</p>
+          <p><strong>Location:</strong> Online Zoom Webinar</p>
+          <p><strong>Cost:</strong> Free</p>
+        </div>
+        <div class="event-modal-description">
+          <h4>About This Event</h4>
+          <p>Join Dr. Edmund Bartlett for an informative presentation on current soft tissue sarcoma treatment approaches. This webinar is designed for patients, caregivers, and healthcare professionals interested in the latest advancements in sarcoma care.</p>
+          
+          <h4>Speaker Background</h4>
+          <p>Dr. Edmund Bartlett is a leading expert in soft tissue sarcoma treatment with over 15 years of specialized experience. He currently serves as the Director of Sarcoma Surgery at a major cancer center and has published extensively on innovative surgical approaches for sarcoma patients.</p>
+          
+          <h4>Webinar Topics</h4>
+          <ul>
+            <li>Current surgical approaches for soft tissue sarcomas</li>
+            <li>Multimodal treatment strategies</li>
+            <li>Post-surgical recovery and rehabilitation</li>
+            <li>Latest research in surgical oncology for sarcomas</li>
+            <li>Q&A session with audience</li>
+          </ul>
+          
+          <h4>Registration Details</h4>
+          <p>Attendance is free, but registration is required. All participants will receive access to the recorded webinar and additional resources following the event.</p>
+          
+          <div class="event-modal-actions">
+            <a href="https://us02web.zoom.us/meeting/register/kQcBPkvEQeuQmdSBSWdpyw#/registration" class="event-modal-register">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="event-modal-2" class="event-modal">
+    <div class="event-modal-content">
+      <div class="event-modal-header">
+        <h3>Dr. Marissa Nucci - LMS Research</h3>
+        <button class="close-event-modal" data-modal="event-modal-2"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="event-modal-body">
+        <div class="event-modal-details">
+          <p><strong>Date:</strong> April 21, 2025 (Tentative)</p>
+          <p><strong>Time:</strong> 3:30 PM - 5:00 PM (ET)</p>
+          <p><strong>Location:</strong> Online Zoom Webinar</p>
+          <p><strong>Cost:</strong> Free</p>
+        </div>
+        <div class="event-modal-description">
+          <h4>About This Event</h4>
+          <p>Dr. Marissa Nucci will present the latest developments in Leiomyosarcoma (LMS) research, with a focus on pathology, molecular characterization, and implications for treatment. This session is valuable for patients, caregivers, and medical professionals who want to understand the current state of LMS research.</p>
+          
+          <h4>Speaker Background</h4>
+          <p>Dr. Marissa Nucci is a distinguished pathologist specializing in gynecologic and soft tissue pathology with a particular focus on leiomyosarcoma. Her groundbreaking research has contributed significantly to the understanding of LMS pathology and molecular signatures.</p>
+          
+          <h4>Presentation Topics</h4>
+          <ul>
+            <li>Current understanding of LMS pathology</li>
+            <li>Recent advances in molecular characterization</li>
+            <li>Research-driven approaches to LMS treatment</li>
+            <li>Ongoing clinical trials and research initiatives</li>
+            <li>Interactive Q&A with attendees</li>
+          </ul>
+          
+          <h4>Registration Information</h4>
+          <p>Registration link will be available soon. This event will be recorded and made available to registered participants after the presentation.</p>
+          
+          <p><em>Note: This date is tentative and may be subject to change. Please check back for confirmed date and registration details.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="event-modal-3" class="event-modal">
+    <div class="event-modal-content">
+      <div class="event-modal-header">
+        <h3>Caregiving Counts</h3>
+        <button class="close-event-modal" data-modal="event-modal-3"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="event-modal-body">
+        <div class="event-modal-details">
+          <p><strong>Date:</strong> April 29, 2025</p>
+          <p><strong>Time:</strong> 5:00 PM - 6:30 PM (ET)</p>
+          <p><strong>Location:</strong> Online Zoom Meeting</p>
+          <p><strong>Cost:</strong> Free</p>
+        </div>
+        <div class="event-modal-description">
+          <h4>About This Event</h4>
+          <p>"Caregiving Counts" is a special support session designed specifically for those caring for loved ones with LMS. This interactive workshop provides practical strategies, emotional support, and connection with others who understand the unique challenges of the caregiver journey.</p>
+          
+          <h4>Session Highlights</h4>
+          <ul>
+            <li>Self-care strategies for caregivers</li>
+            <li>Managing the emotional impact of caregiving</li>
+            <li>Navigating medical systems effectively</li>
+            <li>Building a support network</li>
+            <li>Open discussion and shared experiences</li>
+            <li>Resource sharing</li>
+          </ul>
+          
+          <h4>Facilitated By</h4>
+          <p>This session will be facilitated by experienced caregiver advocates and mental health professionals who specialize in supporting those who care for cancer patients. The format encourages participation and connection in a safe, supportive environment.</p>
+          
+          <div class="event-modal-actions">
+            <a href="https://us02web.zoom.us/meeting/register/F-r77IeLQcufJWKbTfvcSA" class="event-modal-register">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Modal JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing event modals');
+      
+      // Initialize event modals
+      function initEventModals() {
+        // Set initial styles for modals
+        const eventModals = document.querySelectorAll('.event-modal');
+        eventModals.forEach(modal => {
+          modal.style.display = 'none';
+        });
+        
+        // Event modal buttons
+        const eventButtons = document.querySelectorAll('.event-modal-btn');
+        console.log('Found event buttons:', eventButtons.length);
+        
+        eventButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modalId = this.getAttribute('data-modal');
+            console.log('Opening modal:', modalId);
+            const modal = document.getElementById(modalId);
+            if (modal) {
+              modal.style.display = 'flex';
+              document.body.style.overflow = 'hidden';
+            } else {
+              console.error('Modal not found:', modalId);
+            }
+          });
+        });
+        
+        // Close buttons
+        const closeButtons = document.querySelectorAll('.close-event-modal');
+        closeButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+              modal.style.display = 'none';
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+        
+        // Click outside to close
+        eventModals.forEach(modal => {
+          modal.addEventListener('click', function(event) {
+            if (event.target === this) {
+              this.style.display = 'none';
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+        
+        // Escape key to close
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            eventModals.forEach(modal => {
+              if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+              }
+            });
+          }
+        });
+      }
+      
+      // Call the initialization function
+      initEventModals();
+    });
+  </script>
+</body>
+</html>

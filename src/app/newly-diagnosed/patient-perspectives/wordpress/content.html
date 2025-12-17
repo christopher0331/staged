@@ -1,0 +1,240 @@
+<!-- Search and Filter Section -->
+<div class="pp-search-section">
+    <div class="search-container">
+        <input type="text" id="patient-search" placeholder="Search by name or content..." class="search-input">
+        <div class="search-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+    
+    <div class="filter-buttons">
+        <button id="all-filter" class="filter-btn active">All Stories</button>
+        <button id="recent-filter" class="filter-btn">Recent Stories</button>
+    </div>
+</div>
+
+<!-- Patient Stories Section -->
+<div class="pp-patient-stories">
+    <h2 class="section-title">Patients</h2>
+    
+    <div class="no-results-message" style="display: none;">
+        <p>No stories found matching your search criteria.</p>
+    </div>
+    
+    <div class="stories-grid">
+        <!-- Dan's Story -->
+        <div class="patient-story" data-name="Dan">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Dan</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>Hi Anne great to hear from you. You're not going to believe this or at least I'm having a hard time believing it but my last pet scan showed no signs of cancer. Praise the Lord and God bless you and Mitch for all you have done and continue to do. I certainly will tell about you and Mitch. I meet with my oncologist tomorrow to get next steps. I'll be happy to share. That was a scary time When they told me it had spread to my liver and lungs and go home and get your affairs in order but you know what it was probably the best gift I had ever been given. Then along came Mitch and told me about Lynparza and here I am today with a new lease on life. We went out the other night to celebrate and I told the waitress what I was celebrating and at the end of dinner they gave me a birthday cake, I laughed until I cried how appropriate. Love To you both Dan</p>
+                <span class="quote-right"></span>
+                <button class="read-more-btn">Read more</button>
+            </div>
+        </div>
+        
+        <!-- Pamela Randall's Story -->
+        <div class="patient-story" data-name="Pamela Randall">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Pamela Randall</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>I recommend that people that are newly diagnosed with any sarcoma, but certainly LMS – seek a Sarcoma Specialist immediately. Sarcomas are difficult to diagnose in the first place, so if you have a lump or bump anywhere- make sure to advocate for yourself to your primary care physician that perhaps seeking a sarcoma specialist's opinion would be wise. It certainly would be!</p>
+                <span class="quote-right"></span>
+            </div>
+        </div>
+        
+        <!-- Cathie Boyles' Story -->
+        <div class="patient-story" data-name="Cathie Boyles">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Cathie Boyles</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>Hi All – I shared my story during the Mayo Clinic patient program with the NLMSF and I wanted to reach out to newly diagnosed patients, and those currently in treatment. Be your own best advocate by knowing as much as you can, asking the right questions of your care team and embracing support from those that love you. Be sure to let your care team know of any problems during treatment as communicating with them is key to better outcomes and it is also key to reducing your own anxiety. Knowledge is Power = Patient Power A great line borrowed from the NLMSF! I am a survivor and thriver, and I wish you the very same outcome. Together are stronger!</p>
+                <span class="quote-right"></span>
+                <button class="read-more-btn">Read more</button>
+            </div>
+        </div>
+        
+        <!-- Marge Rudloff's Story -->
+        <div class="patient-story" data-name="Marge Rudloff">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Marge Rudloff</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>Hi, I am a 27 year survivor of LMS – a true blessing . . . a beacon of hope for others. I want to share my hope for all – my survivorship has been an amazing journey, taking one day at a time, and making the most of it! Taking small steps each day, sometimes trying to hold down anxiety and stress when its time for a scan, doctors visit, even if I have a strange feeling somewhere in my body. It's important to try to get through it all as best as possible – to enhance positive outcomes. Staying strong and hopeful is not easy to do, but it is something to always strive for each step of this journey. I have been blessed- there is no doubt. From a fellow LMS thriver, I reach out to you with my prayers for the best outcomes for all, with great support behind you all the way . . . and to know that everyone in this sarcoma community is pulling for you as I am.</p>
+                <span class="quote-right"></span>
+                <button class="read-more-btn">Read more</button>
+            </div>
+        </div>
+        
+        <!-- Nikki Hughes' Story -->
+        <div class="patient-story" data-name="Nikki Hughes">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Nikki Hughes</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>Hi, my name is Nikky, I was diagnosed with Leiomyosarcoma (LMS) a little over a year ago. This diagnosis is incredibly overwhelming. When I was first diagnosed I thought my life was over. I wish I knew then what I know now, and that is why I am writing this letter. When you get online and look up LMS, the information can be pretty negative. Be careful what you read, a lot of information is outdated, and skewed in one direction. It is important to find a medical team that is knowledgeable in sarcoma, positive and supportive. I have found this, and with the help from my family, friends, and medical team, I have so much hope for my future. I still have cancer and I am currently undergoing treatment, but that does not mean my life has to stop. I am a wife, nurse, and mother of middle school aged twins. I live a very active life. We just went on a vacation to Seattle, and Victoria B.C., I volunteer at my kids school, do yoga, manage my Etsy craft site (Crafts4CuringCancer), and have recently returned to work one day a week. I wake up each morning thankful for every day. I thank my body for all the hard work it is doing, and I say to myself "today is going to be a great day," and they almost always are. And if they are not that is ok, your entitled to feel like "this sucks," because sometimes it does. But don't give up hope. There are a lot of great supports out there such as the National Leiomyosarcoma Foundation. Hang in there, I know how you feel, and you can do this!</p>
+                <span class="quote-right"></span>
+                <button class="read-more-btn">Read more</button>
+            </div>
+        </div>
+
+        <!-- Add a few more patient stories -->
+        <div class="patient-story" data-name="Andrea Brill">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Andrea Brill</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>Laughing All the Way. I love to "bring the funny" to almost every aspect of my life; whether it be a bumpy hiccup or a splendid joy. My faith in God, my devoted husband, a steadfast belief in kindness, and my giggly outlook make my earthly journey a paradise. My life with LMS took hold 6 August 2018 with a total pelvic exenteration. During my consultation about my vaginal cancer, my surgeon explained that during the 16-hour surgery, he, along with 17 additional surgeons would remove nearly every organ in my urinary, gastrointestinal, and gynecologic systems. He also explained surgery would mean, I'd have a permanent urostomy and a colostomy. My immediate response was, "I don't care if you have to gut me like a deer. I got a lot of living left to do." When things go wrong, humor sets them right. God didn't promise me a life without rides on narrow, winding roads...</p>
+                <span class="quote-right"></span>
+                <button class="read-more-btn">Read more</button>
+            </div>
+        </div>
+
+        <div class="patient-story" data-name="Anne Markam">
+            <div class="patient-header">
+                <div class="patient-avatar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                </div>
+                <h3 class="patient-name">Anne Markam</h3>
+            </div>
+            <div class="patient-content">
+                <span class="quote-left"></span>
+                <p>HI – My name is Anne – and I want you to know that you have what it takes to get through a challenging diagnosis. If you keep your courage, strength, and resilience – your strength will be your lens to staying focused through important collaborative decision-making for selecting your sarcoma specialist, the best treatment protocol plan and maintaining quality of life in the treatment journey and after treatment is over. Stay strong!</p>
+                <span class="quote-right"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    // Show/hide read more functionality
+    const stories = document.querySelectorAll('.patient-story');
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+    readMoreButtons.forEach(button => {
+        const content = button.previousElementSibling.previousElementSibling;
+        const fullText = content.textContent;
+        
+        if (fullText.length <= 300) {
+            button.style.display = 'none';
+            return;
+        }
+        
+        const previewText = fullText.slice(0, 300) + '...';
+        content.setAttribute('data-full-text', fullText);
+        content.textContent = previewText;
+        
+        button.addEventListener('click', function() {
+            const isExpanded = button.textContent === 'Show less';
+            
+            if (isExpanded) {
+                content.textContent = previewText;
+                button.textContent = 'Read more';
+            } else {
+                content.textContent = content.getAttribute('data-full-text');
+                button.textContent = 'Show less';
+            }
+        });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('patient-search');
+    const noResultsMessage = document.querySelector('.no-results-message');
+    
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        let visibleCount = 0;
+        
+        stories.forEach(story => {
+            const name = story.getAttribute('data-name').toLowerCase();
+            const content = story.querySelector('p').textContent.toLowerCase();
+            
+            if (name.includes(searchTerm) || content.includes(searchTerm)) {
+                story.style.display = 'block';
+                visibleCount++;
+            } else {
+                story.style.display = 'none';
+            }
+        });
+        
+        if (visibleCount === 0) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+    });
+    
+    // Filter functionality
+    const allFilterBtn = document.getElementById('all-filter');
+    const recentFilterBtn = document.getElementById('recent-filter');
+    
+    allFilterBtn.addEventListener('click', function() {
+        stories.forEach(story => {
+            story.style.display = 'block';
+        });
+        
+        allFilterBtn.classList.add('active');
+        recentFilterBtn.classList.remove('active');
+        noResultsMessage.style.display = 'none';
+    });
+    
+    recentFilterBtn.addEventListener('click', function() {
+        // For demonstration, filter to show only first 3 stories as "recent"
+        stories.forEach((story, index) => {
+            if (index < 3) {
+                story.style.display = 'block';
+            } else {
+                story.style.display = 'none';
+            }
+        });
+        
+        allFilterBtn.classList.remove('active');
+        recentFilterBtn.classList.add('active');
+        noResultsMessage.style.display = 'none';
+    });
+})();
+</script>

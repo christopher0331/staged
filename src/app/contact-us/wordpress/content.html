@@ -1,0 +1,278 @@
+<!-- Main Content Section -->
+<div class="main-content-wrapper">
+    <div class="main-content">
+        <!-- Contact Form Section -->
+        <div id="contact-form" class="content-section">
+            <h2 class="section-title indigo">Send Us a Message</h2>
+            <div class="space-y">
+                <div class="content-panel indigo">
+                    <div class="panel-header">
+                        <div class="icon-circle indigo">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div>
+                            <h3>Contact Form</h3>
+                            <p>Fill out the form below and we'll get back to you</p>
+                        </div>
+                    </div>
+                    <form id="nlmsf-contact-form" class="contact-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="nlmsf-name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="nlmsf-email" name="email" required placeholder="Your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="nlmsf-phone" name="phone" placeholder="Your phone number (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="nlmsf-subject" name="subject" required>
+                                <option value="" selected disabled>Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Patient Support</option>
+                                <option value="research">Research Information</option>
+                                <option value="donation">Donation Questions</option>
+                                <option value="volunteer">Volunteer Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Your Message *</label>
+                            <textarea id="nlmsf-message" name="message" required rows="5" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="nlmsf-newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">I agree to the <a href="/privacy-policy" target="_blank">privacy policy</a> *</label>
+                        </div>
+                        <!-- Place for form status messages -->
+                        <div id="nlmsf-form-status" class="form-status" style="padding: 10px; border: 1px solid #ccc; margin-bottom: 10px;">Status messages will appear here</div>
+                        <button type="submit" class="submit-button indigo">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Information Section -->
+        <div id="contact-info" class="content-section">
+            <h2 class="section-title purple">Other Ways to Reach Us</h2>
+            <div class="contact-cards-grid">
+                <div class="contact-card">
+                    <div class="contact-icon purple">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="contact-method">Phone</h3>
+                    <p class="contact-detail">(800) 555-1234</p>
+                    <p class="contact-hours">Monday-Friday: 9am-5pm ET</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon purple">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-method">Email</h3>
+                    <p class="contact-detail">info@nlmsf.org</p>
+                    <p class="contact-hours">We respond within 48 hours</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon purple">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-method">Address</h3>
+                    <p class="contact-detail">1685 S. Colorado Blvd.</p>
+                    <p class="contact-detail">Unit S - Suite 447</p>
+                    <p class="contact-detail">Denver, CO 80222</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon purple">
+                        <i class="fas fa-comment-medical"></i>
+                    </div>
+                    <h3 class="contact-method">Patient Support</h3>
+                    <p class="contact-detail">support@nlmsf.org</p>
+                    <p class="contact-hours">24/7 email support</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div id="faq" class="content-section">
+            <h2 class="section-title violet">Frequently Asked Questions</h2>
+            <div class="space-y">
+                <div class="content-panel violet">
+                    <div class="panel-header">
+                        <div class="icon-circle violet">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div>
+                            <h3>Common Questions</h3>
+                            <p>Answers to questions we frequently receive</p>
+                        </div>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How can I get involved with NLMSF?</h4>
+                                <button type="button" class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="faq-answer">
+                                <p>There are many ways to get involved with our foundation including volunteering, donating, fundraising, or participating in our events. Visit our <a href="/get-involved">Get Involved</a> page to learn more about specific opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Where does my donation go?</h4>
+                                <button type="button" class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Your donations support research, patient programs, education, and advocacy. You can view our financial reports and details about fund allocation on our <a href="/accountability-reports">Accountability Reports</a> page.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How can I find a leiomyosarcoma specialist?</h4>
+                                <button type="button" class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We maintain a directory of specialists who have experience treating leiomyosarcoma. Please visit our <a href="/newly-diagnosed/find-specialist">Find a Specialist</a> page for more information or contact our patient support team directly.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Do you offer support groups?</h4>
+                                <button type="button" class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we facilitate both in-person and virtual support groups for patients and caregivers across the country. Check our <a href="/leiomyosarcoma-support-group">Support Groups</a> page to find one in your area.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How can I apply for a research grant?</h4>
+                                <button type="button" class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our foundation awards research grants to qualified investigators studying leiomyosarcoma. Grant applications are accepted during specific periods. Please visit our <a href="/funded-projects">Research Funding</a> page for details on eligibility and application process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Debug Script -->
+<script>
+// Debug helper for form submission
+document.addEventListener('DOMContentLoaded', function() {
+    var debugForm = document.getElementById('nlmsf-contact-form');
+    var debugStatus = document.getElementById('nlmsf-form-status');
+    
+    if (debugForm) {
+        debugForm.addEventListener('submit', function(e) {
+            debugStatus.innerHTML += '<p>Form submitted locally, checking if handler works...</p>';
+            console.log('Form submitted, now checking if AJAX handler takes over');
+        });
+        
+        var debugBtn = document.createElement('button');
+        debugBtn.type = 'button';
+        debugBtn.className = 'submit-button purple';
+        debugBtn.innerHTML = 'Manual Debug Submit';
+        debugBtn.style.marginLeft = '10px';
+        debugBtn.onclick = function() {
+            var nameVal = document.getElementById('nlmsf-name') ? document.getElementById('nlmsf-name').value : 'Test';
+            var emailVal = document.getElementById('nlmsf-email') ? document.getElementById('nlmsf-email').value : 'test@example.com';
+            var phoneVal = document.getElementById('nlmsf-phone') ? document.getElementById('nlmsf-phone').value : '';
+            var subjectVal = document.getElementById('nlmsf-subject') ? document.getElementById('nlmsf-subject').value : 'general';
+            var messageVal = document.getElementById('nlmsf-message') ? document.getElementById('nlmsf-message').value : 'Test message';
+            var newsletterVal = document.getElementById('nlmsf-newsletter') ? document.getElementById('nlmsf-newsletter').checked : false;
+            
+            var formData = {
+                name: nameVal,
+                email: emailVal,
+                phone: phoneVal,
+                subject: subjectVal,
+                message: messageVal,
+                newsletter: newsletterVal
+            };
+            
+            debugStatus.innerHTML = '<p>Manual debug submission with data: ' + JSON.stringify(formData) + '</p>';
+            
+            // Get the correct WordPress REST API URL
+            var restUrl = window.nlmsfResend ? window.nlmsfResend.restUrl : '/wp-json/nlmsf/v1/contact-form';
+            debugStatus.innerHTML += '<p>Using REST URL: ' + restUrl + '</p>';
+            
+            fetch(restUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                debugStatus.innerHTML += '<p>Response status: ' + response.status + '</p>';
+                return response.json();
+            })
+            .then(data => {
+                debugStatus.innerHTML += '<p>Response data: ' + JSON.stringify(data) + '</p>';
+            })
+            .catch(error => {
+                debugStatus.innerHTML += '<p>Error: ' + error.message + '</p>';
+            });
+        };
+        
+        debugForm.querySelector('button[type="submit"]').parentNode.appendChild(debugBtn);
+    }
+});
+</script>
+
+<!-- FAQ toggle functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // FAQ toggle functionality
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    // Clicking the chevron button
+    faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const faqItem = this.closest('.faq-item');
+            faqItem.classList.toggle('open');
+            const icon = this.querySelector('i');
+            if (icon) {
+                if (faqItem.classList.contains('open')) {
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                } else {
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            }
+        });
+    });
+
+    // Clicking anywhere in the question row
+    faqQuestions.forEach(row => {
+        row.addEventListener('click', function() {
+            const faqItem = this.closest('.faq-item');
+            const icon = this.querySelector('.faq-toggle i');
+            faqItem.classList.toggle('open');
+            if (icon) {
+                if (faqItem.classList.contains('open')) {
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                } else {
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            }
+        });
+    });
+});
+</script>

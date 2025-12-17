@@ -1,0 +1,81 @@
+<!-- Sidebar Navigation Component for Psychosocial Support Page -->
+<div class="page-nav">
+    <h3 class="sidebar-title">Page Contents</h3>
+    
+    <div class="nav-section section-challenges">
+        <a href="#challenges" class="nav-link">Common Challenges</a>
+    </div>
+    
+    <div class="nav-section section-support">
+        <a href="#support-types" class="nav-link">Types of Support</a>
+    </div>
+    
+    <div class="nav-section section-counseling">
+        <a href="#counseling" class="nav-link">Counseling Options</a>
+    </div>
+    
+    <div class="nav-section section-nlmsf">
+        <a href="#nlmsf-support" class="nav-link">NLMSF Support Programs</a>
+    </div>
+    
+    <div class="nav-section section-resources">
+        <a href="#contact" class="nav-link">Contact & Resources</a>
+    </div>
+</div>
+
+<!-- JavaScript for sidebar functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Function to set active link based on scroll position
+        function setActiveLink() {
+            const scrollPosition = window.scrollY;
+            
+            // Get all sections
+            const sections = document.querySelectorAll('[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    // Remove active class from all links
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active class to corresponding link
+                    const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Initial call to set active link
+        setActiveLink();
+        
+        // Set active link on scroll
+        window.addEventListener('scroll', setActiveLink);
+        
+        // Smooth scroll for anchor links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>

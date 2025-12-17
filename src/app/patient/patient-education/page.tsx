@@ -21,6 +21,9 @@ export default function PatientEducationPage() {
           <p className="mx-auto max-w-2xl text-xl text-gray-600">
             The NLMSF collaborates annually with major sarcoma centers of excellence to bring important and special educational opportunities to the LMS Community.
           </p>
+          <p className="mx-auto max-w-2xl text-md text-gray-500 mt-2">
+            <span className="text-nlmsf-purple font-medium">Note:</span> Due to the COVID-19 health crisis, all five in-person LMS education programs originally scheduled in 2020 were postponed. Special education programs are taking place by phone or online meeting within the new NLMSF Patient Caregiver Initiatives.  
+          </p>
         </div>
 
         <div className="space-y-8">
@@ -33,10 +36,15 @@ export default function PatientEducationPage() {
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="p-4 rounded-lg border bg-white shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-200">
-                <h3 className="font-medium text-nlmsf-purple flex items-center gap-2">
-                  Patients - Caregivers Advocacy Roundtable
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">First MONDAY of each month – 7 pm EDT</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-12 w-12 flex-shrink-0 rounded-full bg-purple-100 flex items-center justify-center">
+                    <span className="text-purple-700 text-lg font-medium">PC</span>
+                  </div>
+                  <h3 className="font-medium text-nlmsf-purple text-lg">
+                    Patients - Caregivers Advocacy Roundtable
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-600"><strong>First MONDAY</strong> of each month – 7 pm EDT</p>
                 <a href="#" className="mt-4 text-sm text-nlmsf-purple hover:text-nlmsf-purple-dark flex items-center gap-1">
                   Join Virtual Meeting <span>→</span>
                 </a>
@@ -46,10 +54,15 @@ export default function PatientEducationPage() {
               </div>
 
               <div className="p-4 rounded-lg border bg-white shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-200">
-                <h3 className="font-medium text-nlmsf-purple flex items-center gap-2">
-                  Survivors Inspire Peer Network
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">Third THURSDAY of each month – 7 pm EDT</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-12 w-12 flex-shrink-0 rounded-full bg-purple-100 flex items-center justify-center">
+                    <span className="text-purple-700 text-lg font-medium">SI</span>
+                  </div>
+                  <h3 className="font-medium text-nlmsf-purple text-lg">
+                    Survivors Inspire Peer Network
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-600"><strong>Third THURSDAY</strong> of each month – 7 pm EDT</p>
                 <a href="#" className="mt-4 text-sm text-nlmsf-purple hover:text-nlmsf-purple-dark flex items-center gap-1">
                   Join Virtual Meeting <span>→</span>
                 </a>
@@ -61,7 +74,7 @@ export default function PatientEducationPage() {
 
             <div className="mt-4 p-4 rounded-lg border bg-white shadow-sm text-center">
               <p className="text-sm text-gray-600">
-                Contact annieachee@aol.com or call 303 808-3437 to join the virtual meetings.
+                Contact <a href="mailto:annieachee@aol.com" className="text-nlmsf-purple hover:text-nlmsf-purple-dark">annieachee@aol.com</a> or call <a href="tel:3038083437" className="text-nlmsf-purple hover:text-nlmsf-purple-dark">303-808-3437</a> to join the virtual meetings.
                 The NLMSF Newsletters and FB Support Group will always announce scheduled meetings and guest speakers for each meeting.
               </p>
             </div>
@@ -70,19 +83,41 @@ export default function PatientEducationPage() {
           {/* Video Resources */}
           <div className="bg-white shadow-sm hover:shadow-md transition-all duration-200 rounded-lg p-6">
             <h2 className="text-2xl text-nlmsf-purple mb-6">
-              Leiomyosarcoma Education Videos
+              Leiomyosarcoma Education Videos for Patients and Caregivers
             </h2>
             
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {topics.map((topic) => (
+              {videoSections.map((section) => (
                 <a
-                  key={topic}
-                  href={`#${topic.toLowerCase().replace(/\s+/g, "-")}`}
+                  key={section.id}
+                  href={`#${section.id}`}
                   className="p-4 rounded-lg border bg-white shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-200 group"
                 >
-                  <h3 className="font-medium text-nlmsf-purple group-hover:text-nlmsf-purple-dark">{topic}</h3>
+                  <h3 className="font-medium text-nlmsf-purple group-hover:text-nlmsf-purple-dark">{section.title}</h3>
+                  <p className="mt-2 text-xs text-gray-500">{section.videos.length} video{section.videos.length !== 1 ? 's' : ''}</p>
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Denver-specific CTA */}
+          <div className="p-5 rounded-lg border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50">
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <div className="rounded-full bg-purple-100 p-3 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-nlmsf-purple">Denver LMS Support Resources</h3>
+                <p className="text-sm text-gray-600 mt-1">Looking for local support in Denver? Connect with our Denver-based patient advocates who can help guide you through local resources and treatment options.</p>
+              </div>
+              <div className="ml-auto">
+                <a href="#" className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-nlmsf-purple hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                  Connect in Denver
+                </a>
+              </div>
             </div>
           </div>
 
@@ -100,7 +135,7 @@ export default function PatientEducationPage() {
                     <div key={idx} className="p-4 rounded-lg border bg-white shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-200">
                       {video.presenter && (
                         <div className="mb-3 flex items-start gap-3">
-                          <div className="h-8 w-8 flex-shrink-0 rounded-full bg-purple-100 flex items-center justify-center">
+                          <div className="h-10 w-10 flex-shrink-0 rounded-full bg-purple-100 flex items-center justify-center">
                             <span className="text-purple-700 text-sm font-medium">
                               {video.presenter.split(' ').slice(-1)[0][0]}
                             </span>
@@ -134,31 +169,29 @@ export default function PatientEducationPage() {
               </div>
             </div>
           ))}
+          
+          {/* Additional Resources Section */}
+          <div className="bg-white shadow-sm hover:shadow-md transition-all duration-200 rounded-lg p-6">
+            <h2 className="text-2xl text-nlmsf-purple mb-6">Additional Resources</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="p-4 rounded-lg border bg-gradient-to-r from-blue-50 to-purple-50 shadow-sm hover:shadow-md transition-all duration-200">
+                <h3 className="font-medium text-nlmsf-purple mb-2">UCLA – NLMSF Patient/Family LMS Education Symposium</h3>
+                <p className="text-sm text-gray-600">Access recordings and materials from our comprehensive educational symposium covering various aspects of LMS treatment and care.</p>
+                <a href="#" className="mt-3 inline-flex items-center text-sm text-nlmsf-purple hover:text-nlmsf-purple-dark gap-1">
+                  View Symposium Resources <span>→</span>
+                </a>
+              </div>
+              <div className="p-4 rounded-lg border bg-gradient-to-r from-purple-50 to-blue-50 shadow-sm hover:shadow-md transition-all duration-200">
+                <h3 className="font-medium text-nlmsf-purple mb-2">Denver LMS Support Group</h3>
+                <p className="text-sm text-gray-600">Connect with other LMS patients and caregivers in the Denver area for in-person and virtual support meetings.</p>
+                <a href="#" className="mt-3 inline-flex items-center text-sm text-nlmsf-purple hover:text-nlmsf-purple-dark gap-1">
+                  Join Denver Support Group <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-const topics = [
-  "ABC's of a New Diagnosis",
-  "Basic Research",
-  "Caregiving",
-  "Chemotherapy and Targeted Agents",
-  "Circulating Tumor DNA and Liquid Biopsies",
-  "Clinical Trials",
-  "Cutaneous Leiomyosarcoma",
-  "General Information on Sarcoma Care",
-  "Imaging/Radiology",
-  "Immunotherapy",
-  "The Microbiome",
-  "Nutrition",
-  "Pathology",
-  "PECOMA",
-  "Patient Centered Research",
-  "Radiation Therapy",
-  "Sarculator",
-  "Surgical Treatment",
-  "Survivorship Care Planning",
-  "Uterine Fibroids",
-];

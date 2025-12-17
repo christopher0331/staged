@@ -1,0 +1,788 @@
+/* Patient-Driven Research Styles */
+
+/* Global Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Page Navigation Styles */
+.page-nav {
+  position: sticky;
+  top: 2rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 1rem;
+  max-width: 240px;
+  margin-left: auto;
+}
+
+/* Nav Section and Link Styles */
+.nav-section {
+  margin-bottom: 1rem;
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: #4b5563;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  color: #5e35b1;
+  border-left-color: #5e35b1;
+}
+
+.nav-link.active {
+  color: #5e35b1;
+  border-left-color: #5e35b1;
+  font-weight: 600;
+}
+
+/* Section color indicators */
+.section-introduction .nav-link {
+  border-left-color: #5e35b1; /* Purple */
+}
+
+.section-participation .nav-link {
+  border-left-color: #3949ab; /* Indigo */
+}
+
+.section-resources .nav-link {
+  border-left-color: #00796b; /* Teal */
+}
+
+/* Hero Section */
+.pdr-hero-section {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e6f2;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(to right, #8c65f6, #a673ff);
+  border-radius: 30px;
+  padding: 6px 18px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 10px rgba(140, 101, 246, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.category-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(140, 101, 246, 0.3);
+}
+
+.pill-icon {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.pill-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #4a4f6c;
+  margin-bottom: 20px;
+  position: relative;
+  background: linear-gradient(135deg, #5e35b1, #8265d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-title:after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right, #5e35b1, #3949ab);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.hero-description {
+  font-size: 19px;
+  color: #5c6182;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 36px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #c5cae9;
+  color: #3949ab;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.action-button:nth-child(1) {
+  background-color: #e8f0fe;
+  border-color: #bbdefb;
+  color: #1976d2;
+  transition: all 0.3s ease;
+}
+
+.action-button:nth-child(2) {
+  background-color: #e5f7ef;
+  border-color: #b2dfdb;
+  color: #00897b;
+  transition: all 0.3s ease;
+}
+
+.action-button:nth-child(3) {
+  background-color: #fff5e6;
+  border-color: #ffe0b2;
+  color: #f57c00;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-top-elements {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.button-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.hero-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.participation-note {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  padding: 10px 18px;
+  border-radius: 4px;
+  color: #1565c0;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.15);
+  transition: all 0.3s ease;
+}
+
+.note-icon {
+  margin-right: 8px;
+  font-size: 15px;
+}
+
+
+
+/* Main Content Section */
+.pdr-content-section {
+  margin-bottom: 48px;
+}
+
+.research-initiative-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-initiative-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.research-section-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #00695c, #00897b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+}
+
+.subtitle-wrapper {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #00796b;
+  font-style: italic;
+}
+
+.links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.section-link {
+  color: #00838f;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.section-link:hover {
+  color: #006064;
+  text-decoration: underline;
+}
+
+.link-separator {
+  color: #757575;
+}
+
+.research-content {
+  padding: 24px;
+  color: #424242;
+  line-height: 1.6;
+}
+
+.research-content p {
+  margin-bottom: 16px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #e0f2f1, #b2dfdb);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  border-left: 4px solid #26a69a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00695c;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.document-link {
+  display: inline-block;
+  color: #0277bd;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 8px 0;
+  transition: color 0.3s;
+}
+
+.document-link:hover {
+  color: #01579b;
+  text-decoration: underline;
+}
+
+.email-link {
+  color: #0277bd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.email-link:hover {
+  color: #01579b;
+  text-decoration: underline;
+}
+
+.phone-link {
+  color: #0277bd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.phone-link:hover {
+  color: #01579b;
+  text-decoration: underline;
+}
+
+.new-development {
+  background-color: #fff9c4;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  border-left: 4px solid #fbc02d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.new-development h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f57f17;
+  margin-bottom: 8px;
+}
+
+.research-quote {
+  position: relative;
+  margin: 24px 0;
+  padding: 16px 24px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  font-style: italic;
+  color: #616161;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.research-quote:before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 60px;
+  color: #c5cae9;
+  font-family: serif;
+}
+
+.research-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #757575;
+  text-align: right;
+}
+
+/* Illustration below Pattern.org quote */
+.quote-illustration {
+  margin: 12px auto 18px;
+  max-width: 900px;
+}
+.quote-illustration img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+/* Quote gallery (3 images) */
+.quote-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 10px 0 20px;
+}
+.quote-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.quote-gallery img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.research-benefits {
+  margin: 16px 0;
+  padding-left: 20px;
+}
+
+.research-benefits li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+  transition: transform 0.2s ease;
+}
+
+.research-benefits li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #00897b;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.call-to-action {
+  background: linear-gradient(to right, #00897b, #00acc1);
+  color: white;
+  padding: 20px;
+  margin: 24px 0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.emphasis-text {
+  font-weight: 600;
+  color: #00695c;
+  font-size: 18px;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.subsection-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00695c;
+  margin: 24px 0 16px;
+  border-bottom: 2px solid #b2dfdb;
+  padding-bottom: 8px;
+}
+
+.video-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 12px 16px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.video-link:hover {
+  background-color: #e0e0e0;
+}
+
+.video-icon {
+  color: #d32f2f;
+}
+
+.contact-info {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  border-left: 4px solid #90a4ae;
+}
+
+.cta-box {
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: center;
+  border: 1px solid #bbdefb;
+}
+
+.signature {
+  margin-top: 32px;
+  font-style: italic;
+  color: #424242;
+  padding-left: 20px;
+  border-left: 3px solid #26a69a;
+}
+
+.signature p {
+  margin-bottom: 4px;
+}
+
+/* Count Me In Section Specific */
+.cmi-section {
+  border-top: 4px solid #00acc1;
+}
+
+.pattern-section {
+  border-top: 4px solid #9c27b0;
+}
+
+.cure-id-section {
+  border-top: 4px solid #ff9800;
+}
+
+.pattern-details-section {
+  border-top: 4px solid #8bc34a;
+}
+
+.cmi-details-section {
+  border-top: 4px solid #3f51b5;
+}
+
+.cmi-news-section {
+  border-top: 4px solid #f44336;
+}
+
+.who-can-join-section {
+  border-top: 4px solid #009688;
+}
+
+.denver-support-section {
+  border-top: 4px solid #43a047;
+}
+
+/* Sidebar Styles */
+.pdr-sidebar {
+  margin-top: 48px;
+}
+
+.sidebar-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid #e0e6f2;
+}
+
+.sidebar-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #303648;
+  padding: 24px;
+  margin: 0;
+  border-bottom: 1px solid #e0e6f2;
+  background: linear-gradient(to right, #f5f7fa, #eef2f7);
+}
+
+.sidebar-sections {
+  padding: 16px 0;
+}
+
+.section-header {
+  color: #656c8a;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  padding: 12px 24px;
+  border-bottom: 1px dashed #e6e9f0;
+}
+
+.sidebar-section-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: #4b5166;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-section-link:hover {
+  background-color: #f0f4ff;
+  color: #3949ab;
+  border-left-color: #c5cae9;
+}
+
+.sidebar-section-link.active {
+  background-color: #e8eaf6;
+  color: #3949ab;
+  border-left: 3px solid #3949ab;
+  font-weight: 600;
+}
+
+.sidebar-icon {
+  color: #3949ab;
+  margin-right: 10px;
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-section-link:hover .sidebar-icon {
+  transform: translateX(2px);
+}
+
+.denver-resources {
+  padding: 0;
+  border-top: 1px solid #e0e6f2;
+}
+
+.denver-resources .denver-link {
+  display: block;
+  padding: 16px 24px;
+  background: linear-gradient(to right, #e8f5e9, #e0f2f1);
+  color: #00695c;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  border-left: 3px solid #4caf50;
+  border-radius: 0 6px 6px 0;
+}
+
+.denver-resources .denver-link:before {
+  content: "🌄";
+  margin-right: 8px;
+}
+
+.denver-resources .denver-link:hover {
+  background: linear-gradient(to right, #e0f2f1, #b2dfdb);
+  color: #00796b;
+  padding-left: 28px;
+}
+
+/* Animation for Cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.research-initiative-card, .sidebar-card {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.research-initiative-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.research-initiative-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.research-initiative-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.research-initiative-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.sidebar-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sidebar-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Responsive Styling */
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .tagline-text {
+    font-size: 22px;
+  }
+  
+  .tagline-subtext {
+    font-size: 16px;
+  }
+  
+  .hero-description {
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 22px;
+  }
+  
+  .highlight-box {
+    padding: 16px;
+  }
+  
+  .call-to-action {
+    font-size: 16px;
+    padding: 16px;
+  }
+  
+  .research-section-header {
+    padding: 16px;
+  }
+  
+  .research-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 24px;
+  }
+  
+  .tagline-text {
+    font-size: 20px;
+  }
+  
+  .tagline-subtext {
+    font-size: 14px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+  }
+  
+  .links-wrapper {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .research-section-header {
+    padding: 12px;
+  }
+  
+  .research-content {
+    padding: 12px;
+  }
+  
+  .sidebar-container {
+    padding: 16px;
+  }
+}

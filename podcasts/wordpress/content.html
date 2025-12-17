@@ -1,0 +1,139 @@
+<!-- Main content: Podcasts -->
+<div class="content-container">
+  <!-- Introduction -->
+  <div id="intro" class="intro-section">
+    <h2 class="section-title gradient-text">Podcasts for the LMS Community</h2>
+    <p class="intro-text">
+      Explore conversations on resilience, caregiver support, anxiety and coping, and cognitive support therapy—curated for patients, caregivers, and families.
+    </p>
+  </div>
+
+  <!-- Podcasts Carousel (lightweight, no dependencies) -->
+  <div id="podcasts" class="pc-carousel" role="region" aria-label="Podcasts Carousel">
+    <div class="pc-controls" role="group" aria-label="Carousel controls">
+      <button class="pc-btn" aria-label="Previous podcast" onclick="pcPrev()">Prev</button>
+      <div class="pc-dots" role="tablist" aria-label="Podcast slides">
+        <button class="pc-dot is-active" role="tab" aria-selected="true" aria-controls="pc-slide-1" onclick="pcGoTo(0)"></button>
+        <button class="pc-dot" role="tab" aria-selected="false" aria-controls="pc-slide-2" onclick="pcGoTo(1)"></button>
+        <button class="pc-dot" role="tab" aria-selected="false" aria-controls="pc-slide-3" onclick="pcGoTo(2)"></button>
+        <button class="pc-dot" role="tab" aria-selected="false" aria-controls="pc-slide-4" onclick="pcGoTo(3)"></button>
+      </div>
+      <button class="pc-btn" aria-label="Next podcast" onclick="pcNext()">Next</button>
+    </div>
+
+    <div class="pc-viewport">
+      <div class="pc-track" data-active-index="0">
+        <!-- 1 -->
+        <article id="pc-slide-1" class="pc-slide" aria-roledescription="slide" aria-label="1 of 4">
+          <div class="pc-grid">
+            <div class="pc-media">
+              <div class="pc-video-wrapper">
+                <iframe title="NLMSF Anxiety and Coping Podcast" src="https://www.youtube.com/embed/XhLg-x1dBAM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">NLMSF Anxiety and Coping Podcast</h3>
+              <p class="pc-desc">Strategies for managing anxiety and building coping skills throughout the LMS journey.</p>
+              <a class="pc-link" href="https://youtu.be/XhLg-x1dBAM" target="_blank" rel="noopener">Open on YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article id="pc-slide-2" class="pc-slide" aria-roledescription="slide" aria-label="2 of 4">
+          <div class="pc-grid">
+            <div class="pc-media">
+              <div class="pc-video-wrapper">
+                <iframe title="Dimensions in Resilience" src="https://www.youtube.com/embed/W8KbRJpOOXI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Dimensions in Resilience</h3>
+              <p class="pc-desc">Exploring resilience: practical tools and perspectives for patients and caregivers.</p>
+              <a class="pc-link" href="https://www.youtube.com/watch?v=W8KbRJpOOXI" target="_blank" rel="noopener">Open on YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article id="pc-slide-3" class="pc-slide" aria-roledescription="slide" aria-label="3 of 4">
+          <div class="pc-grid">
+            <div class="pc-media">
+              <div class="pc-video-wrapper">
+                <iframe title="Caring for the Caregiver" src="https://www.youtube.com/embed/n4OOczeh1LQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Caring for the Caregiver</h3>
+              <p class="pc-desc">Support and self-care guidance for caregivers—because caring for yourself is caring for your loved one.</p>
+              <a class="pc-link" href="https://youtu.be/n4OOczeh1LQ" target="_blank" rel="noopener">Open on YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article id="pc-slide-4" class="pc-slide" aria-roledescription="slide" aria-label="4 of 4">
+          <div class="pc-grid">
+            <div class="pc-media">
+              <div class="pc-video-wrapper">
+                <iframe title="Morning Pages - Cognitive Support Therapy" src="https://www.youtube.com/embed/0fv3DoEWFtQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Morning Pages - Cognitive Support Therapy</h3>
+              <p class="pc-desc">An introduction to Morning Pages as a cognitive support therapy practice.</p>
+              <a class="pc-link" href="https://youtu.be/0fv3DoEWFtQ" target="_blank" rel="noopener">Open on YouTube</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Title strip selector -->
+    <div class="pc-strip" aria-label="Select a podcast">
+      <button class="pc-strip-item is-active" onclick="pcGoTo(0)">
+        <div class="pc-strip-title">NLMSF Anxiety and Coping Podcast</div>
+        <div class="pc-strip-sub">Anxiety & Coping</div>
+      </button>
+      <button class="pc-strip-item" onclick="pcGoTo(1)">
+        <div class="pc-strip-title">Dimensions in Resilience</div>
+        <div class="pc-strip-sub">Building Resilience</div>
+      </button>
+      <button class="pc-strip-item" onclick="pcGoTo(2)">
+        <div class="pc-strip-title">Caring for the Caregiver</div>
+        <div class="pc-strip-sub">Caregiver Support</div>
+      </button>
+      <button class="pc-strip-item" onclick="pcGoTo(3)">
+        <div class="pc-strip-title">Morning Pages - CST</div>
+        <div class="pc-strip-sub">Cognitive Support Therapy</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const track = document.querySelector('.pc-track');
+    const dots = Array.from(document.querySelectorAll('.pc-dot'));
+    const strip = Array.from(document.querySelectorAll('.pc-strip-item'));
+    const slides = Array.from(document.querySelectorAll('.pc-slide'));
+
+    function update(i){
+      const idx = Math.max(0, Math.min(i, slides.length - 1));
+      track.dataset.activeIndex = String(idx);
+      slides.forEach((s, j) => s.style.display = j === idx ? 'block' : 'none');
+      dots.forEach((d, j) => {
+        if (j === idx) { d.classList.add('is-active'); d.setAttribute('aria-selected', 'true'); }
+        else { d.classList.remove('is-active'); d.setAttribute('aria-selected', 'false'); }
+      });
+      strip.forEach((b, j) => b.classList.toggle('is-active', j === idx));
+    }
+
+    window.pcGoTo = update;
+    window.pcNext = function(){ const i = Number(track.dataset.activeIndex || '0'); update(i + 1); };
+    window.pcPrev = function(){ const i = Number(track.dataset.activeIndex || '0'); update(i - 1); };
+
+    // init
+    slides.forEach((s, j) => s.style.display = j === 0 ? 'block' : 'none');
+  })();
+</script>

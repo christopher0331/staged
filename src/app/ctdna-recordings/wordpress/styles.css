@@ -1,0 +1,523 @@
+/* CTDNA Recordings Page Styles */
+
+/* Hero Section Styles */
+.hero-container {
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #047857, #10b981, #34d399);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.badge-icon {
+    background-color: #047857;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #ffffff, #d1fae5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-divider {
+    height: 4px;
+    width: 60px;
+    background-color: #d1fae5;
+    margin: 1.5rem auto;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.feature-tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.feature-tag i {
+    margin-right: 0.5rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main Content Styles */
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.section-title.emerald {
+    background: linear-gradient(to right, #047857, #10b981);
+    color: white;
+}
+
+.content-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.content-panel.emerald {
+    border-top: 4px solid #047857;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.icon-circle.emerald {
+    background-color: #047857;
+    color: white;
+}
+
+.panel-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+
+.panel-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Video Grid Styles */
+.videos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.video-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    padding: 1rem;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.video-card.emerald {
+    border-left: 4px solid #047857;
+}
+
+.youtube-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.video-thumbnail {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.video-card:hover .video-play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+}
+
+.presenter-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.presenter-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.presenter-avatar.emerald {
+    background-color: #047857;
+}
+
+.presenter-initial {
+    font-size: 1.1rem;
+}
+
+.presenter-name {
+    font-weight: 700;
+    margin: 0;
+}
+
+.presenter-name.emerald {
+    color: #047857;
+}
+
+.presenter-title {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.video-topic {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.video-date {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+}
+
+.video-date i {
+    margin-right: 0.25rem;
+}
+
+.video-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #475569;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.video-link.emerald {
+    color: #047857;
+}
+
+.video-link.emerald:hover {
+    color: #10b981;
+}
+
+.video-link i {
+    margin-right: 0.5rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 8px;
+}
+
+@media (min-width: 1024px) {
+    .main-content-wrapper {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        width: 300px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 2rem;
+        align-self: flex-start;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+    }
+}
+
+.sidebar-navigation {
+    margin-bottom: 2rem;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link-item {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.sidebar-link:hover {
+    color: #6a3ea1;
+}
+
+.sidebar-link i {
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-link:hover i {
+    transform: translateX(3px);
+}
+
+.sidebar-link-item.active .sidebar-link {
+    color: #6a3ea1;
+    font-weight: 600;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+}
+
+.sidebar-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.topic-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.topic-list li {
+    margin-bottom: 0.75rem;
+}
+
+.topic-list a {
+    display: flex;
+    align-items: center;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.topic-list a:hover {
+    color: #6a3ea1;
+}
+
+.topic-list a i {
+    margin-right: 0.5rem;
+    width: 16px;
+    text-align: center;
+}
+
+/* Denver Resources Styling */
+.sidebar-section.denver {
+    border-top: 1px solid #fcd34d;
+    padding-top: 1.5rem;
+}
+
+.sidebar-section-title.denver {
+    color: #b45309;
+}
+
+.denver-link {
+    color: #b45309 !important;
+}
+
+.denver-link:hover {
+    color: #d97706 !important;
+}
+
+/* CTA Section */
+.sidebar-cta {
+    margin-top: 2rem;
+}
+
+.cta-gradient {
+    background: linear-gradient(to bottom right, #6a3ea1, #4338ca);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cta-gradient h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.cta-gradient p {
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #6a3ea1;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .feature-tag {
+        width: fit-content;
+    }
+}

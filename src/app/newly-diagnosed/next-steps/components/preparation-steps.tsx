@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { appointmentPreparationSteps } from "../data";
+import Link from "next/link";
 
 export function PreparationSteps() {
   // Array of gradient colors for preparation steps
@@ -35,7 +36,15 @@ export function PreparationSteps() {
               {section.items.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-gray-700">
+                    {item === "Prepare questions for your care team" ? (
+                      <Link href="/newly-diagnosed/care-team-questions" className="text-purple-600 hover:text-purple-800 hover:underline">
+                        {item}
+                      </Link>
+                    ) : (
+                      item
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>

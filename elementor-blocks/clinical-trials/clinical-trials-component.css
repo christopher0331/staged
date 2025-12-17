@@ -1,0 +1,103 @@
+/* Homepage Clinical Trials component (Elementor block) */
+
+.home-clinical-trials {
+  padding: 0;
+  margin: 0;
+}
+
+.home-ct-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 20px 18px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.home-ct-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.home-ct-label {
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6B46C1, #9333EA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-ct-view-all {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B46C1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.home-ct-view-all:hover {
+  color: #553C9A;
+}
+
+.home-ct-intro {
+  font-size: 13px;
+  color: #4B5563;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.home-ct-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.home-ct-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #F3E8FF;
+  color: #6B21A8;
+  font-weight: 500;
+}
+
+.home-ct-button {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6B46C1, #9333EA);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(88, 28, 135, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-ct-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(88, 28, 135, 0.3);
+}
+
+.home-ct-note {
+  font-size: 11px;
+  color: #6B7280;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .home-ct-card {
+    padding: 16px 14px;
+  }
+
+  .home-ct-label {
+    font-size: 16px;
+  }
+}

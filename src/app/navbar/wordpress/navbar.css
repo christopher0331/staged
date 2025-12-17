@@ -1,0 +1,548 @@
+/* NLMSF WordPress Header/Navbar Styles - Transparent with theme colors */
+
+/* Direct color values as per design protocol */
+.nlmsf-container-header {
+  max-width: 1480px;
+  height: 120%;
+  margin: 0 auto;
+  padding: 0 1rem; /* More horizontal padding on mobile */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-container {
+    padding: 0 2rem; /* More breathing room on desktop */
+  }
+}
+
+/* Top Bar */
+.nlmsf-top-bar {
+  width: 100%;
+  background-color: rgba(249, 250, 251, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  height: 50px;
+  position: relative;
+  z-index: 201;
+  transition: all 0.3s ease;
+}
+
+/* Logo space in top bar */
+.nlmsf-logo-space {
+  width: 33%;
+}
+
+/* Navbar - Updated for larger logo and transparency */
+.nlmsf-navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  position: relative;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 0 1rem; /* Adjusted padding for spanning logo */
+  height: auto; /* Allow height to adjust for two rows */
+  min-height: 90px; /* Adjusted for spanning logo */
+  box-sizing: border-box;
+  overflow: visible; /* Allow dropdowns to be visible */
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-navbar {
+    padding: 0.5rem 0 1.25rem; /* Adjusted padding for spanning logo */
+    min-height: 100px; /* Adjusted height for spanning logo */
+  }
+  
+  .nlmsf-desktop-nav {
+    margin-left: 200px; /* Make room for the logo */
+  }
+}
+
+/* Logo - Updated for spanning logo across top bar and navbar */
+.nlmsf-logo {
+  display: flex;
+  align-items: center;
+  height: 110px; /* Much larger height for logo */
+  overflow: visible;
+}
+
+/* Spanning logo that goes across both bars */
+.nlmsf-logo-spanning {
+  position: absolute;
+  top: 0; /* Adjusted to account for top bar padding */
+  left: 0;
+  height: 160px; /* Combined height for both sections */
+  z-index: 202; /* Above both bars */
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.nlmsf-logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nlmsf-logo-img {
+  width: auto;
+  height: 140px; /* Much larger fixed height */
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-logo-img {
+    height: 150px; /* Even larger on desktop */
+  }
+}
+
+/* Desktop Navigation - Hidden on mobile, visible on desktop */
+.nlmsf-desktop-nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nlmsf-desktop-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .nlmsf-menu-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.nlmsf-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.75rem; /* Reduced from 2rem to make menu more compact */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: center;
+}
+
+.nlmsf-menu-row-1 {
+  margin-bottom: 0.5rem;
+}
+
+.nlmsf-menu-row-2 {
+  margin-top: 0.5rem;
+}
+
+.nlmsf-menu-item {
+  position: relative; /* Changed back to relative for proper dropdown functionality */
+  display: flex;
+  justify-content: center;
+}
+
+.nlmsf-menu-link {
+  display: inline-block;
+  padding: 0.5rem 0.75rem; /* Increased padding for better clickability */
+  color: #4b5563; /* Updated text color to match theme */
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; /* More elegant font stack */
+  font-weight: 500; /* Medium weight for better readability */
+  font-size: 1rem; /* Larger font size */
+  text-decoration: none;
+  border-radius: 0.25rem;
+  position: relative;
+  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  letter-spacing: 0.01em; /* Slight letter spacing for better readability */
+}
+
+/* Dropdown indicator for menu items with dropdowns */
+.nlmsf-has-dropdown > .nlmsf-menu-link {
+  position: relative;
+  padding-right: 1.1rem; /* Add space for the dropdown icon */
+}
+
+.nlmsf-has-dropdown > .nlmsf-menu-link::after {
+  content: '';
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: solid #6a3ea1;
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Ensure HOME menu item doesn't have a dropdown arrow */
+.nlmsf-menu-item:first-child .nlmsf-menu-link {
+  padding-right: 0.75rem;
+}
+
+.nlmsf-menu-item:first-child .nlmsf-menu-link::after {
+  display: none;
+}
+
+.nlmsf-menu-link:hover {
+  background-color: #6a3ea1;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.nlmsf-has-dropdown > .nlmsf-menu-link:hover::after {
+  border-color: #ffffff;
+}
+
+.nlmsf-dropdown-wrapper {
+  position: fixed; /* Fixed position to center on page */
+  top: 90px; /* Position right below navbar */
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.85); /* Match navbar transparency */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(229, 231, 235, 0.5);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nlmsf-dropdown {
+  width: 100vw; /* Full viewport width */
+  max-width: 100%; /* No max-width limitation */
+  background-color: rgba(255, 255, 255, 0.85); /* Match navbar transparency */
+  border-top: 2px solid #6a3ea1; /* Purple top border matching brand */
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  border-left: none;
+  border-right: none;
+  border-radius: 0; /* Remove border radius for full-width appearance */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04); /* Softer shadow for transparent look */
+  margin-top: 0;
+  max-height: calc(100vh - 90px - 20px);
+  overflow-y: auto;
+  /* Add padding to create larger click target areas */
+  padding-top: 25px;
+  padding-bottom: 30px;
+  backdrop-filter: blur(8px); /* Add blur effect to match navbar */
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nlmsf-dropdown-link {
+  display: block;
+  padding: 0.5rem 0.5rem; /* Increased horizontal padding */
+  color: #333333; /* Darker text for better readability */
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; /* More elegant font stack */
+  font-size: 0.95rem; /* Slightly larger font size */
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.4; /* Increased line height for readability */
+  white-space: normal; /* Allow text to wrap in columns */
+  text-align: center; /* Center the text */
+}
+
+.nlmsf-dropdown-link:hover {
+  background-color: #6a3ea1;
+  color: #ffffff;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.nlmsf-dropdown-featured-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(243, 244, 246, 0.7);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+  border-left: 3px solid transparent;
+}
+
+.nlmsf-dropdown-about .nlmsf-dropdown-featured-link:hover {
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+}
+
+.nlmsf-dropdown-research .nlmsf-dropdown-featured-link:hover {
+  background-color: #faf5ff;
+  border-left-color: #8b5cf6;
+}
+
+.nlmsf-dropdown-resources .nlmsf-dropdown-featured-link:hover {
+  background-color: #f0fdfa;
+  border-left-color: #14b8a6;
+}
+
+.nlmsf-dropdown-involved .nlmsf-dropdown-featured-link:hover {
+  background-color: #fdf2f8;
+  border-left-color: #ec4899;
+}
+
+.nlmsf-dropdown-section-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: #6a3ea1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 0.75rem 0.375rem;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid rgba(106, 62, 161, 0.15);
+  margin-bottom: 0.5rem;
+}
+
+.nlmsf-dropdown-category {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nlmsf-dropdown-about .nlmsf-dropdown-category {
+  color: #3b82f6;
+}
+
+.nlmsf-dropdown-research .nlmsf-dropdown-category {
+  color: #8b5cf6;
+}
+
+.nlmsf-dropdown-resources .nlmsf-dropdown-category {
+  color: #14b8a6;
+}
+
+.nlmsf-dropdown-involved .nlmsf-dropdown-category {
+  color: #ec4899;
+}
+
+.nlmsf-dropdown-link {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 0.25rem;
+  border-left: 2px solid transparent;
+}
+
+.nlmsf-dropdown-about .nlmsf-dropdown-link:hover {
+  color: #1e40af;
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+  padding-left: 0.5rem;
+}
+
+.nlmsf-dropdown-research .nlmsf-dropdown-link:hover {
+  color: #6b21a8;
+  background-color: #faf5ff;
+  border-left-color: #8b5cf6;
+  padding-left: 0.5rem;
+}
+
+.nlmsf-dropdown-resources .nlmsf-dropdown-link:hover {
+  color: #0f766e;
+  background-color: #f0fdfa;
+  border-left-color: #14b8a6;
+  padding-left: 0.5rem;
+}
+
+.nlmsf-dropdown-involved .nlmsf-dropdown-link:hover {
+  color: #9d174d;
+  background-color: #fdf2f8;
+  border-left-color: #ec4899;
+  padding-left: 0.5rem;
+}
+
+.nlmsf-primary-button {
+  background: linear-gradient(to right, #2b82ea, #6a3ea1);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(43, 130, 234, 0.2);
+}
+
+.nlmsf-primary-button:hover {
+  box-shadow: 0 4px 8px rgba(43, 130, 234, 0.3);
+  transform: translateY(-1px);
+}
+
+.nlmsf-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 200;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding: 6rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nlmsf-mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nlmsf-mobile-submenu li {
+  border-bottom: none !important;
+}
+
+.nlmsf-mobile-submenu li a {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-radius: 0.25rem;
+}
+
+.nlmsf-mobile-submenu li a:active {
+  background-color: #6a3ea1;
+  color: #ffffff;
+  border-radius: 0.25rem;
+}
+
+.nlmsf-mobile-featured {
+  margin-top: 1.5rem;
+}
+
+.nlmsf-mobile-featured h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6a3ea1;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  letter-spacing: 0.05em;
+}
+
+.nlmsf-mobile-featured-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nlmsf-mobile-featured-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+}
+
+.nlmsf-mobile-featured-item:active {
+  background-color: rgba(106, 62, 161, 0.1);
+  color: #6a3ea1;
+}
+
+.nlmsf-featured-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.nlmsf-featured-icon.blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.nlmsf-featured-icon.purple {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.nlmsf-featured-icon.green {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.nlmsf-featured-icon.amber {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.nlmsf-featured-icon i {
+  font-size: 0.75rem;
+}
+
+.nlmsf-mobile-donate {
+  background-color: #6a3ea1;
+  color: #ffffff !important;
+  border-radius: 9999px;
+  padding: 0.75rem 1rem !important;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.nlmsf-mobile-donate:active {
+  background-color: #5a2e91;
+  transform: translateY(1px);
+}
+
+.nlmsf-mobile-contact {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nlmsf-mobile-phone {
+  display: flex;
+  align-items: center;
+  color: #6a3ea1;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: rgba(106, 62, 161, 0.05);
+  padding: 1rem;
+  border-radius: 0.375rem;
+}
+
+.nlmsf-mobile-phone .nlmsf-phone-icon {
+  margin-right: 0.5rem;
+  color: #6a3ea1;
+}
+
+/* Close icon for mobile menu */
+.nlmsf-close-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}

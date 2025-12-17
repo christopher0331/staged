@@ -28,7 +28,7 @@ export function MainNav({ items }: MainNavProps) {
   const pathname = usePathname()
 
   return (
-    <div className="flex w-full items-center justify-between py-2">
+    <div className="flex w-full items-center justify-between py-4 bg-white z-50 relative border-b shadow-sm">
       {/* Mobile Navigation */}
       <div className="lg:hidden">
         <MobileNav items={items} />
@@ -36,13 +36,17 @@ export function MainNav({ items }: MainNavProps) {
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex lg:items-center lg:space-x-8">
-        <Link href="/" className="flex items-center space-x-2.5 mr-2">
-          <div className="flex items-center justify-center w-9 h-9 rounded-full bg-nlmsf-purple text-white">
-            <span className="text-base font-bold">N</span>
-          </div>
-          <div>
-            <span className="text-lg font-bold text-nlmsf-purple">NLMSF</span>
-            <p className="text-xs text-gray-500 -mt-0.5 hidden xl:block">National LeioMyoSarcoma Foundation</p>
+        <Link href="/" className="flex items-center mr-8">
+          <div className="w-auto h-20 relative overflow-hidden">
+            <Image 
+              src="/nlmsf-logo-2.png" 
+              alt="NLMSF Logo" 
+              width={240} 
+              height={240} 
+              className="object-contain h-full" 
+              priority
+              style={{ filter: 'drop-shadow(0px 2px 3px rgba(0,0,0,0.15))' }}
+            />
           </div>
         </Link>
 

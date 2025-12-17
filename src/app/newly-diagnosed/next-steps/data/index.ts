@@ -50,6 +50,11 @@ export const resourceLinks = {
       link: "#" // TODO: Add actual map link
     },
     {
+      title: "Care Team Questions",
+      description: "Essential questions to ask your sarcoma specialists",
+      link: "/newly-diagnosed/care-team-questions"
+    },
+    {
       title: "Questions for First Appointment",
       description: "Prepare for your first oncology appointment",
       link: "https://sarahcannon.com/blog/entry/12-questions-to-ask-at-your-first-oncology-appointment"

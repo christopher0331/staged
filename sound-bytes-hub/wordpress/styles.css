@@ -1,0 +1,557 @@
+/* 
+ * NLMSF Sarcoma Sound Bytes Hub Styles
+ * Following the standardized NLMSF design protocol
+ * Direct color values, gradient backgrounds, and responsive design
+ */
+
+/* ===== GENERAL STYLES ===== */
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    color: #6a3ea1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4338ca;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.05) 0%, rgba(67, 56, 202, 0.07) 100%);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 8s infinite ease-in-out;
+}
+
+.shape-purple {
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.3) 0%, rgba(126, 34, 206, 0.1) 70%);
+}
+
+.shape-blue {
+    background: radial-gradient(circle, rgba(67, 56, 202, 0.3) 0%, rgba(67, 56, 202, 0.1) 70%);
+}
+
+.shape-teal {
+    background: radial-gradient(circle, rgba(4, 120, 87, 0.3) 0%, rgba(4, 120, 87, 0.1) 70%);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6a3ea1;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    margin: 0 auto 2rem auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(106, 62, 161, 0.2);
+}
+
+.hero-badge i {
+    margin-right: 0.5rem;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+}
+
+.hero-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #6a3ea1, #4338ca);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+}
+
+.hero-description {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    color: #6b7280;
+}
+
+/* ===== CONTENT SECTION ===== */
+.main-content {
+    padding: 2rem 0;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+/* ===== SOUND BYTES HUB STYLES ===== */
+.sound-bytes-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 640px) {
+    .sound-bytes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .sound-bytes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sound-byte-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #6a3ea1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sound-byte-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sound-byte-date {
+    background-color: #f3f4f6;
+    color: #6a3ea1;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.sound-byte-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.sound-byte-preview {
+    margin-bottom: 1rem;
+    color: #4b5563;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    flex: 1;
+}
+
+.sound-byte-link {
+    display: inline-flex;
+    align-items: center;
+    color: #6a3ea1;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: color 0.2s ease;
+}
+
+.sound-byte-link:hover {
+    color: #4338ca;
+}
+
+.sound-byte-link i {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.sound-byte-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.sound-byte-filter-label {
+    font-weight: 600;
+    color: #374151;
+    margin-right: 0.5rem;
+}
+
+.sound-byte-filter-btn {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    color: #4b5563;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sound-byte-filter-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.sound-byte-filter-btn.active {
+    background-color: #6a3ea1;
+    border-color: #6a3ea1;
+    color: white;
+}
+
+.sound-byte-year {
+    margin-bottom: 2.5rem;
+}
+
+.sound-byte-year-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== INDIVIDUAL SOUND BYTE PAGE ===== */
+.sound-byte-content {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.sound-byte-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sound-byte-date-large {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #6a3ea1;
+    margin-bottom: 0.5rem;
+}
+
+.sound-byte-title-large {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+.sound-byte-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #6a3ea1, #4338ca);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 1.5px;
+}
+
+.sound-byte-body {
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.sound-byte-section {
+    margin-bottom: 2rem;
+}
+
+.sound-byte-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.sound-byte-highlight {
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #6a3ea1;
+}
+
+.sound-byte-highlight.blue {
+    border-color: #4338ca;
+}
+
+.sound-byte-highlight.teal {
+    border-color: #047857;
+}
+
+.sound-byte-highlight.amber {
+    border-color: #b45309;
+}
+
+.sound-byte-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.sound-byte-nav-btn {
+    display: flex;
+    align-items: center;
+    color: #6a3ea1;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.sound-byte-nav-btn:hover {
+    color: #4338ca;
+}
+
+.sound-byte-nav-btn i {
+    margin-right: 0.5rem;
+}
+
+.sound-byte-nav-btn.next i {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+.sound-byte-spacer {
+    text-align: center;
+    font-weight: 600;
+    color: #6a3ea1;
+    margin: 2rem 0;
+}
+
+/* ===== SIDEBAR STYLES ===== */
+.sidebar {
+    margin-bottom: 2rem;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.sidebar-nav {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 0.75rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background-color: #f3f4f6;
+    color: #6a3ea1;
+}
+
+.sidebar-link.active {
+    background-color: #f3f4f6;
+    color: #6a3ea1;
+    font-weight: 600;
+}
+
+.sidebar-link i {
+    margin-right: 0.75rem;
+    color: #6a3ea1;
+}
+
+.sidebar-cta {
+    background: linear-gradient(135deg, #6a3ea1, #4338ca);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.sidebar-cta h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-cta p {
+    margin-bottom: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sidebar-btn {
+    display: inline-block;
+    background-color: white;
+    color: #6a3ea1;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-recent {
+    margin-top: 2rem;
+}
+
+.recent-sound-bytes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-sound-byte {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.recent-sound-byte:last-child {
+    border-bottom: none;
+}
+
+.recent-sound-byte-link {
+    display: flex;
+    align-items: flex-start;
+    color: #4b5563;
+    transition: color 0.2s ease;
+}
+
+.recent-sound-byte-link:hover {
+    color: #6a3ea1;
+}
+
+.recent-sound-byte-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .sound-byte-title-large {
+        font-size: 1.75rem;
+    }
+    
+    .sound-byte-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .sound-byte-filter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

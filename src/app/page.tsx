@@ -15,18 +15,20 @@ import { MissionSection } from "./home/components/mission-section";
 import { FeaturedResources } from "./home/components/featured-resources";
 import { ImpactStories } from "./home/components/impact-stories";
 import { UpcomingEvents } from "./home/components/upcoming-events";
+import { ClinicalTrials } from "./home/components/clinical-trials";
+import { SupportHotline } from "./home/components/support-hotline";
 import { homeData } from "./home/data";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Updated with less purple dominance */}
+      {/* Hero Section */}
       <section className="relative py-20 text-white">
         <Image
-          src="/images/unity.png"
-          alt="Unity background"
+          src="/hero-image-nlmsf.jpg"
+          alt="NLMSF Hero Image"
           fill
-          className="object-cover object-[center_0%]"
+          className="object-cover object-[center_0%] z-0"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-indigo-800/60 to-purple-800/50"></div>
@@ -64,43 +66,11 @@ export default function HomePage() {
       <section className="bg-white py-12 border-b">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* For Patients */}
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-nlmsf-purple">For Patients & Caregivers</h2>
-              <div className="space-y-4">
-                <a href="/newly-diagnosed/what-is-lms" className="block p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-                  <h3 className="font-semibold text-nlmsf-purple">Understanding LMS</h3>
-                  <p className="text-sm text-gray-600 mt-1">Learn about diagnosis, treatment, and care options</p>
-                </a>
-                <a href="/support" className="block p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-                  <h3 className="font-semibold text-nlmsf-purple">Support Services</h3>
-                  <p className="text-sm text-gray-600 mt-1">Connect with our community and get help</p>
-                </a>
-                <a href="/newly-diagnosed/find-specialist" className="block p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-                  <h3 className="font-semibold text-nlmsf-purple">Find a Specialist</h3>
-                  <p className="text-sm text-gray-600 mt-1">Locate LMS experts near you</p>
-                </a>
-              </div>
-            </div>
+            {/* Clinical Trials */}
+            <ClinicalTrials />
 
-            {/* Emergency Support */}
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-nlmsf-purple">24/7 Support Hotline</h2>
-              <div className="space-y-4">
-                <div className="p-4 bg-gradient-to-r from-nlmsf-purple to-nlmsf-purple-dark rounded-lg text-white">
-                  <h3 className="font-semibold">Primary Contact</h3>
-                  <a href="tel:+13038083437" className="text-2xl font-bold block mt-2 hover:text-white/90">
-                    (303) 808-3437
-                  </a>
-                </div>
-                <div className="p-4 bg-purple-50 rounded-lg">
-                  <h3 className="font-semibold text-nlmsf-purple">Alternative Contact</h3>
-                  <a href="tel:+13037830924" className="text-2xl font-bold block mt-2 text-nlmsf-purple hover:text-nlmsf-purple-dark">
-                    (303) 783-0924
-                  </a>
-                </div>
-              </div>
-            </div>
+            {/* Support Hotline */}
+            <SupportHotline />
 
             {/* Upcoming Events */}
             <UpcomingEvents />

@@ -1,0 +1,389 @@
+<!-- Main Content Component for What is Leiomyosarcoma Page -->
+<div class="main-content">
+    <!-- Additional Resources & Community Section -->
+    <div class="content-section community-resources-section">
+        <div class="community-description">
+            <p>We're offering all the information we have about leiomyosarcoma on this page, but you can also join our communities and subscribe to our newsletter and bi-weekly snapshots (delivered the same way) to stay up to date and get immediate support outside of our webpage resources.</p>
+        </div>
+        
+        <div class="community-resources-grid">
+            <!-- Facebook Groups -->
+            <div class="community-resource-card facebook-groups">
+                <div class="resource-header">
+                    <div class="resource-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook Groups</h3>
+                </div>
+                
+                <div class="facebook-groups-list">
+                    <div class="facebook-group-item">
+                        <div class="group-info">
+                            <h4>NLMSF Group</h4>
+                        </div>
+                        <a href="https://www.facebook.com/groups/nlmsf" class="group-link" target="_blank">Join</a>
+                    </div>
+                    
+                    <div class="facebook-group-item">
+                        <div class="group-info">
+                            <h4>Stand Up to LMS</h4>
+                        </div>
+                        <a href="https://www.facebook.com/groups/standuptolms" class="group-link" target="_blank">Join</a>
+                    </div>
+                    
+                    <div class="facebook-group-item">
+                        <div class="group-info">
+                            <h4>Cancer Sucks - LMS</h4>
+                        </div>
+                        <a href="https://www.facebook.com/groups/cancersuckslms" class="group-link" target="_blank">Join</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="community-resource-card newsletter-signup">
+                <div class="resource-header">
+                    <div class="resource-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Newsletter & Snapshots</h3>
+                </div>
+                
+                <div class="newsletter-form">
+                    <form action="/api/send-email" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter-events" name="preferences" value="events" checked>
+                            <label for="newsletter-events">Events</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter-research" name="preferences" value="research" checked>
+                            <label for="newsletter-research">Research</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter-community" name="preferences" value="community" checked>
+                            <label for="newsletter-community">Community</label>
+                        </div>
+                        <button type="submit" class="newsletter-submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagnosis Section -->
+    <div id="diagnosis" class="content-section">
+        <h2 class="section-title blue">Diagnosis</h2>
+        
+        <div class="space-y">
+            <!-- Initial Assessment Section -->
+            <div id="initial-assessment" class="content-panel blue">
+                <div class="panel-header">
+                    <div class="icon-circle blue">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3>Initial Assessment</h3>
+                        <p>The first steps in diagnosing Leiomyosarcoma</p>
+                    </div>
+                </div>
+                
+                <p class="panel-text">
+                    If your doctor suspects you may have Leiomyosarcoma, they will likely perform a physical examination and order several tests. The diagnosis process typically involves:
+                </p>
+                
+                <ul class="bullet-list blue">
+                    <li>Physical examination to check for any visible or palpable abnormalities</li>
+                    <li>Review of your medical history and symptoms</li>
+                    <li>Various imaging tests to identify the location and extent of the tumor</li>
+                    <li>Biopsy to confirm the diagnosis</li>
+                </ul>
+            </div>
+            
+            <!-- Imaging Tests Section -->
+            <div id="imaging-tests" class="content-panel indigo">
+                <div class="panel-header">
+                    <div class="icon-circle indigo">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <div>
+                        <h3>Imaging Tests</h3>
+                        <p>Common imaging tests used in LMS diagnosis</p>
+                    </div>
+                </div>
+                
+                <div class="imaging-tests-grid">
+                    <div class="test-card blue">
+                        <h4>X-ray</h4>
+                        <p>Examination of the possible area of cancer to look for tumors or to see if there is any spread beyond the cancer's origin.</p>
+                    </div>
+                    
+                    <div class="test-card teal">
+                        <h4>CT Scan</h4>
+                        <p>A painless, non-invasive way to see inside the body using X-ray imaging. Creates cross-sectional images of soft tissue, organs, blood vessels, and bone that can be combined into 3-D pictures.</p>
+                    </div>
+                    
+                    <div class="test-card amber">
+                        <h4>MRI Scan</h4>
+                        <p>Captures detailed images of the inside of the body using magnetic fields and radio waves.</p>
+                    </div>
+                    
+                    <div class="test-card indigo">
+                        <h4>PET/CT Scan</h4>
+                        <p>Combines CT imaging with a radioactive glucose solution to track cancer cells, which absorb glucose more quickly than healthy cells.</p>
+                    </div>
+                    
+                    <div class="test-card rose">
+                        <h4>Ultrasound</h4>
+                        <p>Uses sound waves to create pictures of organs, veins, and arteries.</p>
+                    </div>
+                    
+                    <div class="test-card emerald">
+                        <h4>Angiogram</h4>
+                        <p>Uses x-ray and contrast dye injected through a catheter to check blood vessels and blood flow for blockages or leakage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Biopsy Section -->
+            <div id="biopsy" class="content-panel teal">
+                <div class="panel-header">
+                    <div class="icon-circle teal">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div>
+                        <h3>Biopsy</h3>
+                        <p>The definitive test for LMS diagnosis</p>
+                    </div>
+                </div>
+                
+                <p class="panel-text">
+                    A biopsy is necessary to confirm a diagnosis of Leiomyosarcoma. During this procedure:
+                </p>
+                
+                <ul class="bullet-list teal">
+                    <li>A sample of tissue is removed from the suspected tumor</li>
+                    <li>The sample is examined under a microscope by a pathologist</li>
+                    <li>Special tests may be performed on the tissue to determine the exact type of tumor</li>
+                    <li>Results help determine the grade and stage of the cancer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Treatment Section -->
+    <div id="treatment" class="content-section">
+        <h2 class="section-title indigo">Treatment</h2>
+        
+        <div class="space-y">
+            <!-- Treatment Overview Section -->
+            <div id="treatment-overview" class="content-panel indigo">
+                <div class="panel-header">
+                    <div class="icon-circle indigo">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div>
+                        <h3>Treatment Overview</h3>
+                        <p>Understanding your treatment options for Leiomyosarcoma</p>
+                    </div>
+                </div>
+                
+                <p class="panel-text">
+                    Treatment for Leiomyosarcoma typically involves a combination of approaches. Your specific treatment plan will depend on several factors, including:
+                </p>
+                
+                <ul class="bullet-list indigo">
+                    <li>The size and location of the tumor</li>
+                    <li>Whether the cancer has spread</li>
+                    <li>Your overall health and preferences</li>
+                    <li>The grade and stage of the cancer</li>
+                </ul>
+            </div>
+            
+            <!-- Treatment Options Section -->
+            <div id="treatment-options">
+                <h3 class="subsection-title">Treatment Options</h3>
+                
+                <div class="treatment-options-grid">
+                    <div class="treatment-card blue">
+                        <div class="treatment-header">
+                            <div class="treatment-icon blue">
+                                <i class="fas fa-syringe"></i>
+                            </div>
+                            <h4>Surgery</h4>
+                        </div>
+                        <p>Tumor resection with wide margins to enhance potential for non-recurrence.</p>
+                    </div>
+                    
+                    <div class="treatment-card amber">
+                        <div class="treatment-header">
+                            <div class="treatment-icon amber">
+                                <i class="fas fa-radiation"></i>
+                            </div>
+                            <h4>Radiation Therapy</h4>
+                        </div>
+                        <p>Used to destroy cancer cells while preserving surrounding organ function.</p>
+                    </div>
+                    
+                    <div class="treatment-card emerald">
+                        <div class="treatment-header">
+                            <div class="treatment-icon emerald">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <h4>Chemotherapy</h4>
+                        </div>
+                        <p>Various drug combinations including gemcitabine-docetaxel and trabectedin.</p>
+                    </div>
+                    
+                    <div class="treatment-card rose">
+                        <div class="treatment-header">
+                            <div class="treatment-icon rose">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4>Targeted Drug Therapy</h4>
+                        </div>
+                        <p>Directed at specific molecular features, often including Pazopanib.</p>
+                    </div>
+                    
+                    <div class="treatment-card purple">
+                        <div class="treatment-header">
+                            <div class="treatment-icon purple">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Immunotherapy</h4>
+                        </div>
+                        <p>Treatment that uses the body's immune system to help fight cancer.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clinical Trials Section -->
+            <div id="clinical-trials" class="content-panel purple">
+                <div class="panel-header">
+                    <div class="icon-circle purple">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <div>
+                        <h3>Clinical Trials</h3>
+                        <p>Exploring additional treatment options</p>
+                    </div>
+                </div>
+                
+                <p class="panel-text">
+                    Clinical trials may provide access to new treatments that are not yet widely available. These trials:
+                </p>
+                
+                <ul class="bullet-list purple">
+                    <li>Test new drugs, combinations of drugs, or other treatments</li>
+                    <li>Help researchers understand which approaches work better for different patients</li>
+                    <li>May provide treatment options when standard treatments have not worked</li>
+                    <li>Contribute to the advancement of cancer treatment for future patients</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Resources Section -->
+    <div id="resources" class="content-section">
+        <h2 class="section-title teal">Resources</h2>
+        
+        <div class="space-y">
+            <!-- LMS Types Section -->
+            <div id="lms-types" class="content-panel teal">
+                <div class="panel-header">
+                    <div class="icon-circle teal">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Types of Leiomyosarcoma</h3>
+                        <p>Learn about different types of LMS and where they can occur</p>
+                    </div>
+                </div>
+                
+                <p class="panel-text">
+                    Leiomyosarcoma can develop in different parts of the body. Click on each type to learn more about its specific characteristics, symptoms, and treatment approaches.
+                </p>
+                
+                <div class="lms-types-grid">
+                    <a href="https://www.dovemed.com/diseases-conditions/leiomyosarcoma-blood-vessel/" target="_blank" rel="noopener noreferrer" class="lms-type-card blue">
+                        <span>Blood Vessel LMS</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    
+                    <a href="https://www.hindawi.com/journals/sarcoma/2012/636849/" target="_blank" rel="noopener noreferrer" class="lms-type-card teal">
+                        <span>Bone LMS</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    
+                    <a href="https://www.dovemed.com/diseases-conditions/leiomyosarcoma-breast/" target="_blank" rel="noopener noreferrer" class="lms-type-card amber">
+                        <span>Breast LMS</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    
+                    <a href="https://www.dovemed.com/diseases-conditions/cardiac-leiomyosarcoma/" target="_blank" rel="noopener noreferrer" class="lms-type-card indigo">
+                        <span>Cardiac LMS</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    
+                    <a href="https://www.dovemed.com/diseases-conditions/primary-cutaneous-leiomyosarcoma/" target="_blank" rel="noopener noreferrer" class="lms-type-card rose">
+                        <span>Cutaneous LMS</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    
+                    <a href="https://leiomyosarcoma.info" target="_blank" rel="noopener noreferrer" class="lms-type-card emerald">
+                        <span>Uterine LMS</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="research-box">
+                    <div class="research-header">
+                        <div class="research-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Research Resources</h4>
+                    </div>
+                    <p>
+                        For detailed information about genomic research in uterine sarcomas, visit:
+                    </p>
+                    <a href="https://clincancerres.aacrjournals.org/content/26/14/3881" target="_blank" rel="noopener noreferrer" class="research-link">
+                        Genomic landscape of uterine sarcomas (07/2020 – M. Hensley, MD)
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Medical Terms Dictionary Section -->
+            <div id="medical-terms" class="content-panel indigo">
+                <div class="panel-header">
+                    <div class="icon-circle indigo">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div>
+                        <h3>Medical Terms Dictionary</h3>
+                        <p>Understanding medical terminology</p>
+                    </div>
+                </div>
+                
+                <p class="panel-text">
+                    The National Cancer Institute (NCI) offers a guide to over 8,000 cancer terms.
+                    The NCI Dictionary is an easy-to-use resource that helps patients and their
+                    families better comprehend medical articles that contain unfamiliar terminology.
+                </p>
+                
+                <div class="dictionary-button-container">
+                    <a href="https://www.cancer.gov/publications/dictionaries/cancer-terms" target="_blank" rel="noopener noreferrer" class="dictionary-button">
+                        <i class="fas fa-search"></i>
+                        Visit NCI Dictionary of Cancer Terms
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

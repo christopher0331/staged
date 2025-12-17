@@ -1,0 +1,45 @@
+/* NLMSF Logo - Enlarged Version */
+
+/* Logo container - increased height to accommodate larger logo */
+.nlmsf-logo {
+  display: flex;
+  align-items: center;
+  height: 120px; /* Increased from 80px */
+  overflow: visible;
+}
+
+/* Logo image - significantly enlarged */
+.nlmsf-logo-img {
+  width: 400px; /* Much larger than original 260px */
+  height: auto;
+  max-height: 100px; /* More than doubled from 48px */
+  object-fit: contain;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15)); /* Slightly enhanced shadow */
+}
+
+/* Adjust navbar to accommodate larger logo */
+.nlmsf-navbar {
+  padding: 1rem 0;
+  min-height: 120px; /* Increased to fit larger logo */
+}
+
+/* Responsive adjustments for desktop */
+@media (min-width: 1024px) {
+  .nlmsf-logo-img {
+    width: 500px; /* Substantially larger for desktop */
+    max-height: 140px; /* More than doubled from 60px */
+  }
+  
+  .nlmsf-navbar {
+    padding: 1.5rem 0; /* More padding for the larger logo */
+    min-height: 160px; /* Increased for larger logo */
+  }
+}
+
+/* For extra large screens */
+@media (min-width: 1440px) {
+  .nlmsf-logo-img {
+    width: 600px; /* Even larger for wide screens */
+    max-height: 160px;
+  }
+}

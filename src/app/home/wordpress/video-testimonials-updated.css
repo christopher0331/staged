@@ -1,0 +1,485 @@
+/**
+ * NLMSF Video Testimonials Styles
+ * CSS for WordPress-compatible patient video testimonials carousel
+ */
+
+/* Video Testimonials Section */
+.nlmsf-video-testimonials-a {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 50%, #eff6ff 100%);
+  overflow: hidden;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.nlmsf-video-testimonials-a::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
+  top: -100px;
+  left: -100px;
+  border-radius: 50%;
+}
+
+.nlmsf-video-testimonials-a::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(147, 51, 234, 0) 70%);
+  bottom: -200px;
+  right: -200px;
+  border-radius: 50%;
+}
+
+.nlmsf-container-a {
+  max-width: 1200px; /* Reduced from 1600px to make video less large */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+.nlmsf-video-header-a {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nlmsf-video-badge-a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nlmsf-video-badge-a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.4);
+}
+
+.nlmsf-video-title-a {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
+  background: linear-gradient(to right, #4338ca, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.nlmsf-video-description-a {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Carousel Controls */
+.nlmsf-carousel-controls-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.nlmsf-carousel-prev-a,
+.nlmsf-carousel-next-a {
+  background: white;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.nlmsf-carousel-prev-a:hover,
+.nlmsf-carousel-next-a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+  background: #f9fafb;
+}
+
+.nlmsf-carousel-prev-a i,
+.nlmsf-carousel-next-a i {
+  color: #4338ca;
+  font-size: 1rem;
+}
+
+.nlmsf-carousel-indicators-a {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nlmsf-indicator-a {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nlmsf-indicator-a.active {
+  background: #4338ca;
+  transform: scale(1.2);
+}
+
+/* Carousel Slides */
+.nlmsf-carousel-slides-a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nlmsf-video-slide-a {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.nlmsf-video-slide-a.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Video Card */
+.nlmsf-video-card-a {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  max-height: 500px;
+}
+
+.nlmsf-video-wrapper-a {
+  flex: 1;
+  position: relative;
+  min-width: 0; /* Prevents flex item from overflowing */
+  overflow: hidden;
+}
+
+/* Adjust aspect ratio to make video slightly less tall */
+.nlmsf-video-wrapper-a::before {
+  content: '';
+  display: block;
+  padding-bottom: 60%; /* Even shorter aspect ratio for wider appearance */
+}
+
+.nlmsf-video-wrapper-a iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.nlmsf-video-info-a {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.nlmsf-video-info-a h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.nlmsf-video-roles-a {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.nlmsf-role-badge-a {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.nlmsf-role-badge-a.medical {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.nlmsf-role-badge-a.survivor {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.nlmsf-role-badge-a.board {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+.nlmsf-role-badge-a.creative {
+  background-color: #ffedd5;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.nlmsf-role-badge-a.advisor {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+.nlmsf-video-quote-a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid #e5e7eb;
+}
+
+.nlmsf-video-quote-a::before {
+  content: "";
+  font-size: 1.5rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 0.25rem;
+  color: #6366f1;
+  opacity: 0.5;
+}
+
+.nlmsf-video-link-a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(to right, #4338ca, #6366f1);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin-top: auto;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+
+.nlmsf-video-link-a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+}
+
+.nlmsf-video-link-a i {
+  font-size: 0.875rem;
+}
+
+/* Footer Section */
+.nlmsf-video-footer-a {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.nlmsf-video-footer-a p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.nlmsf-view-all-button-a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #4338ca;
+  text-decoration: none;
+  border: 2px solid #4338ca;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-view-all-button-a:hover {
+  background: #f5f3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+}
+
+.nlmsf-view-all-button-a i {
+  font-size: 0.875rem;
+  transition: transform 0.2s ease;
+}
+
+.nlmsf-view-all-button-a:hover i {
+  transform: translateX(3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .nlmsf-video-title-a {
+    font-size: 2.25rem;
+  }
+  
+  .nlmsf-video-card-a {
+    flex-direction: column;
+    max-height: none;
+  }
+  
+  .nlmsf-video-wrapper-a,
+  .nlmsf-video-info-a {
+    width: 100%;
+  }
+  
+  .nlmsf-video-wrapper-a::before {
+    padding-bottom: 56.25%; /* Standard 16:9 ratio for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .nlmsf-container-a {
+    padding: 0 1rem;
+  }
+  
+  .nlmsf-video-testimonials-a {
+    padding: 3rem 0;
+  }
+  
+  .nlmsf-video-header-a {
+    margin-bottom: 2rem;
+  }
+  
+  .nlmsf-video-title-a {
+    font-size: 2rem;
+  }
+  
+  .nlmsf-video-description-a {
+    font-size: 1rem;
+  }
+  
+  .nlmsf-video-slide-a {
+    display: block;
+  }
+  
+  .nlmsf-video-card-a {
+    max-height: none;
+    flex-direction: column;
+  }
+  
+  .nlmsf-video-wrapper-a,
+  .nlmsf-video-info-a {
+    width: 100%;
+  }
+  
+  .nlmsf-video-info-a {
+    padding: 1.5rem;
+  }
+  
+  .nlmsf-video-info-a h3 {
+    font-size: 1.25rem;
+  }
+  
+  .nlmsf-video-roles-a {
+    margin-bottom: 0.75rem;
+  }
+  
+  .nlmsf-video-quote-a {
+    font-size: 0.938rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .nlmsf-video-link-a {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .nlmsf-video-footer-a {
+    margin-top: 2rem;
+  }
+  
+  .nlmsf-view-all-button-a {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nlmsf-video-testimonials-a {
+    padding: 2rem 0;
+  }
+  
+  .nlmsf-video-title-a {
+    font-size: 1.75rem;
+  }
+  
+  .nlmsf-carousel-prev-a,
+  .nlmsf-carousel-next-a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .nlmsf-video-info-a {
+    padding: 1.25rem;
+  }
+  
+  .nlmsf-video-info-a h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .nlmsf-role-badge-a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.688rem;
+  }
+  
+  .nlmsf-video-quote-a {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+  }
+}
+
+/* Animations */
+@keyframes card-shadow-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.nlmsf-video-slide-a.active .nlmsf-video-card-a {
+  animation: card-shadow-pulse 4s infinite ease-in-out;
+}

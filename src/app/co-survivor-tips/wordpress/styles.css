@@ -1,0 +1,1676 @@
+/* Co-Survivor Tips Page Styles */
+
+/* NLMSF Themed Hero (additions) */
+.nlmsf-hero { background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%); padding: 2rem 1.25rem; border-radius: 1rem; border: 1px solid #e5e7eb; box-shadow: 0 10px 25px rgba(0,0,0,0.06); text-align: center; margin-bottom: 1.5rem; }
+.nlmsf-hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: #ffffff; border: 1px solid #e5e7eb; color: #374151; padding: .375rem .625rem; border-radius: 999px; font-size: .85rem; }
+.nlmsf-hero-icon { font-size: 1rem; }
+.nlmsf-hero-title { font-size: clamp(1.8rem, 2.6vw, 2.6rem); margin: .85rem 0 .25rem; background: linear-gradient(90deg, #7e22ce, #4338ca); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; font-weight: 800; letter-spacing: -0.02em; }
+.nlmsf-hero-subtitle { color: #1f2937; max-width: 70ch; line-height: 1.6; font-size: 1rem; margin-left: auto; margin-right: auto; }
+.nlmsf-hero-divider { height: 2px; background: linear-gradient(90deg, #7e22ce, #4338ca, #059669); width: 160px; margin: 1rem auto; border-radius: 2px; opacity: .7; }
+.nlmsf-hero-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; justify-content: center; }
+.tag { display: inline-block; padding: .25rem .6rem; border-radius: 999px; font-size: .8rem; font-weight: 700; color: #111827; background: #fff; border: 1px solid #e5e7eb; }
+.tag-purple { background: linear-gradient(180deg, #ede9fe 0%, #e9d5ff 100%); border-color: #c4b5fd; }
+.tag-blue { background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 100%); border-color: #93c5fd; }
+.tag-teal { background: linear-gradient(180deg, #d1fae5 0%, #a7f3d0 100%); border-color: #6ee7b7; }
+
+/* Advocacy section */
+.advocacy-list { padding-left: 1.1rem; color: #1f2937; line-height: 1.6; }
+.advocacy-list li { margin-bottom: .5rem; }
+.advocacy-note { margin-top: .75rem; background: #f9fafb; border: 1px solid #e5e7eb; color: #374151; padding: .75rem; border-radius: .5rem; }
+
+/* Content cards aligned to What-is-LMS */
+.content-card { border-radius: .75rem; padding: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.08); border: 1px solid; margin-bottom: 1.25rem; }
+.content-card.blue { background: linear-gradient(to right, #eff6ff, #dbeafe); border-color: #bfdbfe; }
+.content-card.indigo { background: linear-gradient(to right, #eef2ff, #e0e7ff); border-color: #c7d2fe; }
+.content-card.teal { background: linear-gradient(to right, #f0fdfa, #ccfbf1); border-color: #99f6e4; }
+.content-card.purple { background: linear-gradient(to right, #faf5ff, #f3e8ff); border-color: #e9d5ff; }
+
+/* Grid for advocacy cards */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+
+/* Sidebar: remodel to clean page-nav style */
+.nlmsf-sidebar { position: sticky; top: 2rem; background-color: #ffffff; border-radius: .75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); padding: 1.25rem 1rem; border: 1px solid #e5e7eb; max-width: 260px; }
+.sidebar-heading { font-size: 1rem; font-weight: 800; color: #111827; margin: 0 0 .75rem; }
+.sidebar-list { list-style: none; padding: 0; margin: 0; }
+.sidebar-link { display: block; text-decoration: none; color: #4b5563; padding: .5rem .5rem .5rem 1rem; border-left: 3px solid transparent; border-radius: 0; transition: color .15s ease, border-color .15s ease, background-color .15s ease; }
+.sidebar-link:hover { color: #2563eb; background-color: #f8fafc; border-left-color: #2563eb; }
+
+/* Colored indicators per section */
+a.sidebar-link[href="#co-survivor-intro"] { border-left-color: #3b82f6; }
+a.sidebar-link[href="#caregiver-advocacy"] { border-left-color: #a855f7; }
+a.sidebar-link[href="#co-survivor-tips"] { border-left-color: #6366f1; }
+a.sidebar-link[href="#additional-resources"] { border-left-color: #14b8a6; }
+
+@media (max-width: 1024px) {
+  .nlmsf-sidebar { position: static; max-width: none; }
+}
+/* Hero Section Styles */
+.hero {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url('https://nlmsf.org/wp-content/uploads/2021/01/hero-pattern.png');
+    background-size: cover;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--purple-500);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.badge i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.feature-tag {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-tag.purple {
+    background-color: #faf5ff;
+    color: #7e22ce;
+    border: 1px solid #e9d5ff;
+}
+
+.feature-tag.blue {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+}
+
+.feature-tag.teal {
+    background-color: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+}
+
+.feature-tag.amber {
+    background-color: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+
+.feature-tag i {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+.feature-tag span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #455a64;
+}
+
+/* Content Section Styles */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 1rem 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-section {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #a855f7;
+    border-radius: 3px;
+}
+
+.section-header p {
+    color: #5a6a7e;
+    font-size: 1.1rem;
+}
+
+.content-panel {
+    background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+}
+
+.content-panel.blue {
+    border-left: 4px solid #2563eb;
+}
+
+.content-panel.green {
+    border-left: 4px solid #059669;
+}
+
+.content-panel.purple {
+    border-left: 4px solid #9333ea;
+}
+
+.content-panel.teal {
+    border-left: 4px solid #0d9488;
+}
+
+.content-panel.amber {
+    border-left: 4px solid #d97706;
+}
+
+.content-panel.rose {
+    border-left: 4px solid #e11d48;
+}
+
+.content-panel.indigo {
+    border-left: 4px solid #4f46e5;
+}
+
+.content-panel.special-purple {
+    background-image: linear-gradient(135deg, #a855f7, #7e22ce);
+    color: white;
+}
+
+.content-panel.special-blue {
+    background-image: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.content-panel.special-teal {
+    background-image: linear-gradient(135deg, #14b8a6, #0f766e);
+    color: white;
+}
+
+.content-panel.special-amber {
+    background-image: linear-gradient(135deg, #f59e0b, #b45309);
+    color: white;
+}
+
+.content-panel h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.content-panel.special h3 {
+    color: white;
+}
+
+/* Tip Cards Styles */
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.tip-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border: 1px solid #e5e7eb;
+}
+
+.tip-card.purple {
+    border-top: 3px solid #a855f7;
+}
+
+.tip-card.blue {
+    border-top: 3px solid #3b82f6;
+}
+
+.tip-card.teal {
+    border-top: 3px solid #14b8a6;
+}
+
+.tip-card.amber {
+    border-top: 3px solid #f59e0b;
+}
+
+.tip-card.rose {
+    border-top: 3px solid #f43f5e;
+}
+
+.tip-card.emerald {
+    border-top: 3px solid #10b981;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.08);
+}
+
+.tip-image {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tip-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.tip-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.tip-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.tip-card p {
+    color: #5a6a7e;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tip-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #a855f7;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.tip-button:hover {
+    background-color: #7e22ce;
+    transform: translateY(-2px);
+}
+
+.tip-button.blue {
+    background-color: #3b82f6;
+}
+
+.tip-button.blue:hover {
+    background-color: #1d4ed8;
+}
+
+.tip-button.teal {
+    background-color: #14b8a6;
+}
+
+.tip-button.teal:hover {
+    background-color: #0f766e;
+}
+
+.tip-button.amber {
+    background-color: #f59e0b;
+}
+
+.tip-button.amber:hover {
+    background-color: #b45309;
+}
+
+.tip-button.rose {
+    background-color: #f43f5e;
+}
+
+.tip-button.rose:hover {
+    background-color: #be123c;
+}
+
+.tip-button.emerald {
+    background-color: #10b981;
+}
+
+.tip-button.emerald:hover {
+    background-color: #047857;
+}
+
+.tip-button i {
+    font-size: 0.9rem;
+}
+
+/* Resource Cards Styles */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border: 1px solid #e5e7eb;
+}
+
+.resource-card.purple {
+    border-top: 3px solid #a855f7;
+}
+
+.resource-card.blue {
+    border-top: 3px solid #3b82f6;
+}
+
+.resource-card.teal {
+    border-top: 3px solid #14b8a6;
+}
+
+.resource-card.amber {
+    border-top: 3px solid #f59e0b;
+}
+
+.resource-card.rose {
+    border-top: 3px solid #f43f5e;
+}
+
+.resource-card.emerald {
+    border-top: 3px solid #10b981;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.08);
+}
+
+.resource-image {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.resource-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.resource-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.resource-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.resource-card p {
+    color: #5a6a7e;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.resource-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #a855f7;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.resource-button:hover {
+    background-color: #7e22ce;
+    transform: translateY(-2px);
+}
+
+.resource-button.blue {
+    background-color: #3b82f6;
+}
+
+.resource-button.blue:hover {
+    background-color: #1d4ed8;
+}
+
+.resource-button.teal {
+    background-color: #14b8a6;
+}
+
+.resource-button.teal:hover {
+    background-color: #0f766e;
+}
+
+.resource-button.amber {
+    background-color: #f59e0b;
+}
+
+.resource-button.amber:hover {
+    background-color: #b45309;
+}
+
+.resource-button.rose {
+    background-color: #f43f5e;
+}
+
+.resource-button.rose:hover {
+    background-color: #be123c;
+}
+
+.resource-button.emerald {
+    background-color: #10b981;
+}
+
+.resource-button.emerald:hover {
+    background-color: #047857;
+}
+
+.resource-button i {
+    font-size: 0.9rem;
+}
+
+/* Support Resources Styles */
+.support-resources {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.support-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: .9rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.support-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.support-icon.purple {
+    color: #a855f7;
+    background-color: #faf5ff;
+}
+
+.support-icon.blue {
+    color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+.support-icon.teal {
+    color: #14b8a6;
+    background-color: #f0fdfa;
+}
+
+.support-icon.amber {
+    color: #f59e0b;
+    background-color: #fffbeb;
+}
+
+.support-icon.emerald {
+    color: #10b981;
+    background-color: #ecfdf5;
+}
+
+.support-icon.rose {
+    color: #f43f5e;
+    background-color: #fff1f2;
+}
+
+.support-content {
+    flex-grow: 1;
+}
+
+.support-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+}
+
+.support-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.support-content p {
+    margin-bottom: 1rem;
+    color: #5a6a7e;
+    line-height: 1.6;
+}
+
+.resource-link-wrapper {
+    margin-top: 1rem;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.resource-link:hover {
+    color: #7e22ce;
+    text-decoration: underline;
+}
+
+.resource-link i {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Resource Highlight Styles */
+.resource-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.highlight-image {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.highlight-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.highlight-content {
+    flex-grow: 1;
+}
+
+.highlight-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+}
+
+.highlight-content p {
+    margin-bottom: 1rem;
+    color: #5a6a7e;
+    line-height: 1.6;
+}
+
+/* Denver-specific CTA Styles */
+.denver-cta {
+    margin-top: 2rem;
+}
+
+.denver-cta .content-panel {
+    text-align: center;
+    padding: 2.5rem;
+    background-image: linear-gradient(135deg, var(--purple-500), var(--indigo-600));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.denver-cta .content-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url('https://nlmsf.org/wp-content/uploads/2021/01/denver-skyline.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.denver-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.denver-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: white;
+    color: var(--purple-700);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    background-color: var(--purple-50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.blue {
+    background-color: white;
+    color: var(--blue-700);
+}
+
+.cta-button.blue:hover {
+    background-color: var(--blue-50);
+}
+
+.cta-button.teal {
+    background-color: white;
+    color: var(--teal-700);
+}
+
+.cta-button.teal:hover {
+    background-color: var(--teal-50);
+}
+
+.denver-cta.blue .content-panel {
+    background-image: linear-gradient(135deg, var(--blue-500), var(--indigo-600));
+}
+
+.denver-cta.teal .content-panel {
+    background-image: linear-gradient(135deg, var(--teal-500), var(--blue-600));
+}
+
+.denver-cta.amber .content-panel {
+    background-image: linear-gradient(135deg, var(--amber-500), var(--rose-600));
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.sidebar-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #a855f7;
+    border-radius: 3px;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #455a64;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-link:hover {
+    background-color: #faf5ff;
+    color: #a855f7;
+}
+
+.sidebar-link.blue:hover {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+.sidebar-link.teal:hover {
+    background-color: #f0fdfa;
+    color: #14b8a6;
+}
+
+.sidebar-link.amber:hover {
+    background-color: #fffbeb;
+    color: #f59e0b;
+}
+
+.sidebar-link i {
+    font-size: 1rem;
+    color: #a855f7;
+    width: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-link:hover i {
+    transform: translateX(3px);
+}
+
+.sidebar-link.blue i {
+    color: #3b82f6;
+}
+
+.sidebar-link.teal i {
+    color: #14b8a6;
+}
+
+.sidebar-link.amber i {
+    color: #f59e0b;
+}
+
+.sidebar-link.denver-link {
+    background-color: #faf5ff;
+    border-left: 3px solid #a855f7;
+}
+
+.sidebar-link.denver-link.blue {
+    background-color: #eff6ff;
+    border-left: 3px solid #3b82f6;
+}
+
+.sidebar-link.denver-link.teal {
+    background-color: #f0fdfa;
+    border-left: 3px solid #14b8a6;
+}
+
+.sidebar-link.denver-link.amber {
+    background-color: #fffbeb;
+    border-left: 3px solid #f59e0b;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.sidebar-subtitle {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.quick-help {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.help-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.help-item i {
+    font-size: 1.1rem;
+    color: #a855f7;
+    width: 20px;
+    text-align: center;
+}
+
+.help-item.blue i {
+    color: #3b82f6;
+}
+
+.help-item.teal i {
+    color: #14b8a6;
+}
+
+.help-item.amber i {
+    color: #f59e0b;
+}
+
+.help-item.emerald i {
+    color: #10b981;
+}
+
+.help-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.help-details strong {
+    font-size: 0.9rem;
+    color: #455a64;
+}
+
+.help-details a {
+    color: #a855f7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.help-details a:hover {
+    color: #7e22ce;
+    text-decoration: underline;
+}
+
+.help-item.blue .help-details a {
+    color: #3b82f6;
+}
+
+.help-item.blue .help-details a:hover {
+    color: #1d4ed8;
+}
+
+.help-item.teal .help-details a {
+    color: #14b8a6;
+}
+
+.help-item.teal .help-details a:hover {
+    color: #0f766e;
+}
+
+.help-item.amber .help-details a {
+    color: #f59e0b;
+}
+
+.help-item.amber .help-details a:hover {
+    color: #b45309;
+}
+
+.featured-resource {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid #a855f7;
+    transition: all 0.3s ease;
+}
+
+.featured-resource:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.featured-resource.blue {
+    border-top: 3px solid #3b82f6;
+}
+
+.featured-resource.teal {
+    border-top: 3px solid #14b8a6;
+}
+
+.featured-resource.amber {
+    border-top: 3px solid #f59e0b;
+}
+
+.featured-image {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.featured-resource h4 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.featured-resource p {
+    color: #5a6a7e;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.podcast-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.podcast-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.podcast-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.podcast-details strong {
+    font-size: 0.9rem;
+    color: #455a64;
+    margin-bottom: 0.25rem;
+}
+
+.podcast-details a {
+    color: #a855f7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.podcast-details a:hover {
+    color: #7e22ce;
+    text-decoration: underline;
+}
+
+.podcast-item.blue .podcast-details a {
+    color: #3b82f6;
+}
+
+.podcast-item.blue .podcast-details a:hover {
+    color: #1d4ed8;
+}
+
+.podcast-item.teal .podcast-details a {
+    color: #14b8a6;
+}
+
+.podcast-item.teal .podcast-details a:hover {
+    color: #0f766e;
+}
+
+.podcast-item.amber .podcast-details a {
+    color: #f59e0b;
+}
+
+.podcast-item.amber .podcast-details a:hover {
+    color: #b45309;
+}
+
+.denver-support {
+    background-color: #faf5ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid #a855f7;
+}
+
+.denver-support::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background-image: url('https://nlmsf.org/wp-content/uploads/2021/01/denver-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.denver-support h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #7e22ce;
+    position: relative;
+    z-index: 1;
+}
+
+.denver-support p {
+    margin-bottom: 1rem;
+    color: #7e22ce;
+    position: relative;
+    z-index: 1;
+}
+
+.denver-support .cta-button {
+    background-color: #a855f7;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.denver-support .cta-button:hover {
+    background-color: #7e22ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.denver-support.blue {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+}
+
+.denver-support.blue h4,
+.denver-support.blue p {
+    color: #1d4ed8;
+}
+
+.denver-support.blue .cta-button {
+    background-color: #3b82f6;
+}
+
+.denver-support.blue .cta-button:hover {
+    background-color: #1d4ed8;
+}
+
+.denver-support.teal {
+    background-color: #f0fdfa;
+    border-left: 4px solid #14b8a6;
+}
+
+.denver-support.teal h4,
+.denver-support.teal p {
+    color: #0f766e;
+}
+
+.denver-support.teal .cta-button {
+    background-color: #14b8a6;
+}
+
+.denver-support.teal .cta-button:hover {
+    background-color: #0f766e;
+}
+
+.denver-support .cta-button:hover {
+    background-color: #7e22ce;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.contact-item i {
+    font-size: 1.1rem;
+    color: #a855f7;
+    width: 20px;
+    text-align: center;
+    margin-top: 0.25rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-item:hover i {
+    transform: translateX(3px);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details strong {
+    font-size: 0.9rem;
+    color: #455a64;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details a {
+    color: #a855f7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+    color: #7e22ce;
+    text-decoration: underline;
+}
+
+.contact-item.blue i {
+    color: #3b82f6;
+}
+
+.contact-item.blue .contact-details a {
+    color: #3b82f6;
+}
+
+.contact-item.blue .contact-details a:hover {
+    color: #1d4ed8;
+}
+
+.contact-item.teal i {
+    color: #14b8a6;
+}
+
+.contact-item.teal .contact-details a {
+    color: #14b8a6;
+}
+
+.contact-item.teal .contact-details a:hover {
+    color: #0f766e;
+}
+
+.contact-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #5a6a7e;
+}
+
+.donate-cta {
+    text-align: center;
+}
+
+.donate-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.donate-link:hover {
+    transform: scale(1.05);
+}
+
+.donate-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 0.75rem;
+}
+
+.donate-text {
+    display: block;
+    color: #a855f7;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.donate-link:hover .donate-text {
+    color: #7e22ce;
+}
+
+.donate-link.blue .donate-text {
+    color: #3b82f6;
+}
+
+.donate-link.blue:hover .donate-text {
+    color: #1d4ed8;
+}
+
+.donate-link.teal .donate-text {
+    color: #14b8a6;
+}
+
+.donate-link.teal:hover .donate-text {
+    color: #0f766e;
+}
+
+.donate-cta p {
+    color: #5a6a7e;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #a855f7;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #7e22ce;
+    transform: translateY(-3px);
+}
+
+.social-link.blue {
+    background-color: #3b82f6;
+}
+
+.social-link.blue:hover {
+    background-color: #1d4ed8;
+}
+
+.social-link.teal {
+    background-color: #14b8a6;
+}
+
+.social-link.teal:hover {
+    background-color: #0f766e;
+}
+
+.social-link.amber {
+    background-color: #f59e0b;
+}
+
+.social-link.amber:hover {
+    background-color: #b45309;
+}
+
+/* Denver-specific Styles */
+.denver-link {
+    position: relative;
+}
+
+.denver-link::after {
+    content: 'New';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #f44336;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Margin and Padding Utilities */
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+/* Geolocation-aware Denver CTAs */
+.geo-denver-cta {
+    background-color: #faf5ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #a855f7;
+    position: relative;
+    overflow: hidden;
+}
+
+.geo-denver-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url('https://nlmsf.org/wp-content/uploads/2021/01/denver-skyline.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.geo-denver-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #7e22ce;
+    position: relative;
+    z-index: 1;
+}
+
+.geo-denver-cta p {
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+    color: #374151;
+}
+
+.geo-denver-cta .geo-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #a855f7;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.geo-denver-cta .geo-cta-button:hover {
+    background-color: #7e22ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.geo-denver-cta.blue {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+}
+
+.geo-denver-cta.blue h3 {
+    color: #1d4ed8;
+}
+
+.geo-denver-cta.blue .geo-cta-button {
+    background-color: #3b82f6;
+}
+
+.geo-denver-cta.blue .geo-cta-button:hover {
+    background-color: #1d4ed8;
+}
+
+.geo-denver-cta.teal {
+    background-color: #f0fdfa;
+    border-left: 4px solid #14b8a6;
+}
+
+.geo-denver-cta.teal h3 {
+    color: #0f766e;
+}
+
+.geo-denver-cta.teal .geo-cta-button {
+    background-color: #14b8a6;
+}
+
+.geo-denver-cta.teal .geo-cta-button:hover {
+    background-color: #0f766e;
+}
+
+.geo-denver-cta.amber {
+    background-color: #fffbeb;
+    border-left: 4px solid #f59e0b;
+}
+
+.geo-denver-cta.amber h3 {
+    color: #b45309;
+}
+
+.geo-denver-cta.amber .geo-cta-button {
+    background-color: #f59e0b;
+}
+
+.geo-denver-cta.amber .geo-cta-button:hover {
+    background-color: #b45309;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .resource-highlight {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .highlight-image {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .feature-tags {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .support-item,
+    .podcast-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .support-icon,
+    .podcast-icon {
+        margin: 0 auto;
+    }
+    
+    .resource-grid,
+    .tip-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+/* Hover Effects */
+.resource-card,
+.tip-card,
+.sidebar-link,
+.cta-button,
+.feature-tag,
+.resource-link,
+.resource-button,
+.tip-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-card::after,
+.tip-card::after,
+.sidebar-link::after,
+.cta-button::after,
+.feature-tag::after,
+.resource-link::after,
+.resource-button::after,
+.tip-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.resource-card:hover::after,
+.tip-card:hover::after,
+.sidebar-link:hover::after,
+.cta-button:hover::after,
+.feature-tag:hover::after,
+.resource-link:hover::after,
+.resource-button:hover::after,
+.tip-button:hover::after {
+    left: 100%;
+}
+
+/* Image Styles */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Print Styles */
+@media print {
+    .hero {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 20px 0;
+    }
+    
+    .hero::after {
+        display: none;
+    }
+    
+    .content-panel {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .resource-card,
+    .tip-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .cta-button,
+    .resource-button,
+    .tip-button {
+        background-color: transparent;
+        color: #a855f7;
+        border: 1px solid #a855f7;
+    }
+    
+    .social-links,
+    .denver-cta {
+        display: none;
+    }
+}

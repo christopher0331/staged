@@ -1,0 +1,2072 @@
+/* NLMSF Tribute Pages Manager Styles */
+
+/* Global Message Styles */
+.nlmsf-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    z-index: 10000;
+    display: none;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nlmsf-message-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.nlmsf-message-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.nlmsf-message-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+/* ===================================
+   Frontend Tribute Page Display
+   =================================== */
+
+.nlmsf-tribute-display {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Main Content Layout - Two Column */
+.nlmsf-main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nlmsf-content-left {
+    padding-right: 2rem;
+}
+
+.nlmsf-content-right {
+    padding-left: 1rem;
+    border-left: 2px solid #e5e7eb;
+}
+
+/* Right Side Donors Section */
+.nlmsf-content-right .nlmsf-donations-section {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    position: sticky;
+    top: 2rem;
+}
+
+.nlmsf-content-right .nlmsf-donations-title {
+    color: #dc2626;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-content-right .nlmsf-donations-title i {
+    color: #dc2626;
+}
+
+.nlmsf-content-right .nlmsf-donors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nlmsf-content-right .nlmsf-donor-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.25rem;
+    border-left: 4px solid #dc2626;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.nlmsf-content-right .nlmsf-donor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-content-right .nlmsf-donor-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.nlmsf-content-right .nlmsf-donor-details {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.nlmsf-content-right .nlmsf-donor-amount {
+    color: #059669;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.nlmsf-content-right .nlmsf-donor-date {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.nlmsf-content-right .nlmsf-donor-message {
+    font-style: italic;
+    color: #4b5563;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.nlmsf-content-right .nlmsf-no-donors {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #6b7280;
+    background: white;
+    border-radius: 8px;
+    border: 2px dashed #d1d5db;
+}
+
+/* Responsive Design for Two Column Layout */
+@media (max-width: 1024px) {
+    .nlmsf-main-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .nlmsf-content-left {
+        padding-right: 0;
+    }
+    
+    .nlmsf-content-right {
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid #e5e7eb;
+        padding-top: 2rem;
+    }
+    
+    .nlmsf-content-right .nlmsf-donations-section {
+        position: static;
+    }
+}
+
+/* Header Section */
+.nlmsf-tribute-header {
+    display: grid;
+    grid-template-columns: 1.3fr 1.7fr;
+    margin-bottom: 0;
+    overflow: hidden;
+    height: 350px;
+    max-height: 350px;
+    background: #f8fafc;
+    position: relative;
+}
+
+.nlmsf-photo-collage {
+    position: relative;
+    height: 100%;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nlmsf-collage-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.nlmsf-photo-collage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 350px solid transparent;
+    border-right: 80px solid #f8fafc;
+    z-index: 10;
+}
+
+.nlmsf-memorial-section {
+    background: #f8fafc;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.nlmsf-profile-image-container {
+    margin-bottom: 1.5rem;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nlmsf-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.nlmsf-memorial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.nlmsf-memorial-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nlmsf-memorial-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.1;
+}
+
+
+.nlmsf-memorial-subtitle {
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Tab Navigation */
+.nlmsf-tab-navigation {
+    display: flex;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    margin: 0;
+}
+
+.nlmsf-tab-button {
+    flex: 1;
+    padding: 1rem 2rem;
+    background: white;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-tab-button:hover {
+    color: #2563eb;
+    background: #f8fafc;
+}
+
+.nlmsf-tab-button.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+    background: #f8fafc;
+}
+
+/* Tab Content */
+.nlmsf-tab-content {
+    background: white;
+    min-height: 600px;
+}
+
+.nlmsf-tab-panel {
+    display: none;
+    padding: 2rem;
+}
+
+.nlmsf-tab-panel.active {
+    display: block;
+}
+
+/* About Section */
+.nlmsf-about-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.nlmsf-about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nlmsf-about-title {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.08), rgba(67, 56, 202, 0.06));
+    color: #4b5563;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-about-title::before {
+    content: '';
+    font-size: 1.5rem;
+}
+
+.nlmsf-about-image-container {
+    margin-bottom: 2rem;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+}
+
+.nlmsf-about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.nlmsf-story-section {
+    margin-bottom: 3rem;
+}
+
+.nlmsf-story-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #7e22ce;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.nlmsf-story-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #374151;
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 1rem;
+    border-left: 4px solid #7e22ce;
+}
+
+.nlmsf-donation-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(29, 78, 216, 0.05));
+    border-radius: 1rem;
+    border: 2px solid rgba(37, 99, 235, 0.1);
+}
+
+.nlmsf-donation-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.nlmsf-comments-section {
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.nlmsf-comments-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Comments Section */
+.nlmsf-comment-form {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.nlmsf-comment-form-header {
+    margin-bottom: 1rem;
+}
+
+.nlmsf-comment-form-header h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.25rem 0;
+}
+
+.nlmsf-comment-form-header p {
+    color: #6b7280;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.nlmsf-form-group {
+    margin-bottom: 1rem;
+}
+
+.nlmsf-form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.nlmsf-form-group label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.nlmsf-form-group input,
+.nlmsf-form-group textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.nlmsf-form-group input:focus,
+.nlmsf-form-group textarea:focus {
+    outline: none;
+    border-color: #7e22ce;
+    box-shadow: 0 0 0 2px rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-form-group small {
+    color: #6b7280;
+    font-size: 0.75rem;
+    margin-top: 0.125rem;
+    display: block;
+}
+
+.nlmsf-submit-comment-btn {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.nlmsf-submit-comment-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #6b21a8, #3730a3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(126, 34, 206, 0.3);
+}
+
+.nlmsf-submit-comment-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.nlmsf-comments-display {
+    margin-top: 0;
+}
+
+.nlmsf-comments-display h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.nlmsf-comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nlmsf-comment-item {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.nlmsf-comment-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.nlmsf-comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.nlmsf-comment-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-comment-author i {
+    color: #7e22ce;
+    font-size: 1.1rem;
+}
+
+.nlmsf-comment-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+.nlmsf-comment-date {
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.nlmsf-comment-content {
+    color: #374151;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.nlmsf-no-comments,
+.nlmsf-comments-error,
+.nlmsf-comments-loading {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: #6b7280;
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    border: 2px dashed #d1d5db;
+}
+
+.nlmsf-comments-error {
+    color: #dc2626;
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+/* Tribute Directory Styles */
+.nlmsf-tribute-directory {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.nlmsf-directory-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nlmsf-directory-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nlmsf-directory-title i {
+    color: #7e22ce;
+}
+
+.nlmsf-directory-subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nlmsf-directory-controls {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nlmsf-search-container {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+}
+
+.nlmsf-search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.nlmsf-search-input:focus {
+    outline: none;
+    border-color: #7e22ce;
+    box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+.nlmsf-filter-container {
+    min-width: 200px;
+}
+
+.nlmsf-filter-select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.nlmsf-filter-select:focus {
+    outline: none;
+    border-color: #7e22ce;
+}
+
+.nlmsf-directory-loading {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.nlmsf-no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #6b7280;
+}
+
+.nlmsf-no-results-icon {
+    font-size: 4rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.nlmsf-no-results h3 {
+    font-size: 1.5rem;
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-tributes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.nlmsf-tribute-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.nlmsf-tribute-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nlmsf-tribute-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: #f8fafc;
+}
+
+.nlmsf-tribute-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.nlmsf-tribute-card:hover .nlmsf-tribute-card-image img {
+    transform: scale(1.05);
+}
+
+.nlmsf-tribute-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+}
+
+.nlmsf-tribute-card-placeholder i {
+    font-size: 4rem;
+    color: #cbd5e1;
+}
+
+.nlmsf-tribute-card-content {
+    padding: 1.5rem;
+}
+
+.nlmsf-tribute-card-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+}
+
+.nlmsf-tribute-card-bio {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+}
+
+.nlmsf-tribute-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.nlmsf-tribute-card-date i {
+    margin-right: 0.5rem;
+}
+
+.nlmsf-tribute-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.9), rgba(67, 56, 202, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allow clicks to pass through when hidden */
+}
+
+.nlmsf-tribute-card:hover .nlmsf-tribute-card-overlay {
+    opacity: 1;
+    pointer-events: auto; /* Enable clicks when visible */
+}
+
+.nlmsf-tribute-card-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: none;
+    cursor: pointer;
+}
+
+.nlmsf-tribute-card-link:hover {
+    background: white;
+    color: #7e22ce;
+    transform: scale(1.05);
+}
+
+.nlmsf-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.nlmsf-pagination-btn {
+    background: #7e22ce;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-pagination-btn:hover:not(:disabled) {
+    background: #6b21a8;
+    transform: translateY(-1px);
+}
+
+.nlmsf-pagination-btn:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.nlmsf-pagination-info {
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nlmsf-directory-error {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 1rem;
+    color: #dc2626;
+}
+
+.nlmsf-error-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.nlmsf-directory-error h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-directory-error p {
+    margin: 0 0 1.5rem 0;
+    color: #991b1b;
+}
+
+/* Responsive Design for Directory */
+@media (max-width: 768px) {
+    .nlmsf-tribute-directory {
+        padding: 1rem;
+    }
+    
+    .nlmsf-directory-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nlmsf-directory-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nlmsf-search-container,
+    .nlmsf-filter-container {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .nlmsf-tributes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .nlmsf-pagination {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nlmsf-pagination-info {
+        order: -1;
+    }
+}
+
+/* Tribute Page Container (for directory navigation) */
+.nlmsf-tribute-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.nlmsf-tribute-page-header {
+    margin-bottom: 2rem;
+}
+
+.nlmsf-back-button {
+    background: #6b7280;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-back-button:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+}
+
+.nlmsf-back-button i {
+    font-size: 0.9rem;
+}
+
+/* Donations Section */
+.nlmsf-donations-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.nlmsf-donations-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nlmsf-no-donors {
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+    font-size: 1.1rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    border: 2px dashed #d1d5db;
+}
+
+.nlmsf-section-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nlmsf-section-heading i {
+    color: #7e22ce;
+}
+
+.nlmsf-tribute-biography {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.nlmsf-biography-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.nlmsf-biography-text p {
+    margin-bottom: 1rem;
+}
+
+.nlmsf-tribute-donation {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.03), rgba(67, 56, 202, 0.05));
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px solid rgba(126, 34, 206, 0.2);
+}
+
+.nlmsf-donation-form {
+    margin-top: 1.5rem;
+}
+
+/* Donors Section */
+.nlmsf-tribute-donors {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.nlmsf-donors-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nlmsf-donors-title i {
+    color: #7e22ce;
+}
+
+.nlmsf-donors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.nlmsf-donor-card {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border: 1px solid rgba(126, 34, 206, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 1rem;
+}
+
+.nlmsf-donor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.15);
+    border-color: rgba(126, 34, 206, 0.3);
+}
+
+.nlmsf-donor-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.nlmsf-donor-info {
+    flex: 1;
+}
+
+.nlmsf-donor-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.nlmsf-donor-amount {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7e22ce;
+    margin-bottom: 0.25rem;
+}
+
+.nlmsf-donor-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.nlmsf-donor-message {
+    font-size: 0.875rem;
+    color: #4b5563;
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+/* Tributes Listing Page */
+.nlmsf-tributes-listing {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.nlmsf-tributes-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nlmsf-tributes-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+.nlmsf-tributes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.nlmsf-tribute-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.nlmsf-tribute-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(126, 34, 206, 0.15);
+    border-color: #7e22ce;
+    text-decoration: none;
+}
+
+.nlmsf-tribute-card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.nlmsf-tribute-card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+    z-index: 1;
+}
+
+.nlmsf-tribute-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.nlmsf-tribute-card:hover .nlmsf-tribute-card-image img {
+    transform: scale(1.05);
+}
+
+/* Directory listing containment fixes */
+.nlmsf-tributes-grid .nlmsf-tribute-card {
+    overflow: hidden;
+    position: relative;
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card-image {
+    position: relative;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Modern, high-contrast hover overlay for directory grid */
+.nlmsf-tributes-grid .nlmsf-tribute-card-overlay {
+    background: rgba(17, 24, 39, 0.55); /* slate-900 @ 55% for strong contrast */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card:hover .nlmsf-tribute-card-overlay {
+    opacity: 1;
+}
+
+/* Show overlay when card receives keyboard focus */
+.nlmsf-tributes-grid .nlmsf-tribute-card:focus,
+.nlmsf-tributes-grid .nlmsf-tribute-card:focus-visible {
+    outline: none;
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card:focus-visible .nlmsf-tribute-card-overlay,
+.nlmsf-tributes-grid .nlmsf-tribute-card:focus-within .nlmsf-tribute-card-overlay {
+    opacity: 1;
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card:focus-visible {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.45); /* blue focus ring */
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card-overlay .nlmsf-tribute-card-link {
+    background: #ffffff;
+    color: #111827; /* high contrast on white */
+    border-color: #ffffff;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.nlmsf-tributes-grid .nlmsf-tribute-card-overlay .nlmsf-tribute-card-link:hover {
+    background: #111827;
+    color: #ffffff;
+    border-color: #111827;
+    transform: translateY(-1px);
+}
+
+.nlmsf-tribute-card-placeholder {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.nlmsf-tribute-card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nlmsf-tribute-card-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.nlmsf-tribute-card-excerpt {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.nlmsf-tribute-card-link {
+    color: #7e22ce;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-tribute-card-link i {
+    transition: transform 0.3s ease;
+}
+
+.nlmsf-tribute-card:hover .nlmsf-tribute-card-link i {
+    transform: translateX(4px);
+}
+
+.nlmsf-no-tributes {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #6b7280;
+}
+
+.nlmsf-no-tributes i {
+    font-size: 4rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   Admin Interface Styles
+   =================================== */
+
+.nlmsf-tribute-admin {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nlmsf-admin-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nlmsf-admin-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-admin-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+.nlmsf-add-tribute-section {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-section-title i {
+    color: #7e22ce;
+}
+
+.nlmsf-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nlmsf-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nlmsf-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.nlmsf-form-label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.nlmsf-form-input,
+.nlmsf-form-textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.nlmsf-form-input:focus,
+.nlmsf-form-textarea:focus {
+    outline: none;
+    border-color: #7e22ce;
+    box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.nlmsf-image-upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nlmsf-image-upload-section .nlmsf-form-label {
+    margin-bottom: 0.5rem;
+}
+
+.nlmsf-image-upload-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nlmsf-image-upload-controls input[type="url"] {
+    flex: 1;
+    min-width: 300px;
+}
+
+.nlmsf-image-preview {
+    display: none;
+    max-width: 300px;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.nlmsf-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.nlmsf-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #7e22ce;
+}
+
+/* Buttons */
+.nlmsf-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.nlmsf-btn-primary {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    color: white;
+}
+
+.nlmsf-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.3);
+}
+
+.nlmsf-btn-secondary {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: white;
+}
+
+.nlmsf-btn-secondary:hover {
+    background: linear-gradient(135deg, #4b5563, #374151);
+}
+
+.nlmsf-btn-donors {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.nlmsf-btn-donors:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.nlmsf-btn-edit {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.nlmsf-btn-edit:hover {
+    background: linear-gradient(135deg, #0e7490, #0891b2);
+}
+
+.nlmsf-btn-delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.nlmsf-btn-delete:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.nlmsf-btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+/* Tributes List */
+.nlmsf-tributes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nlmsf-tribute-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.nlmsf-tribute-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #7e22ce;
+}
+
+.nlmsf-tribute-item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.nlmsf-tribute-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nlmsf-tribute-item-info h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-tribute-slug {
+    color: #6b7280;
+    font-size: 0.75rem;
+    margin: 0 0 0.75rem 0;
+    font-family: monospace;
+    background: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+
+.nlmsf-tribute-bio-preview {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.nlmsf-tribute-item-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.nlmsf-published-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nlmsf-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.nlmsf-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.nlmsf-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.nlmsf-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .nlmsf-toggle-slider {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+}
+
+input:checked + .nlmsf-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.nlmsf-toggle-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.nlmsf-tribute-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nlmsf-no-tributes-admin {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6b7280;
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border-radius: 1rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+/* Modal Styles */
+.nlmsf-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.nlmsf-modal-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.nlmsf-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nlmsf-modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.nlmsf-close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.nlmsf-close-modal:hover {
+    color: #374151;
+}
+
+/* Donors Admin */
+.nlmsf-donors-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border-radius: 0.75rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-donors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nlmsf-donor-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
+}
+
+.nlmsf-donor-item-info h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-donor-item-info p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0.25rem 0;
+}
+
+.nlmsf-donor-amount {
+    color: #7e22ce !important;
+    font-weight: 600 !important;
+}
+
+.nlmsf-donor-msg {
+    font-style: italic;
+    color: #4b5563 !important;
+}
+
+.nlmsf-donor-item-actions {
+    flex-shrink: 0;
+}
+
+.nlmsf-no-donors-admin {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    background: white;
+    border-radius: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nlmsf-tribute-header {
+        grid-template-columns: 1fr;
+        height: 350px;
+        max-height: 350px;
+    }
+    
+    .nlmsf-photo-collage {
+        height: 200px;
+    }
+    
+    .nlmsf-photo-collage::after {
+        border-top: 200px solid transparent;
+        border-right: 55px solid #f8fafc;
+    }
+    
+    .nlmsf-memorial-section {
+        padding: 1.5rem;
+        height: 150px;
+        box-sizing: border-box;
+    }
+    
+    .nlmsf-profile-image-container {
+        margin-bottom: 1rem;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .nlmsf-memorial-name {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    
+    .nlmsf-memorial-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .nlmsf-about-image-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .nlmsf-tribute-admin {
+        padding: 1rem;
+    }
+
+    .nlmsf-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nlmsf-tribute-item {
+        grid-template-columns: 1fr;
+    }
+
+    .nlmsf-tribute-item-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .nlmsf-tribute-item-controls {
+        align-items: flex-start;
+    }
+
+    .nlmsf-tribute-item-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nlmsf-tribute-item-actions .nlmsf-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nlmsf-modal-content {
+        padding: 1.5rem;
+    }
+
+    .nlmsf-donors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nlmsf-tributes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nlmsf-tribute-display {
+        padding: 0;
+    }
+    
+    .nlmsf-tribute-header {
+        display: none;
+    }
+    
+    .nlmsf-photo-collage {
+        height: 180px;
+    }
+    
+    .nlmsf-photo-collage::after {
+        border-top: 180px solid transparent;
+        border-right: 40px solid #f8fafc;
+    }
+    
+    .nlmsf-memorial-section {
+        padding: 1rem;
+        height: 170px;
+        box-sizing: border-box;
+    }
+    
+    .nlmsf-profile-image-container {
+        margin-bottom: 0.75rem;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .nlmsf-memorial-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    
+    .nlmsf-memorial-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .nlmsf-tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .nlmsf-tab-panel {
+        padding: 1rem;
+    }
+    
+    .nlmsf-about-title {
+        font-size: 1.4rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .nlmsf-about-image-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .nlmsf-story-title {
+        font-size: 1.6rem;
+    }
+    
+    .nlmsf-story-content {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .nlmsf-donations-title {
+        font-size: 1.6rem;
+    }
+    
+    .nlmsf-tribute-name {
+        font-size: 2rem;
+    }
+
+    .nlmsf-tributes-main-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nlmsf-admin-title {
+        font-size: 2rem;
+    }
+
+    .nlmsf-tribute-name {
+        font-size: 1.75rem;
+    }
+
+    .nlmsf-section-heading {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading Styles */
+.nlmsf-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #6b7280;
+}
+
+.nlmsf-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #7e22ce;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

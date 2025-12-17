@@ -23,19 +23,6 @@ export function OverviewSection() {
           <div className="p-4 rounded-lg bg-white/70 border border-blue-200 hover:shadow-md transition-all duration-300">
             <div className="flex items-center mb-3">
               <div className="bg-blue-100 p-1.5 rounded-full mr-2">
-                <Target className="h-4 w-4 text-blue-600" />
-              </div>
-              <h4 className="font-semibold text-blue-800">Staging</h4>
-            </div>
-            <p className="text-sm text-gray-700">
-              <span className="font-medium">Evaluates the extent of cancer</span> in the body, including the size of the tumor, 
-              its location, and whether it has spread to nearby lymph nodes or other parts of the body.
-            </p>
-          </div>
-          
-          <div className="p-4 rounded-lg bg-white/70 border border-blue-200 hover:shadow-md transition-all duration-300">
-            <div className="flex items-center mb-3">
-              <div className="bg-blue-100 p-1.5 rounded-full mr-2">
                 <Scale className="h-4 w-4 text-blue-600" />
               </div>
               <h4 className="font-semibold text-blue-800">Grading</h4>
@@ -45,22 +32,35 @@ export function OverviewSection() {
               indicating how aggressive the cancer cells look compared to normal cells and how quickly they might grow and spread.
             </p>
           </div>
+          
+          <div className="p-4 rounded-lg bg-white/70 border border-blue-200 hover:shadow-md transition-all duration-300">
+            <div className="flex items-center mb-3">
+              <div className="bg-blue-100 p-1.5 rounded-full mr-2">
+                <Target className="h-4 w-4 text-blue-600" />
+              </div>
+              <h4 className="font-semibold text-blue-800">Staging</h4>
+            </div>
+            <p className="text-sm text-gray-700">
+              <span className="font-medium">Evaluates the extent of cancer</span> in the body, including the size of the tumor, 
+              its location, and whether it has spread to nearby lymph nodes or other parts of the body.
+            </p>
+          </div>
         </div>
       </div>
 
       <div id="purpose" className="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6 shadow-md border border-indigo-200">
         <div className="flex items-center mb-4">
           <div className="bg-indigo-500 p-2 rounded-full mr-4">
-            <Target className="h-6 w-6 text-white" />
+            <Scale className="h-6 w-6 text-white" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-indigo-800">Purpose & Use</h3>
-            <p className="text-indigo-600">Why staging and grading matter</p>
+            <p className="text-indigo-600">Why grading and staging matter</p>
           </div>
         </div>
         
         <p className="text-gray-700 mb-4">
-          Both staging and grading are essential tools that help healthcare professionals:
+          Both grading and staging are essential tools that help healthcare professionals:
         </p>
         
         <ul className="space-y-3">

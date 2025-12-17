@@ -1,0 +1,290 @@
+/* NLMSF Medical Advisory Board Sidebar Styling */
+
+.nlmsf-sidebar {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Section Styling */
+.nlmsf-sidebar-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+/* Section Title with Gradient Backgrounds */
+.nlmsf-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  color: white;
+  position: relative;
+}
+
+.nlmsf-title-blue {
+  background: linear-gradient(90deg, #3182ce 0%, #4299e1 100%);
+}
+
+.nlmsf-title-purple {
+  background: linear-gradient(90deg, #6b46c1 0%, #805ad5 100%);
+}
+
+.nlmsf-title-teal {
+  background: linear-gradient(90deg, #2c7a7b 0%, #38b2ac 100%);
+}
+
+.nlmsf-title-amber {
+  background: linear-gradient(90deg, #c05621 0%, #dd6b20 100%);
+}
+
+.nlmsf-sidebar-content {
+  margin-bottom: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.nlmsf-sidebar-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3182ce;
+  color: #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-sidebar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #2b6cb0;
+}
+
+/* List Styling */
+.nlmsf-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nlmsf-sidebar-list li {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nlmsf-sidebar-list li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.nlmsf-sidebar-list a {
+  color: #4a5568;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-sidebar-list a i {
+  margin-right: 0.75rem;
+  color: #6b46c1;
+  width: 20px;
+  text-align: center;
+}
+
+.nlmsf-sidebar-list a:hover {
+  color: #3182ce;
+}
+
+/* Event Card Styling */
+.nlmsf-event-card {
+  display: flex;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nlmsf-event-card:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.nlmsf-event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #38b2ac 0%, #4fd1c5 100%);
+  border-radius: 8px;
+  color: white;
+  margin-right: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-event-month {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nlmsf-event-day {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.nlmsf-event-details {
+  flex: 1;
+}
+
+.nlmsf-event-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: #2d3748;
+}
+
+.nlmsf-event-details p {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-event-link {
+  font-size: 0.9rem;
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-event-link:hover {
+  color: #2b6cb0;
+  text-decoration: underline;
+}
+
+/* Support Card Styling */
+.nlmsf-support-card {
+  display: flex;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nlmsf-support-card:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.nlmsf-support-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%);
+  border-radius: 50%;
+  color: white;
+  margin-right: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-support-icon i {
+  font-size: 1.25rem;
+}
+
+.nlmsf-support-content {
+  flex: 1;
+}
+
+.nlmsf-support-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: #2d3748;
+}
+
+.nlmsf-support-content p {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-support-link {
+  font-size: 1rem;
+  color: #dd6b20;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nlmsf-support-link:hover {
+  color: #c05621;
+  text-decoration: underline;
+}
+
+/* Denver Support Section */
+.nlmsf-denver-support {
+  background: linear-gradient(135deg, rgba(44, 82, 130, 0.05) 0%, rgba(56, 161, 105, 0.05) 100%);
+  border: 1px solid #e2e8f0;
+}
+
+.nlmsf-denver-support .nlmsf-sidebar-title {
+  background: linear-gradient(90deg, #2c5282 0%, #38a169 100%);
+}
+
+.nlmsf-denver-card {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.nlmsf-denver-button {
+  background: linear-gradient(90deg, #2c5282 0%, #38a169 100%);
+  display: block;
+  width: 100%;
+}
+
+.nlmsf-denver-button:hover {
+  background: linear-gradient(90deg, #2b4c7e 0%, #2f855a 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nlmsf-event-card, .nlmsf-support-card {
+    flex-direction: column;
+  }
+  
+  .nlmsf-event-date, .nlmsf-support-icon {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+  
+  .nlmsf-support-icon {
+    margin: 0 auto 0.75rem;
+  }
+  
+  .nlmsf-support-content {
+    text-align: center;
+  }
+  
+  .nlmsf-sidebar-title {
+    text-align: center;
+  }
+}

@@ -44,6 +44,34 @@ export const mainNav: MainNavItem[] = [
     ]
   },
   {
+    title: "Managing LMS",
+    href: "/newly-diagnosed/managing-lms",
+    items: [
+      {
+        title: "Overview",
+        href: "/newly-diagnosed/managing-lms",
+        description: "Managing your LMS diagnosis and treatment"
+      },
+      {
+        title: "Recurrence Management",
+        href: "/newly-diagnosed/managing-lms/recurrence",
+        description: "Understanding and managing LMS recurrence"
+      },
+      {
+        title: "Treatment Management",
+        href: "/newly-diagnosed/managing-lms/treatment",
+        description: "Tools and resources for managing your ongoing LMS treatments",
+        disabled: true
+      },
+      {
+        title: "Long-term Follow-up",
+        href: "/newly-diagnosed/managing-lms/followup",
+        description: "Guidelines and recommendations for long-term LMS monitoring",
+        disabled: true
+      }
+    ]
+  },
+  {
     title: "What is LMS?",
     href: "/newly-diagnosed/what-is-lms",
     items: [

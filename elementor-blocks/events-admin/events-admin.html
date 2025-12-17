@@ -1,0 +1,1354 @@
+<!-- NLMSF Admin - Elementor Custom Block -->
+<!-- This block provides the admin interface for managing events and education videos -->
+
+<div class="nlmsf-admin">
+    <div class="nlmsf-admin-header">
+        <h1 class="nlmsf-admin-title">Content Management</h1>
+        <p class="nlmsf-admin-subtitle">Manage events and education videos</p>
+    </div>
+
+    <!-- Admin Tabs -->
+    <div class="nlmsf-admin-tabs">
+        <button class="nlmsf-tab-button active" data-tab="events">
+            <i class="fas fa-calendar-alt"></i>
+            Events
+        </button>
+        <button class="nlmsf-tab-button" data-tab="videos">
+            <i class="fas fa-video"></i>
+            Education Videos
+        </button>
+        <button class="nlmsf-tab-button" data-tab="categories">
+            <i class="fas fa-tags"></i>
+            Categories
+        </button>
+    </div>
+
+    <!-- Events Tab Content -->
+    <div id="events-tab" class="nlmsf-tab-content active">
+
+    <!-- Add Event Section -->
+    <div class="nlmsf-add-event-section">
+        <h2 class="nlmsf-section-title">
+            <i class="fas fa-plus-circle"></i>
+            Add New Event
+        </h2>
+        
+        <form id="nlmsf-add-event-form">
+            <div class="nlmsf-form-grid">
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="event-title">Event Title *</label>
+                    <input type="text" id="event-title" name="title" class="nlmsf-form-input" required 
+                           placeholder="Enter event title">
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="event-date">Event Date *</label>
+                    <input type="date" id="event-date" name="event_date" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="event-time">Event Time *</label>
+                    <input type="time" id="event-time" name="event_time" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="base-timezone">Base Timezone *</label>
+                    <select id="base-timezone" name="base_timezone" class="nlmsf-form-input" required>
+                        <option value="America/New_York">Eastern (ET)</option>
+                        <option value="America/Chicago">Central (CT)</option>
+                        <option value="America/Denver">Mountain (MT)</option>
+                        <option value="America/Los_Angeles">Pacific (PT)</option>
+                    </select>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="zoom-link">Zoom Registration Link *</label>
+                    <input type="url" id="zoom-link" name="zoom_link" class="nlmsf-form-input" required 
+                           placeholder="https://zoom.us/meeting/register/...">
+                </div>
+                
+                <div class="nlmsf-form-group full-width">
+                    <label class="nlmsf-form-label" for="event-description">Event Description *</label>
+                    <textarea id="event-description" name="description" class="nlmsf-form-textarea" required 
+                              placeholder="Brief description of the event"></textarea>
+                </div>
+            </div>
+            
+            <div class="nlmsf-checkbox-group">
+                <input type="checkbox" id="display-homepage" name="display_on_homepage" 
+                       class="nlmsf-checkbox" checked>
+                <label for="display-homepage" class="nlmsf-form-label">Display on Homepage</label>
+            </div>
+
+            <div class="nlmsf-checkbox-group" style="gap: 1rem; flex-wrap: wrap;">
+                <span class="nlmsf-form-label" style="min-width: 160px;">Show timezones:</span>
+                <label><input type="checkbox" name="show_et" class="nlmsf-checkbox" checked> ET</label>
+                <label><input type="checkbox" name="show_ct" class="nlmsf-checkbox"> CT</label>
+                <label><input type="checkbox" name="show_mt" class="nlmsf-checkbox"> MT</label>
+                <label><input type="checkbox" name="show_pt" class="nlmsf-checkbox"> PT</label>
+            </div>
+            
+            <button type="submit" class="nlmsf-btn nlmsf-btn-primary">
+                <i class="fas fa-plus"></i>
+                Add Event
+            </button>
+        </form>
+    </div>
+
+    <!-- Events List Section -->
+    <div class="nlmsf-events-list-section">
+        <h2 class="nlmsf-section-title">
+            <i class="fas fa-list"></i>
+            Manage Events
+        </h2>
+        
+        <div class="nlmsf-events-list">
+            <!-- Events will be loaded here via JavaScript -->
+            <div class="nlmsf-loading">
+                <div class="nlmsf-loading-spinner"></div>
+                <p>Loading events...</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Videos Tab Content -->
+    <div id="videos-tab" class="nlmsf-tab-content">
+        <!-- Add Video Section -->
+        <div class="nlmsf-add-video-section">
+            <h2 class="nlmsf-section-title">
+                <i class="fas fa-plus-circle"></i>
+                Add New Video
+            </h2>
+            
+            <form id="nlmsf-add-video-form">
+                <div class="nlmsf-form-grid">
+                    <div class="nlmsf-form-group">
+                        <label class="nlmsf-form-label" for="video-title">Video Title *</label>
+                        <input type="text" id="video-title" name="title" class="nlmsf-form-input" required 
+                               placeholder="Enter video title">
+                    </div>
+                    
+                    <div class="nlmsf-form-group">
+                        <label class="nlmsf-form-label" for="video-category">Category *</label>
+                        <select id="video-category" name="category" class="nlmsf-form-input" required>
+                            <option value="">Select Category</option>
+                            <option value="patient-education">Patient Education</option>
+                            <option value="medical-research">Medical Research</option>
+                            <option value="caregiver-support">Caregiver Support</option>
+                            <option value="webinars">Webinars</option>
+                        </select>
+                    </div>
+                    
+                    <div class="nlmsf-form-group">
+                        <label class="nlmsf-form-label" for="youtube-url">YouTube URL *</label>
+                        <input type="url" id="youtube-url" name="youtube_url" class="nlmsf-form-input" required 
+                               placeholder="https://www.youtube.com/watch?v=...">
+                    </div>
+                    
+                    <div class="nlmsf-form-group">
+                        <label class="nlmsf-form-label" for="video-duration">Duration (MM:SS)</label>
+                        <input type="text" id="video-duration" name="duration" class="nlmsf-form-input" 
+                               placeholder="8:45" pattern="[0-9]+:[0-9]{2}">
+                    </div>
+                    
+                    <div class="nlmsf-form-group full-width">
+                        <label class="nlmsf-form-label" for="video-description">Video Description *</label>
+                        <textarea id="video-description" name="description" class="nlmsf-form-textarea" required 
+                                  placeholder="Brief description of the video content"></textarea>
+                    </div>
+                </div>
+                
+                <div class="nlmsf-checkbox-group">
+                    <input type="checkbox" id="video-featured" name="featured" class="nlmsf-checkbox">
+                    <label for="video-featured" class="nlmsf-form-label">Featured Video (show first)</label>
+                </div>
+                
+                <button type="submit" class="nlmsf-btn nlmsf-btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Add Video
+                </button>
+            </form>
+        </div>
+
+        <!-- Videos List Section -->
+        <div class="nlmsf-videos-list-section">
+            <h2 class="nlmsf-section-title">
+                <i class="fas fa-list"></i>
+                Manage Videos
+            </h2>
+            
+            <div class="nlmsf-videos-list">
+                <!-- Videos will be loaded here via JavaScript -->
+                <div class="nlmsf-loading">
+                    <div class="nlmsf-loading-spinner"></div>
+                    <p>Loading videos...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Event Modal -->
+<div id="nlmsf-edit-modal" class="nlmsf-modal-overlay">
+    <div class="nlmsf-modal-content">
+        <div class="nlmsf-modal-header">
+            <h3 class="nlmsf-modal-title">Edit Event</h3>
+            <button type="button" class="nlmsf-close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form id="nlmsf-edit-event-form">
+            <input type="hidden" name="id">
+            
+            <div class="nlmsf-form-grid">
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-event-title">Event Title *</label>
+                    <input type="text" id="edit-event-title" name="title" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-event-date">Event Date *</label>
+                    <input type="date" id="edit-event-date" name="event_date" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-event-time">Event Time *</label>
+                    <input type="time" id="edit-event-time" name="event_time" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-base-timezone">Base Timezone *</label>
+                    <select id="edit-base-timezone" name="base_timezone" class="nlmsf-form-input" required>
+                        <option value="America/New_York">Eastern (ET)</option>
+                        <option value="America/Chicago">Central (CT)</option>
+                        <option value="America/Denver">Mountain (MT)</option>
+                        <option value="America/Los_Angeles">Pacific (PT)</option>
+                    </select>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-zoom-link">Zoom Registration Link *</label>
+                    <input type="url" id="edit-zoom-link" name="zoom_link" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group full-width">
+                    <label class="nlmsf-form-label" for="edit-event-description">Event Description *</label>
+                    <textarea id="edit-event-description" name="description" class="nlmsf-form-textarea" required></textarea>
+                </div>
+            </div>
+            
+            <div class="nlmsf-checkbox-group">
+                <input type="checkbox" id="edit-display-homepage" name="display_on_homepage" class="nlmsf-checkbox">
+                <label for="edit-display-homepage" class="nlmsf-form-label">Display on Homepage</label>
+            </div>
+
+            <div class="nlmsf-checkbox-group" style="gap: 1rem; flex-wrap: wrap;">
+                <span class="nlmsf-form-label" style="min-width: 160px;">Show timezones:</span>
+                <label><input type="checkbox" name="show_et" class="nlmsf-checkbox"> ET</label>
+                <label><input type="checkbox" name="show_ct" class="nlmsf-checkbox"> CT</label>
+                <label><input type="checkbox" name="show_mt" class="nlmsf-checkbox"> MT</label>
+                <label><input type="checkbox" name="show_pt" class="nlmsf-checkbox"> PT</label>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                <button type="button" class="nlmsf-btn nlmsf-close-modal" 
+                        style="background: #6b7280; color: white;">
+                    Cancel
+                </button>
+                <button type="submit" class="nlmsf-btn nlmsf-btn-primary">
+                    <i class="fas fa-save"></i>
+                    Update Event
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Edit Video Modal -->
+<div id="nlmsf-edit-video-modal" class="nlmsf-modal-overlay">
+    <div class="nlmsf-modal-content">
+        <div class="nlmsf-modal-header">
+            <h3 class="nlmsf-modal-title">Edit Video</h3>
+            <button type="button" class="nlmsf-close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form id="nlmsf-edit-video-form">
+            <input type="hidden" name="id">
+            
+            <div class="nlmsf-form-grid">
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-video-title">Video Title *</label>
+                    <input type="text" id="edit-video-title" name="title" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-video-category">Category *</label>
+                    <select id="edit-video-category" name="category" class="nlmsf-form-input" required>
+                        <option value="patient-education">Patient Education</option>
+                        <option value="medical-research">Medical Research</option>
+                        <option value="caregiver-support">Caregiver Support</option>
+                        <option value="webinars">Webinars</option>
+                    </select>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-youtube-url">YouTube URL *</label>
+                    <input type="url" id="edit-youtube-url" name="youtube_url" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-video-duration">Duration (MM:SS)</label>
+                    <input type="text" id="edit-video-duration" name="duration" class="nlmsf-form-input" 
+                           placeholder="8:45" pattern="[0-9]+:[0-9]{2}">
+                </div>
+                
+                <div class="nlmsf-form-group full-width">
+                    <label class="nlmsf-form-label" for="edit-video-description">Video Description *</label>
+                    <textarea id="edit-video-description" name="description" class="nlmsf-form-textarea" required></textarea>
+                </div>
+            </div>
+            
+            <div class="nlmsf-checkbox-group">
+                <input type="checkbox" id="edit-video-featured" name="featured" class="nlmsf-checkbox">
+                <label for="edit-video-featured" class="nlmsf-form-label">Featured Video (show first)</label>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                <button type="button" class="nlmsf-btn nlmsf-close-modal" 
+                        style="background: #6b7280; color: white;">
+                    Cancel
+                </button>
+                <button type="submit" class="nlmsf-btn nlmsf-btn-primary">
+                    <i class="fas fa-save"></i>
+                    Update Video
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Categories Tab Content -->
+<div id="categories-tab" class="nlmsf-tab-content">
+    <!-- Add Category Section -->
+    <div class="nlmsf-add-category-section">
+        <h2 class="nlmsf-section-title">
+            <i class="fas fa-plus-circle"></i>
+            Add New Category
+        </h2>
+        
+        <form id="nlmsf-add-category-form" class="nlmsf-form">
+            <div class="nlmsf-form-grid">
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="category-name">Category Name *</label>
+                    <input type="text" id="category-name" name="name" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="category-slug">Slug *</label>
+                    <input type="text" id="category-slug" name="slug" class="nlmsf-form-input" required>
+                    <small class="nlmsf-form-help">URL-friendly version (e.g., "patient-education")</small>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="category-icon">Icon</label>
+                    <input type="text" id="category-icon" name="icon" class="nlmsf-form-input" 
+                           placeholder="fas fa-play-circle" value="fas fa-play-circle">
+                    <small class="nlmsf-form-help">Font Awesome icon class</small>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="category-color">Color</label>
+                    <input type="color" id="category-color" name="color" class="nlmsf-form-input" 
+                           value="#4a90e2">
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="category-order">Display Order</label>
+                    <input type="number" id="category-order" name="display_order" class="nlmsf-form-input" 
+                           value="0" min="0">
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                <button type="button" class="nlmsf-btn" onclick="resetCategoryForm()" 
+                        style="background: #6b7280; color: white;">
+                    <i class="fas fa-undo"></i>
+                    Reset
+                </button>
+                <button type="submit" class="nlmsf-btn nlmsf-btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Add Category
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Manage Categories Section -->
+    <div class="nlmsf-manage-categories-section">
+        <h2 class="nlmsf-section-title">
+            <i class="fas fa-tags"></i>
+            Manage Categories
+        </h2>
+        
+        <div class="nlmsf-categories-list" id="nlmsf-categories-list">
+            <div style="text-align: center; padding: 3rem; color: #6b7280;">
+                <div class="nlmsf-loading-spinner"></div>
+                <p>Loading categories...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Category Modal -->
+<div id="nlmsf-edit-category-modal" class="nlmsf-modal-overlay">
+    <div class="nlmsf-modal-content">
+        <div class="nlmsf-modal-header">
+            <h3 class="nlmsf-modal-title">Edit Category</h3>
+            <button type="button" class="nlmsf-close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form id="nlmsf-edit-category-form">
+            <input type="hidden" name="id">
+            
+            <div class="nlmsf-form-grid">
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-category-name">Category Name *</label>
+                    <input type="text" id="edit-category-name" name="name" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-category-slug">Slug *</label>
+                    <input type="text" id="edit-category-slug" name="slug" class="nlmsf-form-input" required>
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-category-icon">Icon</label>
+                    <input type="text" id="edit-category-icon" name="icon" class="nlmsf-form-input">
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-category-color">Color</label>
+                    <input type="color" id="edit-category-color" name="color" class="nlmsf-form-input">
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label" for="edit-category-order">Display Order</label>
+                    <input type="number" id="edit-category-order" name="display_order" class="nlmsf-form-input" min="0">
+                </div>
+                
+                <div class="nlmsf-form-group">
+                    <label class="nlmsf-form-label">
+                        <input type="checkbox" id="edit-category-active" name="active" value="1" checked>
+                        Active
+                    </label>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                <button type="button" class="nlmsf-btn nlmsf-close-modal" 
+                        style="background: #6b7280; color: white;">
+                    Cancel
+                </button>
+                <button type="submit" class="nlmsf-btn nlmsf-btn-primary">
+                    <i class="fas fa-save"></i>
+                    Update Category
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Styles -->
+<style>
+/* Admin Tabs */
+.nlmsf-admin-tabs {
+    display: flex;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0 1rem;
+}
+
+.nlmsf-tab-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+    position: relative;
+}
+
+.nlmsf-tab-button:hover {
+    color: #4f46e5;
+    background: #f8fafc;
+}
+
+.nlmsf-tab-button.active {
+    color: #4f46e5;
+    border-bottom-color: #4f46e5;
+    background: #f8fafc;
+}
+
+.nlmsf-tab-button i {
+    font-size: 1rem;
+}
+
+/* Tab Content */
+.nlmsf-tab-content {
+    display: none;
+}
+
+.nlmsf-tab-content.active {
+    display: block;
+}
+
+/* Video Management Styles */
+.nlmsf-video-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.nlmsf-video-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5db;
+}
+
+.nlmsf-video-thumbnail {
+    width: 120px;
+    height: 80px;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nlmsf-video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nlmsf-video-thumbnail i {
+    font-size: 2rem;
+    color: #9ca3af;
+}
+
+.nlmsf-video-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.nlmsf-video-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+
+.nlmsf-video-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.nlmsf-video-category {
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+.nlmsf-video-duration {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.nlmsf-video-description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.nlmsf-video-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.nlmsf-video-actions .nlmsf-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.nlmsf-featured-badge {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+/* Category Management Styles */
+.nlmsf-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.nlmsf-category-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.nlmsf-category-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nlmsf-category-item.inactive {
+    opacity: 0.6;
+    background: #f9fafb;
+}
+
+.nlmsf-category-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.nlmsf-category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+
+.nlmsf-category-details {
+    flex: 1;
+}
+
+.nlmsf-category-name {
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: #1f2937;
+}
+
+.nlmsf-category-slug {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0 0 0.25rem 0;
+    font-family: monospace;
+}
+
+.nlmsf-category-status {
+    display: inline-block;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nlmsf-category-status.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.nlmsf-category-status.inactive {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.nlmsf-category-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nlmsf-btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.nlmsf-btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.nlmsf-btn-danger:hover {
+    background: #b91c1c;
+}
+
+.nlmsf-form-help {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Loading Styles */
+.nlmsf-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #6b7280;
+}
+
+.nlmsf-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #7e22ce;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<!-- Initialize Admin -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize tabs
+    initTabs();
+    
+    // Initialize video management
+    initVideoManagement();
+    
+    // Initialize category management
+    initCategoryManagement();
+    
+    // Check if the NLMSF Events Manager is loaded
+    if (typeof nlmsfEvents !== 'undefined' && typeof nlmsf_events_ajax !== 'undefined') {
+        nlmsfEvents.loadEventsForAdmin();
+    } else {
+        console.error('NLMSF Events Manager not loaded. Make sure the plugin is activated.');
+        console.log('nlmsfEvents available:', typeof nlmsfEvents !== 'undefined');
+        console.log('nlmsf_events_ajax available:', typeof nlmsf_events_ajax !== 'undefined');
+        
+        // Show error message to user
+        const container = document.querySelector('.nlmsf-events-list');
+        if (container) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: #ef4444; background: #fef2f2; border-radius: 0.5rem; border: 1px solid #fecaca;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Plugin Not Loaded</h3>
+                    <p>The NLMSF Events Manager plugin is not active. Please activate the plugin to use this feature.</p>
+                </div>
+            `;
+        }
+    }
+});
+
+// Tab functionality
+function initTabs() {
+    const tabButtons = document.querySelectorAll('.nlmsf-tab-button');
+    const tabContents = document.querySelectorAll('.nlmsf-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab + '-tab').classList.add('active');
+        });
+    });
+}
+
+// Video management functionality
+let allVideos = [];
+
+function initVideoManagement() {
+    // Load videos from backend
+    loadVideos();
+    
+    // Add video form submission
+    const addVideoForm = document.getElementById('nlmsf-add-video-form');
+    if (addVideoForm) {
+        addVideoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            addVideo();
+        });
+    }
+    
+    // Edit video form submission
+    const editVideoForm = document.getElementById('nlmsf-edit-video-form');
+    if (editVideoForm) {
+        editVideoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            updateVideo();
+        });
+    }
+}
+
+function loadVideos() {
+    const container = document.querySelector('.nlmsf-videos-list');
+    if (!container) return;
+    
+    if (typeof nlmsf_events_ajax === 'undefined') {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #ef4444;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Events Manager Not Loaded</h3>
+                <p>Please refresh the page to load the events manager.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Show loading state
+    container.innerHTML = `
+        <div style="text-align: center; padding: 3rem; color: #6b7280;">
+            <div class="nlmsf-loading-spinner"></div>
+            <p>Loading videos...</p>
+        </div>
+    `;
+    
+    const formData = new FormData();
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'get_videos');
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            allVideos = data.data;
+            displayVideos(data.data);
+        } else {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: #ef4444;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3>Error loading videos</h3>
+                    <p>${data.data}</p>
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        container.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #ef4444;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Error loading videos</h3>
+                <p>Please try again later.</p>
+            </div>
+        `;
+    });
+}
+
+function displayVideos(videos) {
+    const container = document.querySelector('.nlmsf-videos-list');
+    if (!container) return;
+    
+    if (videos.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #6b7280;">
+                <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <h3>No videos yet</h3>
+                <p>Add your first education video using the form above.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    const videosHTML = videos.map(video => `
+        <div class="nlmsf-video-item">
+            <div class="nlmsf-video-thumbnail">
+                <img src="https://img.youtube.com/vi/${extractVideoId(video.youtube_url)}/mqdefault.jpg" alt="${video.title}">
+            </div>
+            <div class="nlmsf-video-info">
+                <h4 class="nlmsf-video-title">
+                    ${video.title}
+                    ${video.featured ? '<span class="nlmsf-featured-badge">Featured</span>' : ''}
+                </h4>
+                <div class="nlmsf-video-meta">
+                    <span class="nlmsf-video-category">${getCategoryName(video.category)}</span>
+                    <span class="nlmsf-video-duration">
+                        <i class="fas fa-clock"></i>
+                        ${video.duration || 'N/A'}
+                    </span>
+                    <span>Added: ${new Date(video.created_at).toLocaleDateString()}</span>
+                </div>
+                <p class="nlmsf-video-description">${video.description}</p>
+            </div>
+            <div class="nlmsf-video-actions">
+                <button class="nlmsf-btn" onclick="editVideo(${video.id})">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                </button>
+                <button class="nlmsf-btn" style="background: #ef4444; color: white;" onclick="deleteVideo(${video.id})">
+                    <i class="fas fa-trash"></i>
+                    Delete
+                </button>
+            </div>
+        </div>
+    `).join('');
+    
+    container.innerHTML = videosHTML;
+}
+
+function extractVideoId(url) {
+    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
+    return match ? match[1] : '';
+}
+
+function getCategoryName(category) {
+    const categories = {
+        'patient-education': 'Patient Education',
+        'medical-research': 'Medical Research',
+        'caregiver-support': 'Caregiver Support',
+        'webinars': 'Webinars'
+    };
+    return categories[category] || category;
+}
+
+// Category Management Functions
+let allCategories = [];
+
+function initCategoryManagement() {
+    loadCategories();
+    
+    // Bind form events
+    document.getElementById('nlmsf-add-category-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        addCategory();
+    });
+    
+    document.getElementById('nlmsf-edit-category-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        updateCategory();
+    });
+    
+    // Auto-generate slug from name
+    document.getElementById('category-name').addEventListener('input', function() {
+        const slug = this.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        document.getElementById('category-slug').value = slug;
+    });
+}
+
+function loadCategories() {
+    const container = document.querySelector('.nlmsf-categories-list');
+    if (!container) return;
+    
+    if (typeof nlmsf_events_ajax === 'undefined') {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #ef4444;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Events Manager Not Loaded</h3>
+                <p>Please refresh the page to load the events manager.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Show loading state
+    container.innerHTML = `
+        <div style="text-align: center; padding: 3rem; color: #6b7280;">
+            <div class="nlmsf-loading-spinner"></div>
+            <p>Loading categories...</p>
+        </div>
+    `;
+    
+    const formData = new FormData();
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'get_categories');
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            allCategories = data.data;
+            displayCategories(data.data);
+        } else {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: #ef4444;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3>Error Loading Categories</h3>
+                    <p>${data.data || 'Unknown error occurred'}</p>
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        container.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #ef4444;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Error Loading Categories</h3>
+                <p>Failed to load categories. Please try again.</p>
+            </div>
+        `;
+    });
+}
+
+function displayCategories(categories) {
+    const container = document.querySelector('.nlmsf-categories-list');
+    if (!container) return;
+    
+    if (categories.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #6b7280;">
+                <i class="fas fa-tags" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>No Categories Yet</h3>
+                <p>Add your first category using the form above.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '<div class="nlmsf-categories-grid">';
+    
+    categories.forEach(category => {
+        const statusClass = category.active ? 'active' : 'inactive';
+        const statusText = category.active ? 'Active' : 'Inactive';
+        
+        html += `
+            <div class="nlmsf-category-item ${statusClass}">
+                <div class="nlmsf-category-info">
+                    <div class="nlmsf-category-icon" style="color: ${category.color}">
+                        <i class="${category.icon}"></i>
+                    </div>
+                    <div class="nlmsf-category-details">
+                        <h4 class="nlmsf-category-name">${category.name}</h4>
+                        <p class="nlmsf-category-slug">${category.slug}</p>
+                        <span class="nlmsf-category-status">${statusText}</span>
+                    </div>
+                </div>
+                <div class="nlmsf-category-actions">
+                    <button class="nlmsf-btn nlmsf-btn-sm" onclick="editCategory(${category.id})">
+                        <i class="fas fa-edit"></i>
+                        Edit
+                    </button>
+                    <button class="nlmsf-btn nlmsf-btn-sm" onclick="toggleCategoryStatus(${category.id}, ${category.active ? 0 : 1})">
+                        <i class="fas fa-${category.active ? 'eye-slash' : 'eye'}"></i>
+                        ${category.active ? 'Hide' : 'Show'}
+                    </button>
+                    <button class="nlmsf-btn nlmsf-btn-sm nlmsf-btn-danger" onclick="deleteCategory(${category.id})">
+                        <i class="fas fa-trash"></i>
+                        Delete
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function addCategory() {
+    if (typeof nlmsf_events_ajax === 'undefined') {
+        alert('Events manager not loaded. Please refresh the page.');
+        return;
+    }
+    
+    const form = document.getElementById('nlmsf-add-category-form');
+    const formData = new FormData(form);
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'add_category');
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Category added successfully!');
+            resetCategoryForm();
+            loadCategories(); // Reload the categories list
+        } else {
+            alert('Error: ' + data.data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding category');
+    });
+}
+
+function editCategory(id) {
+    const category = allCategories.find(cat => cat.id == id);
+    if (!category) return;
+    
+    // Populate edit form
+    document.querySelector('#nlmsf-edit-category-form input[name="id"]').value = category.id;
+    document.getElementById('edit-category-name').value = category.name;
+    document.getElementById('edit-category-slug').value = category.slug;
+    document.getElementById('edit-category-icon').value = category.icon;
+    document.getElementById('edit-category-color').value = category.color;
+    document.getElementById('edit-category-order').value = category.display_order;
+    document.getElementById('edit-category-active').checked = category.active == 1;
+    
+    // Show edit modal
+    document.getElementById('nlmsf-edit-category-modal').style.display = 'flex';
+}
+
+function updateCategory() {
+    const form = document.getElementById('nlmsf-edit-category-form');
+    const formData = new FormData(form);
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'update_category');
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Category updated successfully!');
+            closeModal('nlmsf-edit-category-modal');
+            loadCategories(); // Reload the categories list
+        } else {
+            alert('Error: ' + data.data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error updating category');
+    });
+}
+
+function deleteCategory(id) {
+    if (confirm('Are you sure you want to delete this category? This action cannot be undone.')) {
+        const formData = new FormData();
+        formData.append('action', 'nlmsf_events_action');
+        formData.append('event_action', 'delete_category');
+        formData.append('id', id);
+        formData.append('nonce', nlmsf_events_ajax.nonce);
+        
+        fetch(nlmsf_events_ajax.ajax_url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Category deleted successfully!');
+                loadCategories(); // Reload the categories list
+            } else {
+                alert('Error: ' + data.data);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error deleting category');
+        });
+    }
+}
+
+function toggleCategoryStatus(id, active) {
+    const formData = new FormData();
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'toggle_category_status');
+    formData.append('id', id);
+    formData.append('active', active);
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            loadCategories(); // Reload the categories list
+        } else {
+            alert('Error: ' + data.data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error updating category status');
+    });
+}
+
+function resetCategoryForm() {
+    document.getElementById('nlmsf-add-category-form').reset();
+    document.getElementById('category-color').value = '#4a90e2';
+    document.getElementById('category-icon').value = 'fas fa-play-circle';
+}
+
+function addVideo() {
+    if (typeof nlmsf_events_ajax === 'undefined') {
+        alert('Events manager not loaded. Please refresh the page.');
+        return;
+    }
+    
+    const form = document.getElementById('nlmsf-add-video-form');
+    const formData = new FormData(form);
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'add_video');
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Video added successfully!');
+            form.reset();
+            loadVideos(); // Reload the videos list
+        } else {
+            alert('Error: ' + data.data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding video');
+    });
+}
+
+function editVideo(id) {
+    // Find the video in the current videos array and populate the edit form
+    const video = allVideos.find(v => v.id == id);
+    if (!video) return;
+    
+    // Populate the edit form
+    document.getElementById('edit-video-title').value = video.title;
+    document.getElementById('edit-video-category').value = video.category;
+    document.getElementById('edit-youtube-url').value = video.youtube_url;
+    document.getElementById('edit-video-duration').value = video.duration || '';
+    document.getElementById('edit-video-description').value = video.description;
+    document.getElementById('edit-video-featured').checked = video.featured == 1;
+    document.querySelector('#nlmsf-edit-video-form input[name="id"]').value = video.id;
+    
+    // Show edit modal
+    document.getElementById('nlmsf-edit-video-modal').style.display = 'flex';
+}
+
+function updateVideo() {
+    const form = document.getElementById('nlmsf-edit-video-form');
+    const formData = new FormData(form);
+    formData.append('action', 'nlmsf_events_action');
+    formData.append('event_action', 'update_video');
+    formData.append('nonce', nlmsf_events_ajax.nonce);
+    
+    fetch(nlmsf_events_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Video updated successfully!');
+            closeModal('nlmsf-edit-video-modal');
+            loadVideos(); // Reload the videos list
+        } else {
+            alert('Error: ' + data.data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error updating video');
+    });
+}
+
+function deleteVideo(id) {
+    if (confirm('Are you sure you want to delete this video?')) {
+        const formData = new FormData();
+        formData.append('action', 'nlmsf_events_action');
+        formData.append('event_action', 'delete_video');
+        formData.append('id', id);
+        formData.append('nonce', nlmsf_events_ajax.nonce);
+        
+        fetch(nlmsf_events_ajax.ajax_url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Video deleted successfully!');
+                loadVideos(); // Reload the videos list
+            } else {
+                alert('Error: ' + data.data);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error deleting video');
+        });
+    }
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+// Close modals when clicking outside
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('nlmsf-modal-overlay')) {
+        e.target.style.display = 'none';
+    }
+});
+</script>

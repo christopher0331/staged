@@ -1,0 +1,34 @@
+/* Elementor Block: OncLive Sarcoma (Side Component) */
+.onclive-card { 
+  background: linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Optional: make the card fully fluid to the parent column */
+.onclive-card--fluid { max-width: 100%; }
+
+.onclive-media { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; }
+.onclive-image { width: 100%; max-width: 100%; height: auto; display: block; object-fit: cover; border-radius: 8px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08)); }
+
+/* Safety: ensure any img inside the card also scales */
+.onclive-card img { width: 100%; height: auto; display: block; }
+
+.onclive-title { font-size: 1.06rem; margin: 8px 0 4px; line-height: 1.3; font-weight: 800; }
+.onclive-link { color: #6a3ea1; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+.onclive-link:hover { color: #4f2f7b; }
+
+.onclive-desc { color: #374151; font-size: .95rem; margin: 6px 0 12px; }
+
+.onclive-cta { display: inline-block; padding: 8px 12px; border-radius: 999px; border: 2px solid #6a3ea1; color: #6a3ea1; font-weight: 700; text-decoration: none; transition: all .15s ease; }
+.onclive-cta:hover { background: #6a3ea1; color: #ffffff; box-shadow: 0 4px 10px rgba(106,62,161,0.25); }
+
+/* Center 1/3 width helper (optional) */
+.onclive-center-third { max-width: 340px; margin-left: auto; margin-right: auto; }

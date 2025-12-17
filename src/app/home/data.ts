@@ -1,4 +1,35 @@
+interface Card {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
 export const homeData = {
+  cards: [
+    {
+      id: "newly-diagnosed",
+      title: "Newly Diagnosed",
+      description: "Essential resources and information for patients who have recently been diagnosed with LMS.",
+      image: "/images/resources/newly-diagnosed.jpg",
+      link: "/newly-diagnosed"
+    },
+    {
+      id: "treatment-options",
+      title: "Treatment Options",
+      description: "Learn about treatment approaches for LMS, including surgery, radiation, and systemic therapies.",
+      image: "/images/resources/treatment.jpg",
+      link: "/treatment-options"
+    },
+    {
+      id: "support-programs",
+      title: "Support Programs",
+      description: "Connect with our patient community and access support resources for your LMS journey.",
+      image: "/images/resources/support.jpg",
+      link: "/support"
+    }
+  ],
   stats: [
     {
       value: "15+",
@@ -82,14 +113,114 @@ export const homeData = {
   ],
   partners: [
     {
-      name: "Target Cancer Foundation",
-      logo: "/images/partners/tcf-logo.png",
-      href: "https://targetcancerfoundation.org"
+      name: "Partner 1",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/unnamed-32.jpg",
+      href: "#"
     },
     {
-      name: "Perthera",
-      logo: "/images/partners/perthera-logo.png",
-      href: "https://perthera.com"
+      name: "ASCO",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/7-asco.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 3",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/unnamed-36.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 4",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/download-3.png",
+      href: "#"
+    },
+    {
+      name: "Partner 5",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/unnamed-34.jpg",
+      href: "#"
+    },
+    {
+      name: "ECOG",
+      logo: "https://nlmsf.org/wp-content/uploads/2021/02/ECOG.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 7",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/unnamed-33.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 8",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/unnamed-35.jpg",
+      href: "#"
+    },
+    {
+      name: "PCORI",
+      logo: "https://nlmsf.org/wp-content/uploads/2021/03/Pcori.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 10",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/cb0a477898aea87bc1af0e7ddeaea647-1.png",
+      href: "#"
+    },
+    {
+      name: "Partner 11",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/download-2.png",
+      href: "#"
+    },
+    {
+      name: "Sarcoma Oncology Center",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/Sarcoma-Oncology-Center.jpg",
+      href: "#"
+    },
+    {
+      name: "Lazarex",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/12/lazarex.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 14",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/download-6.png",
+      href: "#"
+    },
+    {
+      name: "Partner 15",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/download-6.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 16",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/05/unnamed-38.jpg",
+      href: "#"
+    },
+    {
+      name: "Partner 17",
+      logo: "https://nlmsf.org/wp-content/uploads/2020/11/unnamed-74-1.jpg",
+      href: "#"
+    },
+    {
+      name: "Count Me In",
+      logo: "https://nlmsf.org/wp-content/uploads/2021/11/CountmeIn.jpg",
+      href: "#"
+    },
+    {
+      name: "University of Mannheim",
+      logo: "https://nlmsf.org/wp-content/uploads/2022/03/University-of-Mannheim.jpg",
+      href: "#"
+    },
+    {
+      name: "USC",
+      logo: "https://nlmsf.org/wp-content/uploads/2022/03/USC.jpg",
+      href: "#"
+    },
+    {
+      name: "Royal Marsden",
+      logo: "https://nlmsf.org/wp-content/uploads/2022/03/royal-marsden.jpg",
+      href: "#"
+    },
+    {
+      name: "McGill University",
+      logo: "https://nlmsf.org/wp-content/uploads/2022/03/McGill.jpg",
+      href: "#"
     }
   ]
 };

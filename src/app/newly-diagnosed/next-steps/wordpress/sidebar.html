@@ -1,0 +1,168 @@
+<!-- Sidebar Navigation Component for Next Steps Page -->
+<div class="sidebar">
+    <div class="sidebar-container">
+        <h3 class="sidebar-title">Page Contents</h3>
+        
+        <ul class="sidebar-links">
+            <li>
+                <a href="#specialists" class="sidebar-link" data-section="specialists">
+                    <i class="fas fa-user-md"></i>
+                    <span>Finding Specialists</span>
+                </a>
+                
+                <ul class="subsection-links">
+                    <li>
+                        <a href="#sarc-centers" class="sidebar-sublink" data-section="sarc-centers">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sarcoma Centers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#denver-resources" class="sidebar-sublink" data-section="denver-resources">
+                            <i class="fas fa-mountain"></i>
+                            <span>Denver Resources</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#preparation" class="sidebar-link" data-section="preparation">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Preparation Steps</span>
+                </a>
+                
+                <ul class="subsection-links">
+                    <li>
+                        <a href="#select-center" class="sidebar-sublink" data-section="select-center">
+                            <i class="fas fa-hospital"></i>
+                            <span>Select a Center</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#first-appointment" class="sidebar-sublink" data-section="first-appointment">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>First Appointment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#documents" class="sidebar-sublink" data-section="documents">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Important Documents</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#resources" class="sidebar-link" data-section="resources">
+                    <i class="fas fa-book-open"></i>
+                    <span>Resources</span>
+                </a>
+                
+                <ul class="subsection-links">
+                    <li>
+                        <a href="#videos" class="sidebar-sublink" data-section="videos">
+                            <i class="fas fa-video"></i>
+                            <span>Educational Videos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#articles" class="sidebar-sublink" data-section="articles">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Research & Articles</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#important-links" class="sidebar-sublink" data-section="important-links">
+                            <i class="fas fa-link"></i>
+                            <span>Important Links</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#community" class="sidebar-link" data-section="community">
+                    <i class="fas fa-users"></i>
+                    <span>Community Support</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Denver-specific CTA in sidebar -->
+    <div class="sidebar-cta">
+        <div class="cta-icon">
+            <i class="fas fa-mountain"></i>
+        </div>
+        <h4>Denver Support</h4>
+        <p>Connect with local LMS resources and support groups in the Denver area</p>
+        <a href="#" class="sidebar-cta-button">
+            Find Local Support
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+<!-- JavaScript for sidebar functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link, .sidebar-sublink');
+        
+        // Function to set active link based on scroll position
+        function setActiveLink() {
+            const scrollPosition = window.scrollY;
+            
+            // Get all sections and subsections
+            const sections = document.querySelectorAll('[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    // Remove active class from all links
+                    sidebarLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active class to current section link and its parent if it's a subsection
+                    const activeLink = document.querySelector(`.sidebar-link[data-section="${sectionId}"], .sidebar-sublink[data-section="${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                        
+                        // If it's a sublink, also activate the parent link
+                        if (activeLink.classList.contains('sidebar-sublink')) {
+                            const parentSection = activeLink.closest('li').parentElement.previousElementSibling;
+                            if (parentSection && parentSection.classList.contains('sidebar-link')) {
+                                parentSection.classList.add('active');
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Set active link on scroll
+        window.addEventListener('scroll', setActiveLink);
+        
+        // Set active link on page load
+        setActiveLink();
+        
+        // Smooth scroll for sidebar links
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>

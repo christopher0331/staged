@@ -1,0 +1,96 @@
+<!-- 2025 News Trackers Section for Elementor -->
+<section class="news-tracker-year newsletter-2025 elementor-section elementor-section-boxed">
+    <div class="elementor-container">
+        <h3>2025 News Trackers</h3>
+        
+        <!-- Initial items (always shown) -->
+        <div class="newsletter-grid">
+            <!-- March 17, 2025 -->
+            <a href="https://mailchi.mp/nlmsf.org/nlmsf-news-tracker-8z011ysyoc-6748546" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                <div class="newsletter-header">
+                    <h4 class="newsletter-title">NLMSF/Sarcoma Community Connection</h4>
+                    <span class="newsletter-date">March 17, 2025</span>
+                </div>
+                <p class="newsletter-description">Patient education sessions, Tips for living with LMS, Medicare guidance</p>
+            </a>
+            
+            <!-- March 1, 2025 -->
+            <a href="https://mailchi.mp/nlmsf.org/nlmsf-news-tracker-8z011ysyoc-6747853" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                <div class="newsletter-header">
+                    <h4 class="newsletter-title">NLMSF/Sarcoma Community Connection</h4>
+                    <span class="newsletter-date">March 1, 2025</span>
+                </div>
+                <p class="newsletter-description">Online education sessions, Cancer survivorship guidance, Caregiving support</p>
+            </a>
+            
+            <!-- February 11, 2025 -->
+            <a href="https://mailchi.mp/nlmsf.org/nlmsf-news-tracker-8z011ysyoc-6747215" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                <div class="newsletter-header">
+                    <h4 class="newsletter-title">NLMSF News Tracker</h4>
+                    <span class="newsletter-date">February 11, 2025</span>
+                </div>
+                <p class="newsletter-description">Radiation strategies, Clinical trials, Progress in LMS research, Coping with scanxiety</p>
+            </a>
+        </div>
+        
+        <!-- View More button -->
+        <div class="newsletter-view-more">
+            <button data-year="2025" aria-expanded="false" onclick="toggleNewsletters('2025')">
+                View More 2025 News Trackers
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Additional items (hidden by default) -->
+        <div class="newsletter-additional" id="additional-2025">
+            <div class="newsletter-grid">
+                <!-- January 28, 2025 -->
+                <a href="https://mailchi.mp/nlmsf.org/nlmsf-news-tracker-8z011ysyoc-6746712" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                    <div class="newsletter-header">
+                        <h4 class="newsletter-title">NLMSF News Tracker</h4>
+                        <span class="newsletter-date">January 28, 2025</span>
+                    </div>
+                    <p class="newsletter-description">Clinical trials information, TKI for LMS patients, STRASS II/III trial updates, financial assistance resources</p>
+                </a>
+                
+                <!-- January 14, 2025 -->
+                <a href="https://mailchi.mp/nlmsf.org/nlmsf-news-tracker-8z011ysyoc-6746206" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                    <div class="newsletter-header">
+                        <h4 class="newsletter-title">NLMSF News Tracker</h4>
+                        <span class="newsletter-date">January 14, 2025</span>
+                    </div>
+                    <p class="newsletter-description">New newsletter look, ASCO presentation on ICIs with TKIs, genetic testing, well-being through gardening</p>
+                </a>
+                
+                <!-- December 31, 2024 -->
+                <a href="https://mailchi.mp/nlmsf.org/nlmsf-news-tracker-8z011ysyoc-6745686" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                    <div class="newsletter-header">
+                        <h4 class="newsletter-title">NLMSF News Tracker</h4>
+                        <span class="newsletter-date">December 31, 2024</span>
+                    </div>
+                    <p class="newsletter-description">NLMSF Research Awardee for 2025-26 announced, research updates, advocacy tips</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Simple inline script for toggling visibility -->
+<script>
+function toggleNewsletters(year) {
+    var additionalSection = document.getElementById('additional-' + year);
+    var button = document.querySelector('button[data-year="' + year + '"]');
+    
+    if (additionalSection.classList.contains('active')) {
+        additionalSection.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+        button.innerHTML = 'View More ' + year + ' News Trackers <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>';
+    } else {
+        additionalSection.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+        button.innerHTML = 'View Less ' + year + ' News Trackers <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>';
+    }
+}
+</script>

@@ -1,0 +1,132 @@
+/**
+ * NLMSF Resend Contact Form Styles
+ */
+
+/* Form Styles */
+.nlmsf-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nlmsf-form-row {
+    margin-bottom: 20px;
+}
+
+.nlmsf-form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.nlmsf-form-input,
+.nlmsf-form-textarea,
+.nlmsf-form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.nlmsf-form-textarea {
+    min-height: 150px;
+}
+
+.nlmsf-form-submit {
+    background-color: #4054b2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.nlmsf-form-submit:hover {
+    background-color: #324191;
+}
+
+.nlmsf-form-submit:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Alert Styles */
+.nlmsf-alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.nlmsf-alert-success {
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32;
+}
+
+.nlmsf-alert-error {
+    background-color: #ffebee;
+    border-color: #f44336;
+    color: #c62828;
+}
+
+.nlmsf-alert-info {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+    color: #0d47a1;
+}
+
+/* Form Check */
+.nlmsf-form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.nlmsf-form-check input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Status area */
+.form-status {
+    margin: 15px 0;
+}
+
+/* FAQ Toggle styles */
+.faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h4 {
+    margin: 0;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    color: #4054b2;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    margin-top: 10px;
+}

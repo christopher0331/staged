@@ -1,0 +1,119 @@
+<!-- Testimonials Section - Space Efficient -->
+<div class="testimonials-compact">
+  <h3 class="testimonials-title">What Our Experts Say</h3>
+  
+  <div class="testimonial-carousel" id="testimonialCarousel">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-slide active">
+      <div class="testimonial-content">
+        <div class="expert-info">
+          <div class="expert-image">
+            <img src="https://nlmsf.org/wp-content/uploads/2025/01/brian-van-tine.jpg" alt="Brian Van Tine, MD" />
+          </div>
+          <div class="expert-details">
+            <h4 class="expert-name">Brian Van Tine, MD</h4>
+            <p class="expert-title">Sarcoma Program Director, Alvin J. Siteman Cancer Center</p>
+          </div>
+        </div>
+        <blockquote class="testimonial-quote">
+          "I love this group, it makes a difference."
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="expert-info">
+          <div class="expert-image">
+            <img src="https://nlmsf.org/wp-content/uploads/2025/01/seth-pollack.jpg" alt="Seth Pollack, MD" />
+          </div>
+          <div class="expert-details">
+            <h4 class="expert-name">Seth Pollack, MD</h4>
+            <p class="expert-title">Professor, Northwestern University Feinberg School of Medicine</p>
+          </div>
+        </div>
+        <blockquote class="testimonial-quote">
+          "I love the NLMSF – I love the patient programs held – your signature support advocacy to collaborate with sarcoma centers..."
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="expert-info">
+          <div class="expert-image">
+            <img src="https://nlmsf.org/wp-content/uploads/2025/01/arun-singh.jpg" alt="Arun Singh, MD" />
+          </div>
+          <div class="expert-details">
+            <h4 class="expert-name">Arun Singh, MD</h4>
+            <p class="expert-title">Director of UCLA Sarcoma Medical Oncology</p>
+          </div>
+        </div>
+        <blockquote class="testimonial-quote">
+          "The National Leiomyosarcoma Foundation is an important organization that strives to gather a critical mass of patients, scientists, patient advocates and physicians..."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="carousel-dots">
+    <button class="dot active" data-slide="0"></button>
+    <button class="dot" data-slide="1"></button>
+    <button class="dot" data-slide="2"></button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('testimonialCarousel');
+  const slides = carousel.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.dot');
+  let currentSlide = 0;
+  let slideInterval;
+
+  function showSlide(index) {
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Show current slide
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    const next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function startCarousel() {
+    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  }
+
+  function stopCarousel() {
+    clearInterval(slideInterval);
+  }
+
+  // Initialize carousel
+  showSlide(0);
+  startCarousel();
+
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      stopCarousel();
+      showSlide(index);
+      startCarousel();
+    });
+  });
+
+  // Pause on hover
+  carousel.addEventListener('mouseenter', stopCarousel);
+  carousel.addEventListener('mouseleave', startCarousel);
+});
+</script>

@@ -4,129 +4,6 @@ import Link from "next/link"
 export function SarcomaSpecificSection() {
   return (
     <div className="space-y-8">
-      <div id="sarcoma-staging" className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-xl p-6 shadow-md border border-amber-200">
-        <div className="flex items-center mb-4">
-          <div className="bg-amber-500 p-2 rounded-full mr-4">
-            <Target className="h-6 w-6 text-white" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-amber-800">Sarcoma Staging</h3>
-            <p className="text-amber-600">How soft tissue sarcomas are staged</p>
-          </div>
-        </div>
-        
-        <p className="text-gray-700 mb-4">
-          Soft tissue sarcomas, including Leiomyosarcoma (LMS), use the American Joint Committee on Cancer (AJCC) TNM staging system, which considers:
-        </p>
-        
-        <div className="grid gap-4 sm:grid-cols-3 mb-6">
-          <div className="p-4 rounded-lg bg-white/70 border border-amber-200 hover:shadow-md transition-all duration-300">
-            <div className="flex items-center mb-2">
-              <div className="bg-amber-100 p-1 rounded-full mr-2">
-                <span className="font-bold text-amber-600 text-sm">T</span>
-              </div>
-              <h5 className="font-semibold text-amber-800">Tumor Size</h5>
-            </div>
-            <p className="text-sm text-gray-700">
-              Measures the size of the primary tumor and whether it has grown into nearby structures
-            </p>
-          </div>
-          
-          <div className="p-4 rounded-lg bg-white/70 border border-amber-200 hover:shadow-md transition-all duration-300">
-            <div className="flex items-center mb-2">
-              <div className="bg-amber-100 p-1 rounded-full mr-2">
-                <span className="font-bold text-amber-600 text-sm">N</span>
-              </div>
-              <h5 className="font-semibold text-amber-800">Lymph Node Involvement</h5>
-            </div>
-            <p className="text-sm text-gray-700">
-              Indicates whether the cancer has spread to nearby lymph nodes (uncommon in most sarcomas)
-            </p>
-          </div>
-          
-          <div className="p-4 rounded-lg bg-white/70 border border-amber-200 hover:shadow-md transition-all duration-300">
-            <div className="flex items-center mb-2">
-              <div className="bg-amber-100 p-1 rounded-full mr-2">
-                <span className="font-bold text-amber-600 text-sm">M</span>
-              </div>
-              <h5 className="font-semibold text-amber-800">Metastasis</h5>
-            </div>
-            <p className="text-sm text-gray-700">
-              Indicates whether the cancer has spread to distant parts of the body (most commonly the lungs)
-            </p>
-          </div>
-        </div>
-        
-        <div className="bg-white/70 rounded-lg p-5 border border-amber-100 mb-6">
-          <h4 className="font-semibold text-amber-800 mb-3">Sarcoma Stage Groupings</h4>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="bg-amber-50">
-                  <th className="py-2 px-3 text-left text-amber-800 font-medium border border-amber-100">Stage</th>
-                  <th className="py-2 px-3 text-left text-amber-800 font-medium border border-amber-100">Description</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                <tr>
-                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IA</td>
-                  <td className="py-2 px-3 border border-amber-100">
-                    Small tumor (≤5 cm), superficial, low grade (G1), no spread to lymph nodes or distant sites
-                  </td>
-                </tr>
-                <tr className="bg-amber-50/30">
-                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IB</td>
-                  <td className="py-2 px-3 border border-amber-100">
-                    Small tumor (≤5 cm), deep, low grade (G1), no spread to lymph nodes or distant sites
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage II</td>
-                  <td className="py-2 px-3 border border-amber-100">
-                    Larger tumor ({'>'}5 cm), low grade (G1), no spread to lymph nodes or distant sites
-                  </td>
-                </tr>
-                <tr className="bg-amber-50/30">
-                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IIIA</td>
-                  <td className="py-2 px-3 border border-amber-100">
-                    Small tumor (≤5 cm), high grade (G2-3), no spread to lymph nodes or distant sites
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IIIB</td>
-                  <td className="py-2 px-3 border border-amber-100">
-                    Larger tumor ({'>'}5 cm), high grade (G2-3), no spread to lymph nodes or distant sites
-                  </td>
-                </tr>
-                <tr className="bg-amber-50/30">
-                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IV</td>
-                  <td className="py-2 px-3 border border-amber-100">
-                    Any size tumor, any grade, with spread to lymph nodes and/or distant sites
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        
-        <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
-          <p className="text-gray-700 italic">
-            "The staging system divides sarcomas into 3 grades (1 to 3). The grade of a sarcoma helps predict how rapidly it will grow and spread. It's useful in predicting a patient's outlook and helps determine treatment options."
-            <span className="block text-right text-sm mt-2">— American Cancer Society</span>
-          </p>
-          <div className="mt-3 text-sm">
-            <Link 
-              href="https://www.cancer.org/cancer/types/soft-tissue-sarcoma/detection-diagnosis-staging/staging.html" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center text-amber-700 hover:text-amber-800 font-medium"
-            >
-              Learn more 
-              <ExternalLink className="ml-1 h-3 w-3" />
-            </Link>
-          </div>
-        </div>
-      </div>
 
       <div id="sarcoma-grading" className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl p-6 shadow-md border border-orange-200">
         <div className="flex items-center mb-4">
@@ -296,6 +173,130 @@ export function SarcomaSpecificSection() {
               <span>The grade of LMS is particularly important in determining treatment approach and predicting behavior</span>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div id="sarcoma-staging" className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-xl p-6 shadow-md border border-amber-200">
+        <div className="flex items-center mb-4">
+          <div className="bg-amber-500 p-2 rounded-full mr-4">
+            <Target className="h-6 w-6 text-white" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-amber-800">Sarcoma Staging</h3>
+            <p className="text-amber-600">How soft tissue sarcomas are staged</p>
+          </div>
+        </div>
+        
+        <p className="text-gray-700 mb-4">
+          Soft tissue sarcomas, including Leiomyosarcoma (LMS), use the American Joint Committee on Cancer (AJCC) TNM staging system, which considers:
+        </p>
+        
+        <div className="grid gap-4 sm:grid-cols-3 mb-6">
+          <div className="p-4 rounded-lg bg-white/70 border border-amber-200 hover:shadow-md transition-all duration-300">
+            <div className="flex items-center mb-2">
+              <div className="bg-amber-100 p-1 rounded-full mr-2">
+                <span className="font-bold text-amber-600 text-sm">T</span>
+              </div>
+              <h5 className="font-semibold text-amber-800">Tumor Size</h5>
+            </div>
+            <p className="text-sm text-gray-700">
+              Measures the size of the primary tumor and whether it has grown into nearby structures
+            </p>
+          </div>
+          
+          <div className="p-4 rounded-lg bg-white/70 border border-amber-200 hover:shadow-md transition-all duration-300">
+            <div className="flex items-center mb-2">
+              <div className="bg-amber-100 p-1 rounded-full mr-2">
+                <span className="font-bold text-amber-600 text-sm">N</span>
+              </div>
+              <h5 className="font-semibold text-amber-800">Lymph Node Involvement</h5>
+            </div>
+            <p className="text-sm text-gray-700">
+              Indicates whether the cancer has spread to nearby lymph nodes (uncommon in most sarcomas)
+            </p>
+          </div>
+          
+          <div className="p-4 rounded-lg bg-white/70 border border-amber-200 hover:shadow-md transition-all duration-300">
+            <div className="flex items-center mb-2">
+              <div className="bg-amber-100 p-1 rounded-full mr-2">
+                <span className="font-bold text-amber-600 text-sm">M</span>
+              </div>
+              <h5 className="font-semibold text-amber-800">Metastasis</h5>
+            </div>
+            <p className="text-sm text-gray-700">
+              Indicates whether the cancer has spread to distant parts of the body (most commonly the lungs)
+            </p>
+          </div>
+        </div>
+        
+        <div className="bg-white/70 rounded-lg p-5 border border-amber-100 mb-6">
+          <h4 className="font-semibold text-amber-800 mb-3">Sarcoma Stage Groupings</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-amber-50">
+                  <th className="py-2 px-3 text-left text-amber-800 font-medium border border-amber-100">Stage</th>
+                  <th className="py-2 px-3 text-left text-amber-800 font-medium border border-amber-100">Description</th>
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                <tr>
+                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IA</td>
+                  <td className="py-2 px-3 border border-amber-100">
+                    Small tumor (≤5 cm), superficial, low grade (G1), no spread to lymph nodes or distant sites
+                  </td>
+                </tr>
+                <tr className="bg-amber-50/30">
+                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IB</td>
+                  <td className="py-2 px-3 border border-amber-100">
+                    Small tumor (≤5 cm), deep, low grade (G1), no spread to lymph nodes or distant sites
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage II</td>
+                  <td className="py-2 px-3 border border-amber-100">
+                    Larger tumor ({'>'}5 cm), low grade (G1), no spread to lymph nodes or distant sites
+                  </td>
+                </tr>
+                <tr className="bg-amber-50/30">
+                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IIIA</td>
+                  <td className="py-2 px-3 border border-amber-100">
+                    Small tumor (≤5 cm), high grade (G2-3), no spread to lymph nodes or distant sites
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IIIB</td>
+                  <td className="py-2 px-3 border border-amber-100">
+                    Larger tumor ({'>'}5 cm), high grade (G2-3), no spread to lymph nodes or distant sites
+                  </td>
+                </tr>
+                <tr className="bg-amber-50/30">
+                  <td className="py-2 px-3 border border-amber-100 font-medium">Stage IV</td>
+                  <td className="py-2 px-3 border border-amber-100">
+                    Any size tumor, any grade, with spread to lymph nodes and/or distant sites
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
+          <p className="text-gray-700 italic">
+            "The staging system divides sarcomas into 3 grades (1 to 3). The grade of a sarcoma helps predict how rapidly it will grow and spread. It's useful in predicting a patient's outlook and helps determine treatment options."
+            <span className="block text-right text-sm mt-2">— American Cancer Society</span>
+          </p>
+          <div className="mt-3 text-sm">
+            <Link 
+              href="https://www.cancer.org/cancer/types/soft-tissue-sarcoma/detection-diagnosis-staging/staging.html" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-amber-700 hover:text-amber-800 font-medium"
+            >
+              Learn more 
+              <ExternalLink className="ml-1 h-3 w-3" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

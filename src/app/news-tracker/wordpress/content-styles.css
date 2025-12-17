@@ -1,0 +1,366 @@
+/* NLMSF News Tracker - Content Styles */
+
+/* Main Content Layout */
+.news-tracker-content {
+    margin-bottom: 40px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Hero Section */
+.news-hero {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.news-hero h1 {
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.news-hero p {
+    font-size: 18px;
+    color: #6b7280;
+    max-width: 700px;
+}
+
+/* Content Sections */
+.content-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.section-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+    fill: none;
+}
+
+/* Icon Colors */
+.purple-icon {
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+}
+
+.blue-icon {
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+.pink-icon {
+    background: linear-gradient(to right, #db2777, #be185d);
+}
+
+.green-icon {
+    background: linear-gradient(to right, #059669, #047857);
+}
+
+.orange-icon {
+    background: linear-gradient(to right, #d97706, #b45309);
+}
+
+.red-icon {
+    background: linear-gradient(to right, #dc2626, #b91c1c);
+}
+
+/* Section Headers */
+.content-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.section-content {
+    padding-left: 55px;
+    margin-bottom: 30px;
+}
+
+.section-content p {
+    margin-bottom: 15px;
+    color: #4b5563;
+}
+
+/* Featured Links */
+.featured-link {
+    margin-top: 20px;
+}
+
+.featured-button {
+    display: inline-block;
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.featured-button:hover {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+/* Year Sections */
+.year-section {
+    margin-bottom: 40px;
+}
+
+.year-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+/* Newsletter Grid Structure */
+.newsletter-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .newsletter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .newsletter-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Newsletter Card Common Styles */
+.newsletter-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.newsletter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.newsletter-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.newsletter-date {
+    font-size: 12px;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.newsletter-description {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Card Color Themes */
+.purple-card {
+    background: linear-gradient(to bottom right, #f5f3ff, #ede9fe);
+    border: 1px solid #ddd6fe;
+}
+
+.purple-card .newsletter-title {
+    color: #7c3aed;
+}
+
+.purple-card .newsletter-description {
+    color: #6d28d9;
+}
+
+.teal-card {
+    background: linear-gradient(to bottom right, #ccfbf1, #cffafe);
+    border: 1px solid #99f6e4;
+}
+
+.teal-card .newsletter-title {
+    color: #0d9488;
+}
+
+.teal-card .newsletter-description {
+    color: #0f766e;
+}
+
+.pink-card {
+    background: linear-gradient(to bottom right, #fce7f3, #fecdd3);
+    border: 1px solid #fbcfe8;
+}
+
+.pink-card .newsletter-title {
+    color: #db2777;
+}
+
+.pink-card .newsletter-description {
+    color: #be185d;
+}
+
+/* View More Functionality */
+.view-more-container {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.view-more-button {
+    background: transparent;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-more-button:hover {
+    color: #7c3aed;
+    border-color: #7c3aed;
+}
+
+/* Hidden Items Toggle */
+.hidden-items {
+    display: none;
+}
+
+.hidden-items.active {
+    display: grid;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Denver-specific section - Amber Theme */
+.denver-resources {
+    background: linear-gradient(to bottom right, #fef3c7, #fde68a);
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.denver-resources h3 {
+    color: #b45309;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.denver-resources p {
+    color: #78350f;
+    margin-bottom: 20px;
+}
+
+.resource-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.resource-button {
+    display: inline-block;
+    background: #fcd34d;
+    color: #78350f;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.resource-button:hover {
+    background: #fbbf24;
+    transform: translateY(-1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-content {
+        padding-left: 0;
+    }
+    
+    .newsletter-header {
+        flex-direction: column;
+    }
+    
+    .newsletter-date {
+        margin-top: 5px;
+    }
+    
+    .resource-buttons {
+        flex-direction: column;
+    }
+    
+    .resource-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+.denver-resources .resource-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.denver-resources .resource-button {
+    background: linear-gradient(to right, #f59e0b, #d97706);
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.denver-resources .resource-button:hover {
+    background: linear-gradient(to right, #d97706, #b45309);
+    transform: translateY(-2px);
+}

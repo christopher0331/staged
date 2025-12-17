@@ -1,0 +1,648 @@
+/* NLMSF Events Manager Styles */
+
+/* Global Message Styles */
+.nlmsf-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    z-index: 10000;
+    display: none;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nlmsf-message-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.nlmsf-message-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.nlmsf-message-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+/* Events Display Component Styles */
+.nlmsf-events-display {
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.nlmsf-events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #7e22ce, #4338ca) 1;
+}
+
+.nlmsf-events-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.nlmsf-events-title i {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.75rem;
+}
+
+.nlmsf-view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #7e22ce;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #7e22ce;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.nlmsf-view-all-link:hover {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.3);
+}
+
+.nlmsf-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.nlmsf-event-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nlmsf-event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+}
+
+.nlmsf-event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(126, 34, 206, 0.15);
+    border-color: #7e22ce;
+}
+
+.nlmsf-event-date-badge {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
+}
+
+.nlmsf-event-month {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.nlmsf-event-day {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-top: 0.25rem;
+}
+
+.nlmsf-event-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.nlmsf-event-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.nlmsf-event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nlmsf-event-datetime {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.nlmsf-event-datetime i {
+    color: #7e22ce;
+    width: 16px;
+}
+
+.nlmsf-event-description {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+.nlmsf-event-actions {
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.nlmsf-register-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.nlmsf-register-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.4);
+    background: linear-gradient(135deg, #6b21a8, #3730a3);
+    color: white;
+    text-decoration: none;
+}
+
+/* No Events State */
+.nlmsf-no-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #6b7280;
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border-radius: 1rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-no-events i {
+    font-size: 3rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.nlmsf-no-events p {
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.nlmsf-no-events .text-sm {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+/* Events Admin Component Styles */
+.nlmsf-events-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nlmsf-admin-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nlmsf-admin-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7e22ce, #4338ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-admin-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+.nlmsf-add-event-section {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nlmsf-section-title i {
+    color: #7e22ce;
+}
+
+.nlmsf-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nlmsf-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nlmsf-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.nlmsf-form-label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.nlmsf-form-input,
+.nlmsf-form-textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: border-color 0.3s ease;
+}
+
+.nlmsf-form-input:focus,
+.nlmsf-form-textarea:focus {
+    outline: none;
+    border-color: #7e22ce;
+    box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.1);
+}
+
+.nlmsf-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.nlmsf-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.nlmsf-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #7e22ce;
+}
+
+.nlmsf-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.nlmsf-btn-primary {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+    color: white;
+}
+
+.nlmsf-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.3);
+}
+
+.nlmsf-btn-edit {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.nlmsf-btn-edit:hover {
+    background: linear-gradient(135deg, #0e7490, #0891b2);
+}
+
+.nlmsf-btn-delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.nlmsf-btn-delete:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.nlmsf-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nlmsf-event-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.nlmsf-event-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #7e22ce;
+}
+
+.nlmsf-event-info h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+}
+
+.nlmsf-event-meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem 0;
+    font-weight: 500;
+}
+
+.nlmsf-event-desc {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+
+.nlmsf-event-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.nlmsf-homepage-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nlmsf-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.nlmsf-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.nlmsf-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.nlmsf-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .nlmsf-toggle-slider {
+    background: linear-gradient(135deg, #7e22ce, #4338ca);
+}
+
+input:checked + .nlmsf-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.nlmsf-toggle-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.nlmsf-event-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nlmsf-no-events-admin {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6b7280;
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.02), rgba(67, 56, 202, 0.03));
+    border-radius: 1rem;
+    border: 1px solid rgba(126, 34, 206, 0.1);
+}
+
+/* Modal Styles */
+.nlmsf-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.nlmsf-modal-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.nlmsf-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nlmsf-modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.nlmsf-close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.nlmsf-close-modal:hover {
+    color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nlmsf-events-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .nlmsf-events-title {
+        font-size: 1.75rem;
+    }
+    
+    .nlmsf-events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .nlmsf-event-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nlmsf-event-date-badge {
+        align-self: flex-start;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .nlmsf-events-admin {
+        padding: 1rem;
+    }
+    
+    .nlmsf-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nlmsf-event-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .nlmsf-modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nlmsf-admin-title {
+        font-size: 2rem;
+    }
+    
+    .nlmsf-events-title {
+        font-size: 1.5rem;
+    }
+    
+    .nlmsf-event-card {
+        padding: 1.25rem;
+    }
+}
